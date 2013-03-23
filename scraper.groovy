@@ -59,40 +59,19 @@
 			def nameBlock = page.depthFirst().DIV.findAll { it.@class == 'title section'}	
 			def eduBlock = page.depthFirst().DIV.findAll{ it.@class == 'text parbase section' }
 			
-			
 			if(!nameBlock.isEmpty()) 
 				println getName(nameBlock)
-			// eduBlock.each{
-			// 	block -> 
-			// 	def v = block.value()
-				
-			// 	v.each{
-			// 		def info = it.value()
-			// 		int i = 0
-			// 		info.each{
-			// 			// println ">>> $i"
-			// 			// println it
-			// 			// println "${it.name()} -- ${it.value()}"
-			// 			if(it.name() == "H2" && it.value().contains("Education"))
-			// 			{ 	
-			// 				education = getEducInfo(info[i+1].value())
-			// 			}
-			// 			// if(it.name() == "P")
-			// 			// 	// println it.value()
-			// 			// if(it.name() == "UL")
-			// 			// 	println it.value()
-			// 			i+=1
-			// 		}
-			// 	}
+			if(!eduBlock.isEmpty())
+			    println getEducInfo(eduBlock)
 
-			// }	
 		}
 	}
 
 	def getName(block){	
 		def name = []
 		block.each{
-			def content = it.value()			
+			def content = it.value()
+
 			content.each{
 				def header = it.value()				
 				header.each{
@@ -110,15 +89,44 @@
 	}
 
 	def getEducInfo(block){
-		def education = []
+		def education = []			
 		block.each{
-			eduInfo ->
-			if(eduInfo.getClass() != groovy.util.Node)
-			{
-				education.add(eduInfo)
+			def content = it.value()
+			content.each{
+				def header = it.value()
+				int i = 0
+				header.each{
+					if(it.name() == "H2" && it.value().contains("Education"))
+					{
+						def schools = header[i+1].value()
+						// println schools
+						schools.each{
+							tag ->
+							// println tag
+							if(tag.getClass() != groovy.util.Node)
+							{
+								education.add(tag)
+							}
+							else if(tag.getClass() == groovy.util.Node && tag.name() == "LI")
+							{
+								tag.each{					
+									li ->									
+									education.add(li)
+								}
+							}
+						}
+					}
+					i+=1
+				}
 			}
 		}
-		return education
+
+		def edu = []
+		education.collect{ 
+			if(it.getClass() != groovy.util.Node)
+				edu.add(it)
+		}
+		return edu
 	}
 
 	def filterPeopleOnly(links){
@@ -133,7 +141,7 @@
 
 	def webAddr = "http://www.cs.sfu.ca/people/faculty.html"
 	// def webAddr = "http://www.cs.sfu.ca/people/faculty/uweglasser.html"
-	// def webAddr1 = "http://www.cs.sfu.ca/people/faculty/gregbaker.html"
+	// def webAddr1 = "http://www.cs.sfu.ca/people/faculty/dianacukierman.html"
 	// def webAddr2 = "http://www.cs.sfu.ca/people/faculty/uweglasser.html"
 
 	// println getDoc(webAddr)[1]
