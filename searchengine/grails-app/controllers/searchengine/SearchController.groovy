@@ -11,4 +11,5 @@ class SearchController {
 		def allSearch = Search.list()		// query data from search model db
 		[allSearch:allSearch] // send queried data to view
 	}
+	
 }
