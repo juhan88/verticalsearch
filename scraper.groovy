@@ -14,24 +14,25 @@ def outputJson(data){
 
 	names.each{
 		name ->
-		list = edu[i]
+		eduList = edu[i]
 		def json = new JsonBuilder()
 		json.message{
-			header{
+			prof{
 				firstname name[0]
 				lastname name[1]
 			}
 			int num = 0
-			println list
-			list.each{
-				eduInfo = it.split(",")
-
-				education{
-					"edu$num" it
+			
+			eduList.each{				
+				def eduInfo = it.split(",")							
+				"education$num"{
+					dessertaion eduInfo[0]
+					faculty eduInfo[1]
+					school eduInfo[2]
+					location eduInfo[3]
+					// yearcomplete eduInfo[4]	
 				}
-				countries{
-					"country$num" eduInfo[3]
-				}
+				
 				num+=1
 			}
 		}
