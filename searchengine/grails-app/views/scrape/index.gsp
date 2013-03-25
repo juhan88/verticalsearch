@@ -6,9 +6,9 @@
 
 <body>
 	<table border="1">
-		<g:each in="${data}" status="i" var="thisData">
+		<g:each in="${json}" status="i" var="thisJson">
 		  <tr>
-				<td>${thisData}</td>
+				<td>${thisJson.toString()}</td>
 			</tr>
 		</g:each>
 	</table>

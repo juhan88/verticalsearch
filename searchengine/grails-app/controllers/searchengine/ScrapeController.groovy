@@ -91,7 +91,7 @@ class ScrapeController {
 					 	} // end v.each
 					} // end edublock.each
 				} // end if
-				name_educ += [(r_name):r_education]
+				name_educ += [name:r_name,education:r_education]
 			} // end docs.each
 			 return name_educ
 			}
@@ -107,8 +107,7 @@ class ScrapeController {
 							  def fullname = it.split(" ") 
 							  def fstname = fullname[0]
 							  def lstname = fullname[fullname.size()-1]
-							  name.add(fstname)
-							  name.add(lstname)
+							  name = fstname + ' ' + lstname
 							}					
 						}
 					}
@@ -138,15 +137,20 @@ class ScrapeController {
 				return filtered.unique()
 			}
 
-			def webAddr = "http://www.cs.sfu.ca/people/faculty.html"
-			// def webAddr = "http://www.cs.sfu.ca/people/faculty/uweglasser.html"
+			//def webAddr = "http://www.cs.sfu.ca/people/faculty.html"
+			 def webAddr = "http://www.cs.sfu.ca/people/faculty/uweglasser.html"
 			// def webAddr1 = "http://www.cs.sfu.ca/people/faculty/gregbaker.html"
 			// def webAddr2 = "http://www.cs.sfu.ca/people/faculty/uweglasser.html"
 
 			// println getDoc(webAddr)[1]
 			def index = {
-				def data = getInfo(getDoc(webAddr))
-				[data:data]
+				def rdata = getInfo(getDoc(webAddr))
+				//[rdata:rdata]
+				
+				def json = new groovy.json.JsonBuilder()
+				json rdata
+				[json:json]
+				
 			// getInfo(getRawDoc(webAddr1))
 			// getInfo(getRawDoc(webAddr2))
 			}
