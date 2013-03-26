@@ -28,9 +28,10 @@ def outputJson(data){
 				lastname name[1]
 			}
 			int num = 0
-			println eduList
+			
 			eduList.each{				
-				def eduInfo = it.split(",")
+				def eduInfo = it.split(",")		
+				// println eduInfo.size()		
 				//NEED TO FIX BUG
 				//NOT ALL PROFS LIST in the following order 
 				//DEGREE, FACULTY, UNIVERSITY, COUNTRY, YEAROFCOMPLETION							
@@ -52,22 +53,31 @@ def outputJson(data){
 						yearcomplete eduInfo[4]	
 					}
 				}
+				else if(eduInfo.size() == 3)
+				{
+					"education$num"{
+						dissertation eduInfo[0]						
+						school eduInfo[1]
+						country eduInfo[2]
+						
+					}
+				}
 				
 				num+=1
 			}
 			
-			if(courseList != null && !courseList.isEmpty() && courseList.size > 3 && name[1] != "Pearce"){
+			if(!courseList.isEmpty() && name[1] != "Pearce"){
 				num = 0			
-				courseList.each{
-					println "HERE"
+				courseList.each{					
 					def course = it.split(" ")
-					println "++++++++++++++++="
-					def cname = course[0] + " " + course[1]				
-					def topic = joinString(course, 2, course.size()-1)
-					
-					"course$num"{
-						courseName cname
-						courseTopic topic
+					if(course.size() > 2){
+						def cname = course[0] + " " + course[1]				
+						def topic = joinString(course, 2, course.size()-1)
+						
+						"course$num"{
+							courseName cname
+							courseTopic topic
+						}
 					}
 					num+=1
 				}
@@ -298,25 +308,30 @@ def getEducInfo(block){
 		content.each{
 			def header = it.value()
 			int i = 0
-			header.each{
+			def found = false
+
+			header.each{				
 				if(it.name() == "H2" && it.value().contains("Education"))
 				{
-					def schools = header[i+1].value()
-					// println schools
-					schools.each{
-						tag ->
-						// println tag
-						if(tag.getClass() != groovy.util.Node)
-						{
-							education.add(tag)
-						}
-						else if(tag.getClass() == groovy.util.Node && tag.name() == "LI")
-						{
-							tag.each{					
-								li ->									
-								education.add(li)
-							}
-						}
+					found = true
+					// println header[i+1]
+				}
+				if(it.name() == "P" && found){
+					school = it.value()	
+					// println "+++++++++"			
+					// println school.text()
+					// println "+++++++++"
+					if(school.getClass() != groovy.util.Node)
+					{
+						education.add(school)
+					}
+
+				}
+				else if (it.name() == "UL" && found){
+					school = it.value()					
+					school.each{
+						li -> 									
+						education.add(li.text())
 					}
 				}
 				i+=1
@@ -325,12 +340,26 @@ def getEducInfo(block){
 	}
 
 	//refilter only want school names not BR[tags
-	def edu = []
-	education.collect{ 
-		if(it.getClass() != groovy.util.Node)
-			edu.add(it)
+	// println "SIZE IS ${education.size()}"
+	// println education
+	// println "__________________-"
+	def edu = education
+	def results = []
+	edu.each{
+		degree ->				
+		if(degree.getClass() == groovy.util.NodeList){
+			degree.each{
+				if(it.getClass() != groovy.util.Node){
+					results.add(it)
+				}
+			}
+		}
 	}
-	return edu
+	
+	if(results.isEmpty() && !education.isEmpty())
+		results = education
+
+	return results
 }
 
 
@@ -368,17 +397,23 @@ def bigTest(){
 }
 
 def smallTest(){
-	// def webAddr1 = "http://www.cs.sfu.ca/people/faculty/dianacukierman.html"
+	def webAddr4 = "http://www.cs.sfu.ca/people/faculty/dianacukierman.html"
 	def webAddr1 = "http://www.cs.sfu.ca/people/faculty/mikeevans.html"
-	// def webAddr2 = "http://www.cs.sfu.ca/people/faculty/uweglasser.html"	
-	def webAddr2 = "http://www.cs.sfu.ca/people/faculty/stevenpearce.html"
+	// def webAddr1 = "http://www.cs.sfu.ca/people/faculty/ryandarcy.html"
+	def webAddr2 = "http://www.cs.sfu.ca/people/faculty/RameshKrishnamurti.html"
+	def webAddr3 = "http://www.cs.sfu.ca/people/faculty/uweglasser.html"	
+	// def webAddr2 = "http://www.cs.sfu.ca/people/faculty/stevenpearce.html"
 	def output1 = getInfo(getRawDoc(webAddr1))
 	def output2 = getInfo(getRawDoc(webAddr2))	
+	def output3 = getInfo(getRawDoc(webAddr3))
+	def output4 = getInfo(getRawDoc(webAddr4))
 	
 	printJson(outputJson(output1))
 	printJson(outputJson(output2))
+	printJson(outputJson(output3))
+	printJson(outputJson(output4))
 }
 
 
-smallTest()
-// bigTest()
+// smallTest()
+bigTest()
