@@ -1,4 +1,4 @@
-null[
+[
     {
         "message": {
             "professor": {
@@ -112,6 +112,18 @@ null[
                 "school": " University of Paderborn",
                 "country": " Germany",
                 "yearcomplete": " 1995"
+            },
+            "course0": {
+                "courseName": "CMPT 300",
+                "courseTopic": "Operating Systems 1"
+            },
+            "course1": {
+                "courseName": "CMPT 405",
+                "courseTopic": "Design and Analysis of Computing Algorithms"
+            },
+            "course2": {
+                "courseName": "CMPT 705",
+                "courseTopic": "Design and Analysis of Algorithms"
             }
         }
     },
@@ -227,6 +239,14 @@ null[
                 "school": " University of British Columbia",
                 "country": " Canada",
                 "yearcomplete": " 1977"
+            },
+            "course0": {
+                "courseName": "CMPT 885",
+                "courseTopic": "Special Topics in Computer Architecture"
+            },
+            "course1": {
+                "courseName": "CMPT 383",
+                "courseTopic": "Comparative Programming Languages"
             }
         }
     },
@@ -292,6 +312,20 @@ null[
                 "school": " Dalhousie University",
                 "country": " Canada",
                 "yearcomplete": " 2002"
+            },
+            "education1": {
+                "dissertation": "MSc",
+                "faculty": " Neuroscience",
+                "school": " Dalhousie University",
+                "country": " Canada",
+                "yearcomplete": " 1998"
+            },
+            "education2": {
+                "dissertation": "BSc",
+                "faculty": " Psychology and Biology",
+                "school": " University of Victoria",
+                "country": " Canada",
+                "yearcomplete": " 1996"
             }
         }
     },
@@ -319,6 +353,18 @@ null[
                 "school": " Buenos Aires University",
                 "country": " France",
                 "yearcomplete": " 1975"
+            },
+            "course0": {
+                "courseName": "CMPT 310",
+                "courseTopic": "Artificial Intelligence Survey"
+            },
+            "course1": {
+                "courseName": "CMPT 419",
+                "courseTopic": "Special Topics in Artificial Intelligence"
+            },
+            "course2": {
+                "courseName": "CMPT 882",
+                "courseTopic": "Special Topics in Artificial Intelligence"
             }
         }
     },
@@ -340,6 +386,14 @@ null[
                 "school": " University of Toronto",
                 "country": " Canada",
                 "yearcomplete": " 1977"
+            },
+            "course0": {
+                "courseName": "CMPT 411:",
+                "courseTopic": "Introduction to Knowledge Representation"
+            },
+            "course1": {
+                "courseName": "CMPT 354:",
+                "courseTopic": "Database Systems"
             }
         }
     },
@@ -403,6 +457,17 @@ null[
                 "country": " Canada",
                 "yearcomplete": " 1998"
             },
+            "education1": {
+                "dissertation": "M.Math",
+                "school": " University of Waterloo",
+                "country": " Canada",
+                "yearcomplete": " 1994"
+            },
+            "education2": {
+                "dissertation": "B.Sc. Simon Fraser University",
+                "school": " Canada",
+                "country": " 1992"
+            },
             "course0": {
                 "courseName": "CMPT 118",
                 "courseTopic": "Special Topics in Computer and Information Technology"
@@ -452,6 +517,18 @@ null[
                 "school": " University of Toronto",
                 "country": " Canada",
                 "yearcomplete": " 1970"
+            },
+            "course0": {
+                "courseName": "CMPT 828",
+                "courseTopic": "Illumination in Images and Video"
+            },
+            "course1": {
+                "courseName": "CMPT 365",
+                "courseTopic": "Multimedia Systems"
+            },
+            "course2": {
+                "courseName": "CMPT 110",
+                "courseTopic": "Event-Driven Programming in Visual Basic"
             }
         }
     },
@@ -545,6 +622,23 @@ null[
                 "school": " Swiss Federal Institute of Technology",
                 "country": " Zurich",
                 "yearcomplete": " 1990"
+            },
+            "education1": {
+                "dissertation": "Diploma (M.Sc.) in Computer Science",
+                "school": " University of Dortmund",
+                "country": " 1984"
+            },
+            "course0": {
+                "courseName": "CMPT 354",
+                "courseTopic": "Database Systems 1"
+            },
+            "course1": {
+                "courseName": "CMPT 454",
+                "courseTopic": "Database Systems 11"
+            },
+            "course2": {
+                "courseName": "CMPT 459",
+                "courseTopic": "Special Topics in Database Systems"
             }
         }
     },
@@ -554,6 +648,38 @@ null[
                 "title": "Senior Lecturer",
                 "firstname": "Mike",
                 "lastname": "Evans"
+            },
+            "education0": {
+                "dissertation": "M.Sc. ",
+                "school": " Birmingham University",
+                "country": " England"
+            },
+            "education2": {
+                "dissertation": "M.Sc.",
+                "school": " University of Dundee",
+                "country": " Scotland"
+            },
+            "education3": {
+                "dissertation": "M.A.",
+                "school": " Dalhousie University",
+                "country": " Canada"
+            },
+            "education4": {
+                "dissertation": "B.Sc. Honors",
+                "school": " Dalhousie University",
+                "country": " Canada"
+            },
+            "course0": {
+                "courseName": "CMPT 126",
+                "courseTopic": "Introduction to Computing Science and Programming"
+            },
+            "course1": {
+                "courseName": "CMPT 225",
+                "courseTopic": "Data Structures and Programming"
+            },
+            "course2": {
+                "courseName": "CMPT 300",
+                "courseTopic": "Operating Systems 1"
             }
         }
     },
@@ -584,6 +710,14 @@ null[
                 "school": " Northampton",
                 "country": " MA",
                 "yearcomplete": " United States"
+            },
+            "course0": {
+                "courseName": "CMPT 431",
+                "courseTopic": "Distributed Systems"
+            },
+            "course1": {
+                "courseName": "CMPT 886",
+                "courseTopic": "Special Topics in Operating Systems: Multicore Processors -- Software/Hardware Interaction"
             }
         }
     },
@@ -599,6 +733,23 @@ null[
                 "school": " Simon Fraser University",
                 "country": " Canada",
                 "yearcomplete": " 2009"
+            },
+            "education1": {
+                "dissertation": "B.Sc. Computing Science",
+                "school": " Simon Fraser University",
+                "country": " Canada 2002"
+            },
+            "course0": {
+                "courseName": "CMPT 213",
+                "courseTopic": "Object-Oriented Applications Design in Java"
+            },
+            "course1": {
+                "courseName": "CMPT 276",
+                "courseTopic": "Introduction to Software Engineering using the Android operating system"
+            },
+            "course2": {
+                "courseName": "CMPT 433",
+                "courseTopic": "Embedded Systems"
             }
         }
     },
@@ -629,6 +780,18 @@ null[
                 "school": " University of British Columbia",
                 "country": " Canada",
                 "yearcomplete": " 1971"
+            },
+            "course0": {
+                "courseName": "CMPT 102",
+                "courseTopic": "Scientific Computer Programming"
+            },
+            "course1": {
+                "courseName": "CMPT 412",
+                "courseTopic": "Computational Vision"
+            },
+            "course2": {
+                "courseName": "CMPT 822",
+                "courseTopic": "Computational Colour Vision Seminar"
             }
         }
     },
@@ -659,6 +822,14 @@ null[
                 "school": " University of Paderborn",
                 "country": " Germany",
                 "yearcomplete": " 1987"
+            },
+            "course0": {
+                "courseName": "CMPT 475",
+                "courseTopic": "Software Engineering II"
+            },
+            "course1": {
+                "courseName": "CMPT 375",
+                "courseTopic": "Software Technology Foundations"
             }
         }
     },
@@ -686,6 +857,18 @@ null[
                 "school": " Shandong University",
                 "country": " China",
                 "yearcomplete": " 1982"
+            },
+            "course0": {
+                "courseName": "CMPT 471",
+                "courseTopic": "Networking II"
+            },
+            "course1": {
+                "courseName": "CMPT 497",
+                "courseTopic": "Capstone Projects"
+            },
+            "course2": {
+                "courseName": "CMPT 816",
+                "courseTopic": "Theory of Communication Networks"
             }
         }
     },
@@ -801,6 +984,18 @@ null[
                 "school": " Mansoura University",
                 "country": " Egypt",
                 "yearcomplete": " 1994."
+            },
+            "course0": {
+                "courseName": "CMPT 300",
+                "courseTopic": "Operating Systems"
+            },
+            "course1": {
+                "courseName": "CMPT 771",
+                "courseTopic": "Internet Architecture and Protocols"
+            },
+            "course2": {
+                "courseName": "CMPT 820",
+                "courseTopic": "Multimedia Systems"
             }
         }
     },
@@ -855,23 +1050,17 @@ null[
                 "firstname": "Valentine",
                 "lastname": "Kabanets"
             },
-            "education0": {
-                "dissertation": "Ph.D. Computer Science",
-                "school": " University of Toronto",
-                "country": " Canada",
-                "yearcomplete": " 2000"
+            "course0": {
+                "courseName": " CMPT 307",
+                "courseTopic": "Data structures and algorithms"
             },
-            "education1": {
-                "dissertation": "M.Sc. Computing Science",
-                "school": " Simon Fraser University",
-                "country": " Canada",
-                "yearcomplete": " 1996"
+            "course1": {
+                "courseName": " CMPT 881",
+                "courseTopic": "Average-case complexity"
             },
-            "education2": {
-                "dissertation": "B.Sc.",
-                "school": " National University of Kiev",
-                "country": " Ukraine",
-                "yearcomplete": " 1993"
+            "course2": {
+                "courseName": " CMPT 308",
+                "courseTopic": "Computability and Complexity"
             }
         }
     },
@@ -976,6 +1165,20 @@ null[
                 "school": " Computer and Information Science",
                 "country": " University of Pennsylvania",
                 "yearcomplete": " 1987"
+            },
+            "education1": {
+                "dissertation": "M.Tech.",
+                "faculty": " Electrical Engineering",
+                "school": " Indian Institute of Technology",
+                "country": " India",
+                "yearcomplete": " 1977"
+            },
+            "education2": {
+                "dissertation": "B.Tech.",
+                "faculty": " Electrical Engineering",
+                "school": " Indian Institute of Technology",
+                "country": " India",
+                "yearcomplete": " 1974"
             }
         }
     },
@@ -1035,6 +1238,18 @@ null[
                 "country": " United States",
                 "yearcomplete": " 1986"
             },
+            "education1": {
+                "dissertation": "M.Sc. Computer Sciences",
+                "school": " University of Wisconsin-Madison",
+                "country": " United States",
+                "yearcomplete": " 1981"
+            },
+            "education2": {
+                "dissertation": "B.Sc. Electrical Engineering",
+                "school": " University of Science and Technology of China",
+                "country": " China",
+                "yearcomplete": " 1970"
+            },
             "course0": {
                 "courseName": "CMPT 365",
                 "courseTopic": "Multimedia Systems"
@@ -1066,6 +1281,32 @@ null[
                 "school": " University of Illinois at Urbana-Champaign",
                 "country": " United States",
                 "yearcomplete": " 1981"
+            },
+            "education1": {
+                "dissertation": "M.Sc.",
+                "faculty": " Computer Science",
+                "school": " University of Illinois at Urbana-Chanpaign",
+                "country": " United States",
+                "yearcomplete": " 1978"
+            },
+            "education2": {
+                "dissertation": "B.G.S.",
+                "faculty": " Computer Science and Mathematics",
+                "school": " University of Kansas",
+                "country": " United States",
+                "yearcomplete": " 1975"
+            },
+            "course0": {
+                "courseName": "CMPT 307",
+                "courseTopic": "Data Structures and Algorithms"
+            },
+            "course1": {
+                "courseName": "CMPT 376W",
+                "courseTopic": "Technical Writing and Group Dynamics"
+            },
+            "course2": {
+                "courseName": "CMPT 705",
+                "courseTopic": "Design and Analysis of Algorithms"
             }
         }
     },
@@ -1076,12 +1317,25 @@ null[
                 "firstname": "Jiangchuan",
                 "lastname": "Liu"
             },
+            "education0": {
+                "dissertation": "Ph.D. Computer Science",
+                "school": " The Hong Kong University of Science & Technology (HKUST)",
+                "country": " 2003"
+            },
             "education1": {
                 "dissertation": "B.Eng (Cum Laude)",
                 "faculty": " Computer Science and Technology",
                 "school": " Tsinghua University",
                 "country": " Beijing",
                 "yearcomplete": " China"
+            },
+            "course0": {
+                "courseName": "CMPT 371",
+                "courseTopic": "Data communications and networking"
+            },
+            "course1": {
+                "courseName": "CMPT 771",
+                "courseTopic": "Advanced network architecture and protocols"
             }
         }
     },
@@ -1098,6 +1352,31 @@ null[
                 "school": " University of Alberta",
                 "country": " Canada",
                 "yearcomplete": " 1976"
+            },
+            "education1": {
+                "dissertation": "M.Math.",
+                "school": " University of Waterloo",
+                "country": " Canada",
+                "yearcomplete": " 1972"
+            },
+            "education2": {
+                "dissertation": "B.A. (Honors)",
+                "faculty": " Math.",
+                "school": " University of London",
+                "country": " England",
+                "yearcomplete": " 1970"
+            },
+            "course0": {
+                "courseName": "CMPT 354",
+                "courseTopic": "Database Systems 1"
+            },
+            "course1": {
+                "courseName": "CMPT 454",
+                "courseTopic": "Database Systems 11"
+            },
+            "course2": {
+                "courseName": "CMPT 740",
+                "courseTopic": "Database Systems"
             }
         }
     },
@@ -1128,6 +1407,18 @@ null[
                 "school": " University of Toronto",
                 "country": " Canada",
                 "yearcomplete": " 1989"
+            },
+            "course0": {
+                "courseName": "CMPT 225",
+                "courseTopic": "Data Structures and Programming"
+            },
+            "course1": {
+                "courseName": "CMPT 417",
+                "courseTopic": "Intelligent Systems"
+            },
+            "course2": {
+                "courseName": "CMPT 701",
+                "courseTopic": "Computability and Logic"
             }
         }
     },
@@ -1149,6 +1440,18 @@ null[
                 "school": " University of Toronto",
                 "country": " Canada",
                 "yearcomplete": " 1999"
+            },
+            "course0": {
+                "courseName": "CMPT 310:",
+                "courseTopic": "Artificial Intelligence Survey"
+            },
+            "course1": {
+                "courseName": "CMPT 726:",
+                "courseTopic": "Machine Learning"
+            },
+            "course2": {
+                "courseName": "CMPT 888:",
+                "courseTopic": "Human Activity Recognition"
             }
         }
     },
@@ -1193,6 +1496,11 @@ null[
                 "school": " University of Arizona",
                 "country": " United States",
                 "yearcomplete": " 1995"
+            },
+            "education1": {
+                "dissertation": "M.Sc. University of British Columbia",
+                "school": " Canada",
+                "country": " 1984"
             },
             "education2": {
                 "dissertation": "B.Sc. (Honors)",
@@ -1251,6 +1559,18 @@ null[
                 "school": " Computer Science Shanghai Jiao Tong University",
                 "country": " China",
                 "yearcomplete": " 1991"
+            },
+            "course0": {
+                "courseName": "CMPT 454",
+                "courseTopic": "Database Systems 11"
+            },
+            "course1": {
+                "courseName": "CMPT 456",
+                "courseTopic": "Information Retrieval and Web Search"
+            },
+            "course2": {
+                "courseName": "CMPT 843",
+                "courseTopic": "Database and Knowledge-base Systems"
             }
         }
     },
@@ -1281,6 +1601,18 @@ null[
                 "school": " University of Waterloo",
                 "country": " Canada",
                 "yearcomplete": " 1974"
+            },
+            "course0": {
+                "courseName": "CMPT 307",
+                "courseTopic": "Data Structures and Algorithms"
+            },
+            "course1": {
+                "courseName": "CMPT 371",
+                "courseTopic": "Data Communications and Networking"
+            },
+            "course2": {
+                "courseName": "CMPT 705",
+                "courseTopic": "Design and Analysis of Algorithms"
             }
         }
     },
@@ -1308,6 +1640,18 @@ null[
                 "school": " University of Alberta",
                 "country": " Canada",
                 "yearcomplete": " 1982"
+            },
+            "course0": {
+                "courseName": "CMPT 383",
+                "courseTopic": "Comparative Programming Languages"
+            },
+            "course1": {
+                "courseName": "CMPT 417",
+                "courseTopic": "Intelligent Systems"
+            },
+            "course2": {
+                "courseName": "CMPT 825",
+                "courseTopic": "Natural Language Processing"
             }
         }
     },
@@ -1377,6 +1721,14 @@ null[
                 "school": " Bilkent University",
                 "country": " Turkey",
                 "yearcomplete": " 1991"
+            },
+            "course0": {
+                "courseName": "CMPT 441",
+                "courseTopic": "Introduction to Computational Biology"
+            },
+            "course1": {
+                "courseName": "CMPT 711",
+                "courseTopic": "Bioinformatics Algorithms"
             }
         }
     },
@@ -1398,6 +1750,18 @@ null[
                 "school": " University of Poona",
                 "country": " India",
                 "yearcomplete": " 1991"
+            },
+            "course0": {
+                "courseName": "CMPT 379:",
+                "courseTopic": "Principles of Compiler Design"
+            },
+            "course1": {
+                "courseName": "CMPT 413:",
+                "courseTopic": "Computational Linguistics "
+            },
+            "course2": {
+                "courseName": "CMPT 825:",
+                "courseTopic": "Natural Language Processing"
             }
         }
     },
@@ -1425,6 +1789,18 @@ null[
                 "school": " University of Toronto",
                 "country": " Canada",
                 "yearcomplete": " 1992"
+            },
+            "course0": {
+                "courseName": "CMPT320 Social",
+                "courseTopic": "Implications of a Computerized Society"
+            },
+            "course1": {
+                "courseName": "CMPT 354",
+                "courseTopic": "Introduction to Database Management"
+            },
+            "course2": {
+                "courseName": "CMPT 726",
+                "courseTopic": "Machine Learning"
             }
         }
     },
@@ -1446,6 +1822,18 @@ null[
                 "school": " McGill University",
                 "country": " Canada",
                 "yearcomplete": " 1989"
+            },
+            "course0": {
+                "courseName": "CMPT 373",
+                "courseTopic": "Software Development Methods"
+            },
+            "course1": {
+                "courseName": "CMPT 379",
+                "courseTopic": "Compiler Design"
+            },
+            "course2": {
+                "courseName": "MACM 101",
+                "courseTopic": "Discrete Mathematics"
             }
         }
     },
@@ -1456,26 +1844,13 @@ null[
                 "firstname": "Arrvindh",
                 "lastname": "Shriraman"
             },
-            "education0": {
-                "dissertation": "Ph.D.",
-                "faculty": " Computer Science",
-                "school": " University of Rochester",
-                "country": " New York",
-                "yearcomplete": " United States"
+            "course0": {
+                "courseName": "CMPT 479",
+                "courseTopic": "Special Topics in Computing Systems"
             },
-            "education1": {
-                "dissertation": "M.S.",
-                "faculty": " Computer Science",
-                "school": " University of Rochester",
-                "country": " New York",
-                "yearcomplete": " United States"
-            },
-            "education2": {
-                "dissertation": "B.Eng.",
-                "faculty": " Computer Science and Engineering",
-                "school": " University of Madras",
-                "country": " Chennai",
-                "yearcomplete": " Tamil Nadu"
+            "course1": {
+                "courseName": "CMPT 885",
+                "courseTopic": "Future Multicore Systems and their Software (offered in summer)"
             }
         }
     },
@@ -1512,6 +1887,18 @@ null[
                 "school": " McGill University",
                 "country": " Canada",
                 "yearcomplete": " 1996"
+            },
+            "course0": {
+                "courseName": "CMPT 125",
+                "courseTopic": "Introduction to Computing Science and Programming II"
+            },
+            "course1": {
+                "courseName": "CMPT 468/768",
+                "courseTopic": "Computer Music Theory and Sound Synthesis"
+            },
+            "course2": {
+                "courseName": "CMPT 889",
+                "courseTopic": "Computational Acoustic Modeling"
             }
         }
     },
@@ -1533,6 +1920,18 @@ null[
                 "school": " Eotvos University",
                 "country": " Hungary",
                 "yearcomplete": " 1987"
+            },
+            "course0": {
+                "courseName": "CMPT 307",
+                "courseTopic": "Data Structures and Algorithms"
+            },
+            "course1": {
+                "courseName": "CMPT 407",
+                "courseTopic": "- CMPT 710 Computational Complexity – cross-listed"
+            },
+            "course2": {
+                "courseName": "CMPT 710",
+                "courseTopic": "Computational Complexity"
             }
         }
     },
@@ -1548,6 +1947,19 @@ null[
                 "school": " University of Toronto",
                 "country": " Canada",
                 "yearcomplete": " 2002"
+            },
+            "education1": {
+                "dissertation": "Diploma (Hons.) Applied Mathematics",
+                "school": " Moscow State University",
+                "country": " 1989"
+            },
+            "course0": {
+                "courseName": "CMPT 477/777",
+                "courseTopic": "Formal Verification"
+            },
+            "course1": {
+                "courseName": "MACM 101",
+                "courseTopic": "Discrete Mathematics"
             }
         }
     },
@@ -1672,6 +2084,18 @@ null[
                 "school": " Department of Mathematics",
                 "country": " Universitat des Saarlandes",
                 "yearcomplete": " Germany 1991"
+            },
+            "course0": {
+                "courseName": "CMPT 441",
+                "courseTopic": "Computational Biology"
+            },
+            "course1": {
+                "courseName": "CMPT 711",
+                "courseTopic": "Bioinformatics Algorithms"
+            },
+            "course2": {
+                "courseName": "MACM 101",
+                "courseTopic": "Discrete Mathematics"
             }
         }
     },
@@ -1695,6 +2119,18 @@ null[
                 "school": " East China Normal University",
                 "country": " China",
                 "yearcomplete": " 1992"
+            },
+            "course0": {
+                "courseName": "CHIN 180,",
+                "courseTopic": "CHIN 181, CHIN 280 and CHIN 281: Intensive Mandarin Chinese for Beginners"
+            },
+            "course1": {
+                "courseName": "CHIN 190,",
+                "courseTopic": "CHIN 191, CHIN 290 and CHIN 291: Heritage Mandarin Chinese"
+            },
+            "course2": {
+                "courseName": "CHIN 390:",
+                "courseTopic": "Advanced Chinese Reading: Technical Chinese"
             }
         }
     },
@@ -1725,6 +2161,18 @@ null[
                 "school": " University of Waterloo",
                 "country": " Canada",
                 "yearcomplete": " 1995"
+            },
+            "course0": {
+                "courseName": "CMPT 464/764",
+                "courseTopic": "Geometric modeling in computer graphics"
+            },
+            "course1": {
+                "courseName": "CMPT 466",
+                "courseTopic": "Computer animation"
+            },
+            "course2": {
+                "courseName": "CMPT 361",
+                "courseTopic": "Introduction to computer graphics"
             }
         }
     }
