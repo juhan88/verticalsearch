@@ -7,47 +7,61 @@ import groovy.json.*
 
 // wrapper for outpputing JSON
 def outputJson(data){
-	def messages = []
-	def names = data[0]
+	def messages = []	
+	
+	def names = data[0]	
 	def edu = data[1]	
 	def courses = data[2]
 	int i = 0
-
+	
+	//loop thru all the names found
 	names.each{
 		name ->
-		println name
 		eduList = edu[i]
 		courseList = courses[i]
+
 		def json = new JsonBuilder()
 		json.message{
-			prof{
+			professor{
+				title name[2]
 				firstname name[0]
 				lastname name[1]
 			}
 			int num = 0
-			
+			println eduList
 			eduList.each{				
 				def eduInfo = it.split(",")
-
 				//NEED TO FIX BUG
 				//NOT ALL PROFS LIST in the following order 
 				//DEGREE, FACULTY, UNIVERSITY, COUNTRY, YEAROFCOMPLETION							
-				//SOME HAVE 3 OR 4 OR 5
-				"education$num"{
-					dessertaion eduInfo[0]
-					faculty eduInfo[1]
-					school eduInfo[2]
-					country eduInfo[3]
-					// yearcomplete eduInfo[4]	
+				//SOME HAVE 3 OR 4 OR 5				
+				if(eduInfo.size() == 4){
+					"education$num"{
+						dissertation eduInfo[0]
+						school eduInfo[1]
+						country eduInfo[2]
+						yearcomplete eduInfo[3]
+					}
+				}
+				else if(eduInfo.size() > 3){
+					"education$num"{
+						dissertation eduInfo[0]
+						faculty eduInfo[1]
+						school eduInfo[2]
+						country eduInfo[3]
+						yearcomplete eduInfo[4]	
+					}
 				}
 				
 				num+=1
 			}
-			println courseList
-			if(!courseList.isEmpty() && courseList.size > 3){
+			
+			if(courseList != null && !courseList.isEmpty() && courseList.size > 3 && name[1] != "Pearce"){
 				num = 0			
 				courseList.each{
+					println "HERE"
 					def course = it.split(" ")
+					println "++++++++++++++++="
 					def cname = course[0] + " " + course[1]				
 					def topic = joinString(course, 2, course.size()-1)
 					
@@ -56,6 +70,25 @@ def outputJson(data){
 						courseTopic topic
 					}
 					num+=1
+				}
+			}
+			//special case for Pearce
+			else if( name[1] == "Pearce"){
+				courseList.each{
+					c ->
+					num = 0
+					if (c.contains("Computing Science"))
+					{	
+						
+						def d = c.split(",")
+						d.each{
+							def cname  = getStevenPearce(it)
+							"course$num"{
+								courseName "CMPT " + cname
+							}
+							num+=1
+						}
+					}
 				}
 			}
 		}
@@ -67,9 +100,31 @@ def outputJson(data){
 	return messages
 }
 
+def getStevenPearce(string){
+	def newString = []
+	def add = false
+	if(string.contains("(")){
+		string.each{
+			if(add)
+				newString.add(it)
+			if(it == '(')
+			{
+				add = true
+			}
+		}
+		return newString.join()
+	}
+	if(string.contains(")"))
+	{
+		return string[0..-2]
+	}
+	return string
+}
+
 def printJson(message){
 	def prettyJson = JsonOutput.prettyPrint(message.toString())
-	println prettyJson
+	println prettyJson  //dumps output to screen
+	return prettyJson	//dumps output for writing to file
 }
 
 // wrapper function for scraping data
@@ -124,20 +179,22 @@ def getDoc(webAddr){
 	return docs
 }
 
+//wrapper for all logic
 def getInfo(docs){
 	println("Retrieving Info...")
 	def names = []
 	def educations = []
-	def courses = []
+	def courses = []	
 	docs.each{
 		page ->		
 		def nameBlock = page.depthFirst().DIV.findAll { it.@class == 'title section'}	
+		def position = page.depthFirst().DIV.findAll { it.@class == 'text '}
 		def eduBlock = page.depthFirst().DIV.findAll{ it.@class == 'text parbase section' }
 		def courseBlock = page.depthFirst().DIV.findAll{ it.@class == 'text parbase section'}
 
 		
-		if(!nameBlock.isEmpty()) 
-			names.add(getName(nameBlock))
+		if(!nameBlock.isEmpty() && !position.isEmpty())
+			names.add(getName(nameBlock) + getTitle(position))		
 		if(!eduBlock.isEmpty())
 		    educations.add(getEducInfo(eduBlock))
 		if(!courseBlock.isEmpty())
@@ -146,11 +203,29 @@ def getInfo(docs){
 
 	}
 
+	
 	def data = []
 	data.add(names)
 	data.add(educations)
-	data.add(courses)
+	data.add(courses)	
 	return data
+}
+
+def getTitle(block){
+	def position
+	block.each{
+		def content = it.value()
+		content.each{			
+			if(it.name() == 'P'){
+				def header = it.value().text()	
+				if(header.contains("School of Computing Science") && !header.contains("DIV")){
+					def p = header.split(",")
+					position = p[0]
+				}
+			}
+		}
+	}
+	return position
 }
 
 def getName(block){	
@@ -185,7 +260,7 @@ def getCourses(block){
 				if(it.name() == "H2" && it.value().contains("Recently taught courses"))
 				{
 					def schools = header[i+1].value()
-					// println schools
+					
 					schools.each{
 						tag ->
 						// println tag
@@ -285,18 +360,25 @@ def facultyAddr = ["http://www.cs.sfu.ca/people/emeriti.html", "http://www.cs.sf
 
 def bigTest(){
 	def webAddr = "http://www.cs.sfu.ca/people/faculty.html"
-	printJson(outputJson(getInfo(getDoc(webAddr))))	
+	def data = getInfo(getDoc(webAddr))	
+	
+	f = new File("output.txt")
+	f.append(printJson(outputJson(data)))
+
 }
 
 def smallTest(){
-	def webAddr1 = "http://www.cs.sfu.ca/people/faculty/dianacukierman.html"
-	def webAddr2 = "http://www.cs.sfu.ca/people/faculty/uweglasser.html"	
+	// def webAddr1 = "http://www.cs.sfu.ca/people/faculty/dianacukierman.html"
+	def webAddr1 = "http://www.cs.sfu.ca/people/faculty/mikeevans.html"
+	// def webAddr2 = "http://www.cs.sfu.ca/people/faculty/uweglasser.html"	
+	def webAddr2 = "http://www.cs.sfu.ca/people/faculty/stevenpearce.html"
 	def output1 = getInfo(getRawDoc(webAddr1))
-	def output2 = getInfo(getRawDoc(webAddr2))
+	def output2 = getInfo(getRawDoc(webAddr2))	
+	
 	printJson(outputJson(output1))
 	printJson(outputJson(output2))
 }
 
 
-// smallTest()
-bigTest()
+smallTest()
+// bigTest()
