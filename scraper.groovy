@@ -340,25 +340,29 @@ def getEducInfo(block){
 	}
 
 	//refilter only want school names not BR[tags
-	// println "SIZE IS ${education.size()}"
-	// println education
-	// println "__________________-"
+
 	def edu = education
 	def results = []
 	edu.each{
-		degree ->				
+		degree ->
+		
 		if(degree.getClass() == groovy.util.NodeList){
 			degree.each{
-				if(it.getClass() != groovy.util.Node){
+				if(it.getClass() != groovy.util.Node){	
 					results.add(it)
 				}
 			}
-		}
+		}		
 	}
-	
-	if(results.isEmpty() && !education.isEmpty())
-		results = education
 
+
+	// println results.size()
+	if(results.isEmpty() && !education.isEmpty())
+		results = education		
+	
+		
+
+	println results
 	return results
 }
 
@@ -397,23 +401,24 @@ def bigTest(){
 }
 
 def smallTest(){
-	def webAddr4 = "http://www.cs.sfu.ca/people/faculty/dianacukierman.html"
-	def webAddr1 = "http://www.cs.sfu.ca/people/faculty/mikeevans.html"
+	// def webAddr4 = "http://www.cs.sfu.ca/people/faculty/dianacukierman.html"
+	// def webAddr1 = "http://www.cs.sfu.ca/people/faculty/mikeevans.html"
 	// def webAddr1 = "http://www.cs.sfu.ca/people/faculty/ryandarcy.html"
-	def webAddr2 = "http://www.cs.sfu.ca/people/faculty/RameshKrishnamurti.html"
-	def webAddr3 = "http://www.cs.sfu.ca/people/faculty/uweglasser.html"	
+	// def webAddr2 = "http://www.cs.sfu.ca/people/faculty/RameshKrishnamurti.html"
+	// def webAddr3 = "http://www.cs.sfu.ca/people/faculty/uweglasser.html"	
 	// def webAddr2 = "http://www.cs.sfu.ca/people/faculty/stevenpearce.html"
+	def webAddr1 = "http://www.cs.sfu.ca/people/faculty/valentinekabanets.html"
 	def output1 = getInfo(getRawDoc(webAddr1))
-	def output2 = getInfo(getRawDoc(webAddr2))	
-	def output3 = getInfo(getRawDoc(webAddr3))
-	def output4 = getInfo(getRawDoc(webAddr4))
+	// def output2 = getInfo(getRawDoc(webAddr2))	
+	// def output3 = getInfo(getRawDoc(webAddr3))
+	// def output4 = getInfo(getRawDoc(webAddr4))
 	
 	printJson(outputJson(output1))
-	printJson(outputJson(output2))
-	printJson(outputJson(output3))
-	printJson(outputJson(output4))
+	// printJson(outputJson(output2))
+	// printJson(outputJson(output3))
+	// printJson(outputJson(output4))
 }
 
 
-// smallTest()
-bigTest()
+smallTest()
+// bigTest()
