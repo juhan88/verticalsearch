@@ -1,4 +1,6 @@
 
+// Doesn't Work
+// Refer to the deleteAllIndex.sh
 
 def deleteAllIndex(){
 
