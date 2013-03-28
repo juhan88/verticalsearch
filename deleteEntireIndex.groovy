@@ -27,3 +27,4 @@ def deleteAllIndex(){
 }
 
 deleteAllIndex()
+//reformated JSON to match updated schema.xml in solr *avoid using dynamic '_s' field tags which causes headache in querying
