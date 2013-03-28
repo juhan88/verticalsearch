@@ -21,47 +21,49 @@ def outputJson(data){
 		courseList = courses[i]
 
 		def json = new JsonBuilder()
-		json.message{
-			professor{
-				title name[2]
-				firstname name[0]
-				lastname name[1]
-			}
+		json{
+
+			id i
+			position_s name[2]
+			professor_s	name[0] + " " + name[1]
+			 
+			
 			int num = 0
 			
 			eduList.each{				
-				def eduInfo = it.split(",")		
+				"education${num}_s" it
+				// def eduInfo = it.split(",")		
 				// println eduInfo.size()		
 				//NEED TO FIX BUG
 				//NOT ALL PROFS LIST in the following order 
 				//DEGREE, FACULTY, UNIVERSITY, COUNTRY, YEAROFCOMPLETION							
 				//SOME HAVE 3 OR 4 OR 5				
-				if(eduInfo.size() == 4){
-					"education$num"{
-						dissertation eduInfo[0]
-						school eduInfo[1]
-						country eduInfo[2]
-						yearcomplete eduInfo[3]
-					}
-				}
-				else if(eduInfo.size() > 3){
-					"education$num"{
-						dissertation eduInfo[0]
-						faculty eduInfo[1]
-						school eduInfo[2]
-						country eduInfo[3]
-						yearcomplete eduInfo[4]	
-					}
-				}
-				else if(eduInfo.size() == 3)
-				{
-					"education$num"{
-						dissertation eduInfo[0]						
-						school eduInfo[1]
-						country eduInfo[2]
+				// if(eduInfo.size() == 4){
+				// 	"education$num"{
+				// 		dissertation eduInfo[0]
+				// 		school eduInfo[1]
+				// 		country eduInfo[2]
+				// 		yearcomplete eduInfo[3]
+				// 	}
+				// }
+				// else if(eduInfo.size() > 3){
+				// 	"education$num"{
+				// 		dissertation eduInfo[0]
+				// 		faculty eduInfo[1]
+				// 		school eduInfo[2]
+				// 		country eduInfo[3]
+				// 		yearcomplete eduInfo[4]	
+				// 	}
+				// }
+				// else if(eduInfo.size() == 3)
+				// {
+				// 	"education$num"{
+				// 		dissertation eduInfo[0]						
+				// 		school eduInfo[1]
+				// 		country eduInfo[2]
 						
-					}
-				}
+				// 	}
+				// }
 				
 				num+=1
 			}
@@ -69,37 +71,38 @@ def outputJson(data){
 			if(!courseList.isEmpty() && name[1] != "Pearce"){
 				num = 0			
 				courseList.each{					
-					def course = it.split(" ")
-					if(course.size() > 2){
-						def cname = course[0] + " " + course[1]				
-						def topic = joinString(course, 2, course.size()-1)
+					"course${num}_s" it
+					// def course = it.split(" ")
+					// if(course.size() > 2){
+					// 	def cname = course[0] + " " + course[1]				
+					// 	def topic = joinString(course, 2, course.size()-1)
 						
-						"course$num"{
-							courseName cname
-							courseTopic topic
-						}
-					}
+					// 	"course$num"{
+					// 		courseName cname
+					// 		courseTopic topic
+					// 	}
+					// }
 					num+=1
 				}
 			}
 			//special case for Pearce
 			else if( name[1] == "Pearce"){
-				courseList.each{
-					c ->
-					num = 0
-					if (c.contains("Computing Science"))
-					{	
+				// courseList.each{
+				// 	c ->
+				// 	num = 0
+				// 	if (c.contains("Computing Science"))
+				// 	{	
 						
-						def d = c.split(",")
-						d.each{
-							def cname  = getStevenPearce(it)
-							"course$num"{
-								courseName "CMPT " + cname
-							}
-							num+=1
-						}
-					}
-				}
+				// 		def d = c.split(",")
+				// 		d.each{
+				// 			def cname  = getStevenPearce(it)
+				// 			"course$num"{
+				// 				courseName "CMPT " + cname
+				// 			}
+				// 			num+=1
+				// 		}
+				// 	}
+				// }
 			}
 		}
 		// println it
@@ -386,7 +389,7 @@ def filterPeopleOnly(links){
 	return filtered.unique()
 }
 
-def facultyAddr = ["http://www.cs.sfu.ca/people/emeriti.html", "http://www.cs.sfu.ca/people/faculty.html"]
+def facultyAOddr = ["http://www.cs.sfu.ca/people/emeriti.html", "http://www.cs.sfu.ca/people/faculty.html"]
 
 
 // def webAddr = "http://www.cs.sfu.ca/people/faculty/uweglasser.html"
@@ -395,30 +398,33 @@ def bigTest(){
 	def webAddr = "http://www.cs.sfu.ca/people/faculty.html"
 	def data = getInfo(getDoc(webAddr))	
 	
-	f = new File("output.txt")
+	f = new File("prof.json")
 	f.append(printJson(outputJson(data)))
 
 }
 
 def smallTest(){
-	// def webAddr4 = "http://www.cs.sfu.ca/people/faculty/dianacukierman.html"
+	def webAddr4 = "http://www.cs.sfu.ca/people/faculty/dianacukierman.html"
 	// def webAddr1 = "http://www.cs.sfu.ca/people/faculty/mikeevans.html"
 	// def webAddr1 = "http://www.cs.sfu.ca/people/faculty/ryandarcy.html"
 	// def webAddr2 = "http://www.cs.sfu.ca/people/faculty/RameshKrishnamurti.html"
 	// def webAddr3 = "http://www.cs.sfu.ca/people/faculty/uweglasser.html"	
 	// def webAddr2 = "http://www.cs.sfu.ca/people/faculty/stevenpearce.html"
-	def webAddr1 = "http://www.cs.sfu.ca/people/faculty/valentinekabanets.html"
-	def output1 = getInfo(getRawDoc(webAddr1))
+	// def webAddr1 = "http://www.cs.sfu.ca/people/faculty/valentinekabanets.html"
+	// def output1 = getInfo(getRawDoc(webAddr1))
 	// def output2 = getInfo(getRawDoc(webAddr2))	
 	// def output3 = getInfo(getRawDoc(webAddr3))
-	// def output4 = getInfo(getRawDoc(webAddr4))
+	def output4 = getInfo(getRawDoc(webAddr4))
 	
-	printJson(outputJson(output1))
-	// printJson(outputJson(output2))
-	// printJson(outputJson(output3))
-	// printJson(outputJson(output4))
+
+	f = new File("output.json")
+	f.delete()
+	// f.append(printJson(outputJson(output1)))
+	// f.append(printJson(outputJson(output2)))
+	// f.append(printJson(outputJson(output3)))
+	f.append(printJson(outputJson(output4)))
 }
 
 
-smallTest()
-// bigTest()
+// smallTest()
+bigTest()
