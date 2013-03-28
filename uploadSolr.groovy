@@ -1,5 +1,6 @@
 
-
+// Doesn't Work 
+// Refer to updateIndex.sh
 
 def uploadJson(){
 	// def jsonMessage = []
