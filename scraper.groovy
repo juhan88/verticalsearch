@@ -11,62 +11,69 @@ def outputJson(data){
 	
 	def names = data[0]	
 	def edu = data[1]	
-	def courses = data[2]
+	def recentlyTaughtCourses = data[2]
 	int i = 0
 	
 	//loop thru all the names found
 	names.each{
 		name ->
 		eduList = edu[i]
-		courseList = courses[i]
+		courseList = recentlyTaughtCourses[i]
 
 		def json = new JsonBuilder()
 		json{
 
 			id i
-			position_s name[2]
-			professor_s	name[0] + " " + name[1]
-			 
-			
+			position name[2]
+			professor name[0] + " " + name[1]			
+			schools eduList
 			int num = 0
 			
-			eduList.each{				
-				"education${num}_s" it
-				// def eduInfo = it.split(",")		
-				// println eduInfo.size()		
-				//NEED TO FIX BUG
-				//NOT ALL PROFS LIST in the following order 
-				//DEGREE, FACULTY, UNIVERSITY, COUNTRY, YEAROFCOMPLETION							
-				//SOME HAVE 3 OR 4 OR 5				
-				// if(eduInfo.size() == 4){
-				// 	"education$num"{
-				// 		dissertation eduInfo[0]
-				// 		school eduInfo[1]
-				// 		country eduInfo[2]
-				// 		yearcomplete eduInfo[3]
-				// 	}
-				// }
-				// else if(eduInfo.size() > 3){
-				// 	"education$num"{
-				// 		dissertation eduInfo[0]
-				// 		faculty eduInfo[1]
-				// 		school eduInfo[2]
-				// 		country eduInfo[3]
-				// 		yearcomplete eduInfo[4]	
-				// 	}
-				// }
-				// else if(eduInfo.size() == 3)
-				// {
-				// 	"education$num"{
-				// 		dissertation eduInfo[0]						
-				// 		school eduInfo[1]
-				// 		country eduInfo[2]
-						
-				// 	}
-				// }
-				
+			def degreeslst = []
+			def facultylst = []
+			def courseslst =[]
+			def schoolslst = []
+			def countrylst = []
+			def yearCompletelst = []
+			
+			eduList.each{
+				def eduInfo = it.split(",")		
+				println eduInfo.size()		
+				// NEED TO FIX BUG
+				// NOT ALL PROFS LIST in the following order 
+				// DEGREE, FACULTY, UNIVERSITY, COUNTRY, YEAROFCOMPLETION							
+				// SOME HAVE 3 OR 4 OR 5				
+				if(eduInfo.size() == 4){					
+					degreeslst.add(eduInfo[0])
+					schoolslst.add(eduInfo[1])
+					countrylst.add(eduInfo[2])
+					yearCompletelst.add(eduInfo[3])
+					
+				}
+				else if(eduInfo.size() > 4){					
+					degreeslst.add(eduInfo[0])
+					facultylst.add(eduInfo[1])
+					schoolslst.add(eduInfo[2])
+					countrylst.add(eduInfo[3])
+					yearCompletelst.add(eduInfo[4])
+					
+				}
+				else if(eduInfo.size() == 3)
+				{					
+					degreeslst.add(eduInfo[0])
+					schoolslst.add(eduInfo[1])
+					countrylst.add(eduInfo[2])
+				}
+					
 				num+=1
 			}
+
+			degrees degreeslst.unique()
+			schools schoolslst.unique()
+			country countrylst.unique()			
+			faculty facultylst.unique()
+			yearCompleted yearCompletelst.unique()
+			education eduList
 			
 			if(!courseList.isEmpty() && name[1] != "Pearce"){
 				num = 0			
@@ -104,6 +111,7 @@ def outputJson(data){
 				// 	}
 				// }
 			}
+			courses courseslst.unique()
 		}
 		// println it
 		// println edu[i]
@@ -399,6 +407,7 @@ def bigTest(){
 	def data = getInfo(getDoc(webAddr))	
 	
 	f = new File("prof.json")
+	f.delete()
 	f.append(printJson(outputJson(data)))
 
 }

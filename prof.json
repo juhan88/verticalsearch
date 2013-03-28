@@ -1,16 +1,60 @@
 [
     {
         "id": 0,
-        "position_s": null,
-        "professor_s": "Faculty Listings"
+        "position": null,
+        "professor": "Faculty Listings",
+        "schools": [
+            
+        ],
+        "degrees": [
+            
+        ],
+        "country": [
+            
+        ],
+        "courses": [
+            
+        ],
+        "faculty": [
+            
+        ],
+        "yearCompleted": [
+            
+        ],
+        "education": [
+            
+        ]
     },
     {
         "id": 1,
-        "position_s": "Senior Lecturer",
-        "professor_s": "Greg Baker",
-        "education0_s": "M.Sc., Simon Fraser University, Canada, 2000",
-        "education1_s": "B.Sc., Queen’s University, Canada, 1998",
-        "education2_s": " ",
+        "position": "Senior Lecturer",
+        "professor": "Greg Baker",
+        "schools": [
+            " Simon Fraser University",
+            " Queen’s University"
+        ],
+        "degrees": [
+            "M.Sc.",
+            "B.Sc."
+        ],
+        "country": [
+            " Canada"
+        ],
+        "courses": [
+            
+        ],
+        "faculty": [
+            
+        ],
+        "yearCompleted": [
+            " 2000",
+            " 1998"
+        ],
+        "education": [
+            "M.Sc., Simon Fraser University, Canada, 2000",
+            "B.Sc., Queen’s University, Canada, 1998",
+            " "
+        ],
         "course0_s": "CMPT 120 Introduction to Computing Science and Programming I",
         "course1_s": "CMPT 165 Introduction to the Internet and the World Wide Web",
         "course2_s": "CMPT 383 Comparative Programming Languages",
@@ -18,13 +62,40 @@
     },
     {
         "id": 2,
-        "position_s": "Senior Lecturer",
-        "professor_s": "Bradley Bart",
-        "education0_s": "M.Sc., Simon Fraser University, Canada, 2000",
-        "education1_s": "B.Sc., University of Waterloo, Canada, 1997",
-        "education2_s": "B.Ed., University of Western Ontario, Canada, 1996",
-        "education3_s": "B.Math., University of Waterloo, Canada, 1996",
-        "education4_s": " ",
+        "position": "Senior Lecturer",
+        "professor": "Bradley Bart",
+        "schools": [
+            " Simon Fraser University",
+            " University of Waterloo",
+            " University of Western Ontario"
+        ],
+        "degrees": [
+            "M.Sc.",
+            "B.Sc.",
+            "B.Ed.",
+            "B.Math."
+        ],
+        "country": [
+            " Canada"
+        ],
+        "courses": [
+            
+        ],
+        "faculty": [
+            
+        ],
+        "yearCompleted": [
+            " 2000",
+            " 1997",
+            " 1996"
+        ],
+        "education": [
+            "M.Sc., Simon Fraser University, Canada, 2000",
+            "B.Sc., University of Waterloo, Canada, 1997",
+            "B.Ed., University of Western Ontario, Canada, 1996",
+            "B.Math., University of Waterloo, Canada, 1996",
+            " "
+        ],
         "course0_s": "CMPT 120 Intro to Computing Science Programming 1",
         "course1_s": "CMPT 150 Intro Computer Design",
         "course2_s": "CMPT 225 Data Structures/Programming",
@@ -32,23 +103,73 @@
     },
     {
         "id": 3,
-        "position_s": "Associate Professor",
-        "professor_s": "Petra Berenbrink",
-        "education0_s": "Ph.D., University of Paderborn, Germany, 2000",
-        "education1_s": "M.Sc., University of Paderborn, Germany, 1995",
-        "education2_s": " ",
+        "position": "Associate Professor",
+        "professor": "Petra Berenbrink",
+        "schools": [
+            " University of Paderborn"
+        ],
+        "degrees": [
+            "Ph.D.",
+            "M.Sc."
+        ],
+        "country": [
+            " Germany"
+        ],
+        "courses": [
+            
+        ],
+        "faculty": [
+            
+        ],
+        "yearCompleted": [
+            " 2000",
+            " 1995"
+        ],
+        "education": [
+            "Ph.D., University of Paderborn, Germany, 2000",
+            "M.Sc., University of Paderborn, Germany, 1995",
+            " "
+        ],
         "course0_s": "CMPT 300 Operating Systems 1",
         "course1_s": "CMPT 405 Design and Analysis of Computing Algorithms",
         "course2_s": "CMPT 705 Design and Analysis of Algorithms"
     },
     {
         "id": 4,
-        "position_s": "Professor",
-        "professor_s": "Binay Bhattacharya",
-        "education0_s": "Ph.D., Computer Science, McGill University, Canada, 1982",
-        "education1_s": "M.Sc., Computer Science, McGill University, Canada 1978",
-        "education2_s": "M.Sc., Pure Mathematics, University of Calcutta, India, 1969",
-        "education3_s": " ",
+        "position": "Professor",
+        "professor": "Binay Bhattacharya",
+        "schools": [
+            " McGill University",
+            " Computer Science",
+            " University of Calcutta"
+        ],
+        "degrees": [
+            "Ph.D.",
+            "M.Sc."
+        ],
+        "country": [
+            " Canada",
+            " McGill University",
+            " India"
+        ],
+        "courses": [
+            
+        ],
+        "faculty": [
+            " Computer Science",
+            " Pure Mathematics"
+        ],
+        "yearCompleted": [
+            " 1982",
+            " Canada 1978",
+            " 1969"
+        ],
+        "education": [
+            "Ph.D., Computer Science, McGill University, Canada, 1982",
+            "M.Sc., Computer Science, McGill University, Canada 1978",
+            "M.Sc., Pure Mathematics, University of Calcutta, India, 1969",
+            " "
+        ],
         "course0_s": "CMPT 102 Introduction to Scientific Computer Programming",
         "course1_s": "CMPT 405 Design and Analysis of Computing Algorithms",
         "course2_s": "CMPT 705 Design and Analysis of Algorithms",
@@ -58,10 +179,32 @@
     },
     {
         "id": 5,
-        "position_s": "Associate Professor",
-        "professor_s": "Andrei Bulatov",
-        "education0_s": "Ph.D., Mathematics, Ural State University, Russia, 1995",
-        "education1_s": "M.Sc., Mathematics, Ural State University, Russia, 1991",
+        "position": "Associate Professor",
+        "professor": "Andrei Bulatov",
+        "schools": [
+            " Ural State University"
+        ],
+        "degrees": [
+            "Ph.D.",
+            "M.Sc."
+        ],
+        "country": [
+            " Russia"
+        ],
+        "courses": [
+            
+        ],
+        "faculty": [
+            " Mathematics"
+        ],
+        "yearCompleted": [
+            " 1995",
+            " 1991"
+        ],
+        "education": [
+            "Ph.D., Mathematics, Ural State University, Russia, 1995",
+            "M.Sc., Mathematics, Ural State University, Russia, 1991"
+        ],
         "course0_s": "CMPT 307 Data Structures and Algorithms",
         "course1_s": "CMPT 405 Design and Analysis of Computing Algorithms",
         "course2_s": "CMPT 705 Design and Analysis of Algorithms",
@@ -69,20 +212,68 @@
     },
     {
         "id": 6,
-        "position_s": "Professor",
-        "professor_s": "Robert Cameron",
-        "education0_s": "Ph.D., Electrical Engineering, University of British Columbia, Canada, 1983",
-        "education1_s": "B.A. Sc., Electrical Engineering, University of British Columbia, Canada, 1977",
+        "position": "Professor",
+        "professor": "Robert Cameron",
+        "schools": [
+            " University of British Columbia"
+        ],
+        "degrees": [
+            "Ph.D.",
+            "B.A. Sc."
+        ],
+        "country": [
+            " Canada"
+        ],
+        "courses": [
+            
+        ],
+        "faculty": [
+            " Electrical Engineering"
+        ],
+        "yearCompleted": [
+            " 1983",
+            " 1977"
+        ],
+        "education": [
+            "Ph.D., Electrical Engineering, University of British Columbia, Canada, 1983",
+            "B.A. Sc., Electrical Engineering, University of British Columbia, Canada, 1977"
+        ],
         "course0_s": "CMPT 885 Special Topics in Computer Architecture",
         "course1_s": "CMPT 383 Comparative Programming Languages"
     },
     {
         "id": 7,
-        "position_s": "Senior Lecturer",
-        "professor_s": "Diana Cukierman",
-        "education0_s": "Ph.D., Computing Science, Simon Fraser University, Canada, 2003",
-        "education1_s": "M.Sc., Computing Science, Simon Fraser University, Canada, 1994",
-        "education2_s": "Engineer of Computational Systems, Universidad de la Republica, Uruguay, 1989",
+        "position": "Senior Lecturer",
+        "professor": "Diana Cukierman",
+        "schools": [
+            " Simon Fraser University",
+            " Universidad de la Republica"
+        ],
+        "degrees": [
+            "Ph.D.",
+            "M.Sc.",
+            "Engineer of Computational Systems"
+        ],
+        "country": [
+            " Canada",
+            " Uruguay"
+        ],
+        "courses": [
+            
+        ],
+        "faculty": [
+            " Computing Science"
+        ],
+        "yearCompleted": [
+            " 2003",
+            " 1994",
+            " 1989"
+        ],
+        "education": [
+            "Ph.D., Computing Science, Simon Fraser University, Canada, 2003",
+            "M.Sc., Computing Science, Simon Fraser University, Canada, 1994",
+            "Engineer of Computational Systems, Universidad de la Republica, Uruguay, 1989"
+        ],
         "course0_s": "CMPT 120 Introduction to Computing Science and Programming I",
         "course1_s": "CMPT 125 Introduction to Computing Science and Programming II",
         "course2_s": "CMPT 126 Introduction to Computing Science and Programming",
@@ -91,41 +282,138 @@
     },
     {
         "id": 8,
-        "position_s": "ProfessorSchool of Computing ScienceSchool of Engineering Science",
-        "professor_s": "Ryan D'Arcy",
-        "education0_s": "PhD, Neuroscience, Dalhousie University, Canada, 2002",
-        "education1_s": "MSc, Neuroscience, Dalhousie University, Canada, 1998",
-        "education2_s": "BSc, Psychology and Biology, University of Victoria, Canada, 1996"
+        "position": "ProfessorSchool of Computing ScienceSchool of Engineering Science",
+        "professor": "Ryan D'Arcy",
+        "schools": [
+            " Dalhousie University",
+            " University of Victoria"
+        ],
+        "degrees": [
+            "PhD",
+            "MSc",
+            "BSc"
+        ],
+        "country": [
+            " Canada"
+        ],
+        "courses": [
+            
+        ],
+        "faculty": [
+            " Neuroscience",
+            " Psychology and Biology"
+        ],
+        "yearCompleted": [
+            " 2002",
+            " 1998",
+            " 1996"
+        ],
+        "education": [
+            "PhD, Neuroscience, Dalhousie University, Canada, 2002",
+            "MSc, Neuroscience, Dalhousie University, Canada, 1998",
+            "BSc, Psychology and Biology, University of Victoria, Canada, 1996"
+        ]
     },
     {
         "id": 9,
-        "position_s": "Professor",
-        "professor_s": "Veronica Dahl",
-        "education0_s": "Doctorat de Specialite en Intelligence Artificielle, Univ. Aix-Marseille II, France, 1977",
-        "education1_s": "DEA en Intelligence Artificielle, Univ. Aix-Marseille II, France, 1976",
-        "education2_s": "Computador Cientifico, Buenos Aires University, France, 1975",
-        "education3_s": " ",
+        "position": "Professor",
+        "professor": "Veronica Dahl",
+        "schools": [
+            " Univ. Aix-Marseille II",
+            " Buenos Aires University"
+        ],
+        "degrees": [
+            "Doctorat de Specialite en Intelligence Artificielle",
+            "DEA en Intelligence Artificielle",
+            "Computador Cientifico"
+        ],
+        "country": [
+            " France"
+        ],
+        "courses": [
+            
+        ],
+        "faculty": [
+            
+        ],
+        "yearCompleted": [
+            " 1977",
+            " 1976",
+            " 1975"
+        ],
+        "education": [
+            "Doctorat de Specialite en Intelligence Artificielle, Univ. Aix-Marseille II, France, 1977",
+            "DEA en Intelligence Artificielle, Univ. Aix-Marseille II, France, 1976",
+            "Computador Cientifico, Buenos Aires University, France, 1975",
+            " "
+        ],
         "course0_s": "CMPT 310 Artificial Intelligence Survey",
         "course1_s": "CMPT 419 Special Topics in Artificial Intelligence",
         "course2_s": "CMPT 882 Special Topics in Artificial Intelligence"
     },
     {
         "id": 10,
-        "position_s": "Professor",
-        "professor_s": "James Delgrande",
-        "education0_s": "Ph.D., University of Toronto, Canada, 1985",
-        "education1_s": "M.Sc., University of Toronto, Canada, 1977",
-        "education2_s": " ",
+        "position": "Professor",
+        "professor": "James Delgrande",
+        "schools": [
+            " University of Toronto"
+        ],
+        "degrees": [
+            "Ph.D.",
+            "M.Sc."
+        ],
+        "country": [
+            " Canada"
+        ],
+        "courses": [
+            
+        ],
+        "faculty": [
+            
+        ],
+        "yearCompleted": [
+            " 1985",
+            " 1977"
+        ],
+        "education": [
+            "Ph.D., University of Toronto, Canada, 1985",
+            "M.Sc., University of Toronto, Canada, 1977",
+            " "
+        ],
         "course0_s": "CMPT 411: Introduction to Knowledge Representation",
         "course1_s": "CMPT 354: Database Systems"
     },
     {
         "id": 11,
-        "position_s": "Associate Director",
-        "professor_s": "Anthony Dixon",
-        "education0_s": "Ph.D., University of British Columbia, Canada, 1973",
-        "education1_s": "M.Sc., University of British Columbia, Canada, 1970",
-        "education2_s": "B.Sc., University of British Columbia, Canada, 1968",
+        "position": "Associate Director",
+        "professor": "Anthony Dixon",
+        "schools": [
+            " University of British Columbia"
+        ],
+        "degrees": [
+            "Ph.D.",
+            "M.Sc.",
+            "B.Sc."
+        ],
+        "country": [
+            " Canada"
+        ],
+        "courses": [
+            
+        ],
+        "faculty": [
+            
+        ],
+        "yearCompleted": [
+            " 1973",
+            " 1970",
+            " 1968"
+        ],
+        "education": [
+            "Ph.D., University of British Columbia, Canada, 1973",
+            "M.Sc., University of British Columbia, Canada, 1970",
+            "B.Sc., University of British Columbia, Canada, 1968"
+        ],
         "course0_s": "CMPT 110 Programming in Visual Basic",
         "course1_s": "CMPT 150 Introduction to Computer Design",
         "course2_s": "CMPT 250 Introduction to Computer Architecture",
@@ -134,12 +422,38 @@
     },
     {
         "id": 12,
-        "position_s": "Senior Lecturer",
-        "professor_s": "Toby Donaldson",
-        "education0_s": "Ph.D. Computer Science, University of Waterloo, Canada, 1998",
-        "education1_s": "M.Math, University of Waterloo, Canada, 1994",
-        "education2_s": "B.Sc. Simon Fraser University, Canada, 1992",
-        "education3_s": " ",
+        "position": "Senior Lecturer",
+        "professor": "Toby Donaldson",
+        "schools": [
+            " University of Waterloo",
+            " University of Waterloo",
+            " Canada"
+        ],
+        "degrees": [
+            "Ph.D. Computer Science",
+            "M.Math",
+            "B.Sc. Simon Fraser University"
+        ],
+        "country": [
+            " Canada",
+            " 1992"
+        ],
+        "courses": [
+            
+        ],
+        "faculty": [
+            
+        ],
+        "yearCompleted": [
+            " 1998",
+            " 1994"
+        ],
+        "education": [
+            "Ph.D. Computer Science, University of Waterloo, Canada, 1998",
+            "M.Math, University of Waterloo, Canada, 1994",
+            "B.Sc. Simon Fraser University, Canada, 1992",
+            " "
+        ],
         "course0_s": "CMPT 118 Special Topics in Computer and Information Technology",
         "course1_s": "CMPT 120 Introduction to Computing Science and Programming 1",
         "course2_s": "CMPT 125 Introduction to Computing Science and Programming 11",
@@ -148,23 +462,74 @@
     },
     {
         "id": 13,
-        "position_s": "Professor",
-        "professor_s": "Mark Drew",
-        "education0_s": "Ph.D., Physics, University of British Columbia, Canada, 1976",
-        "education1_s": "M.Sc., Physics, University of Toronto, Canada, 1971",
-        "education2_s": "B.A.Sc., Engineering Science, University of Toronto, Canada, 1970",
-        "education3_s": " ",
+        "position": "Professor",
+        "professor": "Mark Drew",
+        "schools": [
+            " University of British Columbia",
+            " University of Toronto"
+        ],
+        "degrees": [
+            "Ph.D.",
+            "M.Sc.",
+            "B.A.Sc."
+        ],
+        "country": [
+            " Canada"
+        ],
+        "courses": [
+            
+        ],
+        "faculty": [
+            " Physics",
+            " Engineering Science"
+        ],
+        "yearCompleted": [
+            " 1976",
+            " 1971",
+            " 1970"
+        ],
+        "education": [
+            "Ph.D., Physics, University of British Columbia, Canada, 1976",
+            "M.Sc., Physics, University of Toronto, Canada, 1971",
+            "B.A.Sc., Engineering Science, University of Toronto, Canada, 1970",
+            " "
+        ],
         "course0_s": "CMPT 828 Illumination in Images and Video",
         "course1_s": "CMPT 365 Multimedia Systems",
         "course2_s": "CMPT 110 Event-Driven Programming in Visual Basic"
     },
     {
         "id": 14,
-        "position_s": "Senior Lecturer",
-        "professor_s": "John Edgar",
-        "education0_s": "M.Sc., Computing Sciences, Simon Fraser University, Canada, 1999",
-        "education1_s": "Qualified as a member of the Institute of Chartered Accountants of England and Wales, 1988",
-        "education2_s": "B.Sc., Psychology, University College London, UK, 1984",
+        "position": "Senior Lecturer",
+        "professor": "John Edgar",
+        "schools": [
+            " Simon Fraser University",
+            " University College London"
+        ],
+        "degrees": [
+            "M.Sc.",
+            "B.Sc."
+        ],
+        "country": [
+            " Canada",
+            " UK"
+        ],
+        "courses": [
+            
+        ],
+        "faculty": [
+            " Computing Sciences",
+            " Psychology"
+        ],
+        "yearCompleted": [
+            " 1999",
+            " 1984"
+        ],
+        "education": [
+            "M.Sc., Computing Sciences, Simon Fraser University, Canada, 1999",
+            "Qualified as a member of the Institute of Chartered Accountants of England and Wales, 1988",
+            "B.Sc., Psychology, University College London, UK, 1984"
+        ],
         "course0_s": "CMPT 128 Introduction to Computing Science and Programming for Engineers",
         "course1_s": "CMPT 212 Object-Oriented Applications Design in C++",
         "course2_s": "CMPT 225 Data Structures and Programming",
@@ -172,10 +537,35 @@
     },
     {
         "id": 15,
-        "position_s": "Associate Professor",
-        "professor_s": "Funda Ergun",
-        "education0_s": "Ph.D., Computer Science, Cornell University, United States, 1997",
-        "education1_s": "BS, Computer Engineering and Information Science, Bilkent University, Turkey, 1990",
+        "position": "Associate Professor",
+        "professor": "Funda Ergun",
+        "schools": [
+            " Cornell University",
+            " Bilkent University"
+        ],
+        "degrees": [
+            "Ph.D.",
+            "BS"
+        ],
+        "country": [
+            " United States",
+            " Turkey"
+        ],
+        "courses": [
+            
+        ],
+        "faculty": [
+            " Computer Science",
+            " Computer Engineering and Information Science"
+        ],
+        "yearCompleted": [
+            " 1997",
+            " 1990"
+        ],
+        "education": [
+            "Ph.D., Computer Science, Cornell University, United States, 1997",
+            "BS, Computer Engineering and Information Science, Bilkent University, Turkey, 1990"
+        ],
         "course0_s": "CMPT 371 Data Communications and Networking",
         "course1_s": "CMPT 408 Special Topics in Theoretical Computing Science",
         "course2_s": "CMPT 765 Computer Communication Network",
@@ -183,90 +573,285 @@
     },
     {
         "id": 16,
-        "position_s": "Director",
-        "professor_s": "Martin Ester",
-        "education0_s": "Ph.D. Computer Science, Swiss Federal Institute of Technology, Zurich, 1990",
-        "education1_s": "Diploma (M.Sc.) in Computer Science, University of Dortmund, 1984",
-        "education2_s": " ",
+        "position": "Director",
+        "professor": "Martin Ester",
+        "schools": [
+            " Swiss Federal Institute of Technology",
+            " University of Dortmund"
+        ],
+        "degrees": [
+            "Ph.D. Computer Science",
+            "Diploma (M.Sc.) in Computer Science"
+        ],
+        "country": [
+            " Zurich",
+            " 1984"
+        ],
+        "courses": [
+            
+        ],
+        "faculty": [
+            
+        ],
+        "yearCompleted": [
+            " 1990"
+        ],
+        "education": [
+            "Ph.D. Computer Science, Swiss Federal Institute of Technology, Zurich, 1990",
+            "Diploma (M.Sc.) in Computer Science, University of Dortmund, 1984",
+            " "
+        ],
         "course0_s": "CMPT 354 Database Systems 1",
         "course1_s": "CMPT 454 Database Systems 11",
         "course2_s": "CMPT 459 Special Topics in Database Systems"
     },
     {
         "id": 17,
-        "position_s": "Senior Lecturer",
-        "professor_s": "Mike Evans",
-        "education0_s": "M.Sc. , Birmingham University, England",
-        "education1_s": "Post Grad Cert in Education, University of Wales",
-        "education2_s": "M.Sc., University of Dundee, Scotland",
-        "education3_s": "M.A., Dalhousie University, Canada",
-        "education4_s": "B.Sc. Honors, Dalhousie University, Canada",
-        "education5_s": " ",
+        "position": "Senior Lecturer",
+        "professor": "Mike Evans",
+        "schools": [
+            " Birmingham University",
+            " University of Dundee",
+            " Dalhousie University"
+        ],
+        "degrees": [
+            "M.Sc. ",
+            "M.Sc.",
+            "M.A.",
+            "B.Sc. Honors"
+        ],
+        "country": [
+            " England",
+            " Scotland",
+            " Canada"
+        ],
+        "courses": [
+            
+        ],
+        "faculty": [
+            
+        ],
+        "yearCompleted": [
+            
+        ],
+        "education": [
+            "M.Sc. , Birmingham University, England",
+            "Post Grad Cert in Education, University of Wales",
+            "M.Sc., University of Dundee, Scotland",
+            "M.A., Dalhousie University, Canada",
+            "B.Sc. Honors, Dalhousie University, Canada",
+            " "
+        ],
         "course0_s": "CMPT 126 Introduction to Computing Science and Programming",
         "course1_s": "CMPT 225 Data Structures and Programming",
         "course2_s": "CMPT 300 Operating Systems 1"
     },
     {
         "id": 18,
-        "position_s": "Associate Professor",
-        "professor_s": "Alexandra Fedorova",
-        "education0_s": "Ph.D. in Computer Science, Harvard University, Cambridge, MA, United States, 2006",
-        "education1_s": "M.Sc. in Computer Science, Harvard University, Cambridge, MA, United States, 2002",
-        "education2_s": "B.A. in Computer Science and Economics, Smith College, Northampton, MA, United States, 1999",
+        "position": "Associate Professor",
+        "professor": "Alexandra Fedorova",
+        "schools": [
+            " Cambridge",
+            " Northampton"
+        ],
+        "degrees": [
+            "Ph.D. in Computer Science",
+            "M.Sc. in Computer Science",
+            "B.A. in Computer Science and Economics"
+        ],
+        "country": [
+            " MA"
+        ],
+        "courses": [
+            
+        ],
+        "faculty": [
+            " Harvard University",
+            " Smith College"
+        ],
+        "yearCompleted": [
+            " United States"
+        ],
+        "education": [
+            "Ph.D. in Computer Science, Harvard University, Cambridge, MA, United States, 2006",
+            "M.Sc. in Computer Science, Harvard University, Cambridge, MA, United States, 2002",
+            "B.A. in Computer Science and Economics, Smith College, Northampton, MA, United States, 1999"
+        ],
         "course0_s": "CMPT 431 Distributed Systems",
         "course1_s": "CMPT 886 Special Topics in Operating Systems: Multicore Processors -- Software/Hardware Interaction"
     },
     {
         "id": 19,
-        "position_s": "Lecturer",
-        "professor_s": "Brian Fraser",
-        "education0_s": "Ph.D. Computing Science, Simon Fraser University, Canada, 2009",
-        "education1_s": "B.Sc. Computing Science, Simon Fraser University, Canada 2002",
+        "position": "Lecturer",
+        "professor": "Brian Fraser",
+        "schools": [
+            " Simon Fraser University"
+        ],
+        "degrees": [
+            "Ph.D. Computing Science",
+            "B.Sc. Computing Science"
+        ],
+        "country": [
+            " Canada",
+            " Canada 2002"
+        ],
+        "courses": [
+            
+        ],
+        "faculty": [
+            
+        ],
+        "yearCompleted": [
+            " 2009"
+        ],
+        "education": [
+            "Ph.D. Computing Science, Simon Fraser University, Canada, 2009",
+            "B.Sc. Computing Science, Simon Fraser University, Canada 2002"
+        ],
         "course0_s": "CMPT 213 Object-Oriented Applications Design in Java",
         "course1_s": "CMPT 276 Introduction to Software Engineering using the Android operating system",
         "course2_s": "CMPT 433 Embedded Systems"
     },
     {
         "id": 20,
-        "position_s": "Professor",
-        "professor_s": "Brian Funt",
-        "education0_s": "Ph.D., Computing Science, University of British Columbia, Canada, 1976",
-        "education1_s": "M.Sc., Computing Science, University of British Columbia, Canada, 1973",
-        "education2_s": "B.Sc., Computing Science, University of British Columbia, Canada, 1971",
-        "education3_s": " ",
+        "position": "Professor",
+        "professor": "Brian Funt",
+        "schools": [
+            " University of British Columbia"
+        ],
+        "degrees": [
+            "Ph.D.",
+            "M.Sc.",
+            "B.Sc."
+        ],
+        "country": [
+            " Canada"
+        ],
+        "courses": [
+            
+        ],
+        "faculty": [
+            " Computing Science"
+        ],
+        "yearCompleted": [
+            " 1976",
+            " 1973",
+            " 1971"
+        ],
+        "education": [
+            "Ph.D., Computing Science, University of British Columbia, Canada, 1976",
+            "M.Sc., Computing Science, University of British Columbia, Canada, 1973",
+            "B.Sc., Computing Science, University of British Columbia, Canada, 1971",
+            " "
+        ],
         "course0_s": "CMPT 102 Scientific Computer Programming",
         "course1_s": "CMPT 412 Computational Vision",
         "course2_s": "CMPT 822 Computational Colour Vision Seminar"
     },
     {
         "id": 21,
-        "position_s": "Professor",
-        "professor_s": "Uwe Glässer",
-        "education0_s": "Habilitation, Computer Science, University of Paderborn, Germany, 1999",
-        "education1_s": "Doctorate, Computer Science, University of Paderborn, Germany, 1992",
-        "education2_s": "Diploma, Computer Science, University of Paderborn, Germany, 1987",
+        "position": "Professor",
+        "professor": "Uwe Glässer",
+        "schools": [
+            " University of Paderborn"
+        ],
+        "degrees": [
+            "Habilitation",
+            "Doctorate",
+            "Diploma"
+        ],
+        "country": [
+            " Germany"
+        ],
+        "courses": [
+            
+        ],
+        "faculty": [
+            " Computer Science"
+        ],
+        "yearCompleted": [
+            " 1999",
+            " 1992",
+            " 1987"
+        ],
+        "education": [
+            "Habilitation, Computer Science, University of Paderborn, Germany, 1999",
+            "Doctorate, Computer Science, University of Paderborn, Germany, 1992",
+            "Diploma, Computer Science, University of Paderborn, Germany, 1987"
+        ],
         "course0_s": "CMPT 475 Software Engineering II",
         "course1_s": "CMPT 375 Software Technology Foundations"
     },
     {
         "id": 22,
-        "position_s": "Professor",
-        "professor_s": "Qianping Gu",
-        "education0_s": "Ph.D. Computer Science, Tohoku University, Japan, 1988",
-        "education1_s": "M.Sc. Computer Science, Ibaraki University, Japan, 1985",
-        "education2_s": "B.Sc. Computer Science, Shandong University, China, 1982",
+        "position": "Professor",
+        "professor": "Qianping Gu",
+        "schools": [
+            " Tohoku University",
+            " Ibaraki University",
+            " Shandong University"
+        ],
+        "degrees": [
+            "Ph.D. Computer Science",
+            "M.Sc. Computer Science",
+            "B.Sc. Computer Science"
+        ],
+        "country": [
+            " Japan",
+            " China"
+        ],
+        "courses": [
+            
+        ],
+        "faculty": [
+            
+        ],
+        "yearCompleted": [
+            " 1988",
+            " 1985",
+            " 1982"
+        ],
+        "education": [
+            "Ph.D. Computer Science, Tohoku University, Japan, 1988",
+            "M.Sc. Computer Science, Ibaraki University, Japan, 1985",
+            "B.Sc. Computer Science, Shandong University, China, 1982"
+        ],
         "course0_s": "CMPT 471 Networking II",
         "course1_s": "CMPT 497 Capstone Projects",
         "course2_s": "CMPT 816 Theory of Communication Networks"
     },
     {
         "id": 23,
-        "position_s": "Associate Professor",
-        "professor_s": "Lou Hafer",
-        "education0_s": "Ph.D. Electrical Engineering, Carnegie-Mellon University, United States, 1981",
-        "education1_s": "M.Sc. Electrical Engineering, Carnegie-Mellon University, United States, 1978",
-        "education2_s": "B.Sc. Electrical Engineering, Carnegie-Mellon University, United States, 1976",
-        "education3_s": " ",
+        "position": "Associate Professor",
+        "professor": "Lou Hafer",
+        "schools": [
+            " Carnegie-Mellon University"
+        ],
+        "degrees": [
+            "Ph.D. Electrical Engineering",
+            "M.Sc. Electrical Engineering",
+            "B.Sc. Electrical Engineering"
+        ],
+        "country": [
+            " United States"
+        ],
+        "courses": [
+            
+        ],
+        "faculty": [
+            
+        ],
+        "yearCompleted": [
+            " 1981",
+            " 1978",
+            " 1976"
+        ],
+        "education": [
+            "Ph.D. Electrical Engineering, Carnegie-Mellon University, United States, 1981",
+            "M.Sc. Electrical Engineering, Carnegie-Mellon University, United States, 1978",
+            "B.Sc. Electrical Engineering, Carnegie-Mellon University, United States, 1976",
+            " "
+        ],
         "course0_s": "CMPT 125 Introduction to Computer Science and Programming II",
         "course1_s": "CMPT 150 Introduction to Computer Design",
         "course2_s": "CMPT 371 Data Communications and Networking",
@@ -274,12 +859,38 @@
     },
     {
         "id": 24,
-        "position_s": "Associate Professor",
-        "professor_s": "Ghassan Hamarneh",
-        "education0_s": "Ph.D. Signal and Systems, Chalmers University of Technology, Sweden, 2001",
-        "education1_s": "M.Sc. Digital Communications, Chalmers University of Technology, Sweden, 1997",
-        "education2_s": "B.Sc. Electrical Engineering, Jordan University, Jordan, 1995",
-        "education3_s": " ",
+        "position": "Associate Professor",
+        "professor": "Ghassan Hamarneh",
+        "schools": [
+            " Chalmers University of Technology",
+            " Jordan University"
+        ],
+        "degrees": [
+            "Ph.D. Signal and Systems",
+            "M.Sc. Digital Communications",
+            "B.Sc. Electrical Engineering"
+        ],
+        "country": [
+            " Sweden",
+            " Jordan"
+        ],
+        "courses": [
+            
+        ],
+        "faculty": [
+            
+        ],
+        "yearCompleted": [
+            " 2001",
+            " 1997",
+            " 1995"
+        ],
+        "education": [
+            "Ph.D. Signal and Systems, Chalmers University of Technology, Sweden, 2001",
+            "M.Sc. Digital Communications, Chalmers University of Technology, Sweden, 1997",
+            "B.Sc. Electrical Engineering, Jordan University, Jordan, 1995",
+            " "
+        ],
         "course0_s": "CMPT 102 Introduction to Scientific Computing",
         "course1_s": "CMPT 340 Biomedical Computing",
         "course2_s": "CMPT 419/829 Biomedical Image Computing",
@@ -287,23 +898,78 @@
     },
     {
         "id": 25,
-        "position_s": "Associate Professor",
-        "professor_s": "Mohamed Hefeeda",
-        "education0_s": "Ph.D. Computer Science, Purdue University, United States, 2004",
-        "education1_s": "M.Sc, Computer Science and Engineering, University of Connecticut, United States, 2001",
-        "education2_s": "B.Sc., Electronics Engineering, Mansoura University, Egypt, 1994.",
-        "education3_s": " ",
+        "position": "Associate Professor",
+        "professor": "Mohamed Hefeeda",
+        "schools": [
+            " Purdue University",
+            " University of Connecticut",
+            " Mansoura University"
+        ],
+        "degrees": [
+            "Ph.D. Computer Science",
+            "M.Sc",
+            "B.Sc."
+        ],
+        "country": [
+            " United States",
+            " Egypt"
+        ],
+        "courses": [
+            
+        ],
+        "faculty": [
+            " Computer Science and Engineering",
+            " Electronics Engineering"
+        ],
+        "yearCompleted": [
+            " 2004",
+            " 2001",
+            " 1994."
+        ],
+        "education": [
+            "Ph.D. Computer Science, Purdue University, United States, 2004",
+            "M.Sc, Computer Science and Engineering, University of Connecticut, United States, 2001",
+            "B.Sc., Electronics Engineering, Mansoura University, Egypt, 1994.",
+            " "
+        ],
         "course0_s": "CMPT 300 Operating Systems",
         "course1_s": "CMPT 771 Internet Architecture and Protocols",
         "course2_s": "CMPT 820 Multimedia Systems"
     },
     {
         "id": 26,
-        "position_s": "Professor",
-        "professor_s": "Pavol Hell",
-        "education0_s": "Ph.D., University of Montreal, Canada, 1973",
-        "education1_s": "M.Sc., McMaster University, Canada, 1970",
-        "education2_s": "B.Sc., Charles University, Prague, Czech Republic, 1968",
+        "position": "Professor",
+        "professor": "Pavol Hell",
+        "schools": [
+            " University of Montreal",
+            " McMaster University",
+            " Prague"
+        ],
+        "degrees": [
+            "Ph.D.",
+            "M.Sc.",
+            "B.Sc."
+        ],
+        "country": [
+            " Canada",
+            " Czech Republic"
+        ],
+        "courses": [
+            
+        ],
+        "faculty": [
+            " Charles University"
+        ],
+        "yearCompleted": [
+            " 1973",
+            " 1970",
+            " 1968"
+        ],
+        "education": [
+            "Ph.D., University of Montreal, Canada, 1973",
+            "M.Sc., McMaster University, Canada, 1970",
+            "B.Sc., Charles University, Prague, Czech Republic, 1968"
+        ],
         "course0_s": "CMPT 307 Data Structures and Algorithms",
         "course1_s": "CMPT 814 Algorithmic Graph Theory",
         "course2_s": "MACM 101 Discrete Mathematics",
@@ -311,20 +977,63 @@
     },
     {
         "id": 27,
-        "position_s": "Associate Professor",
-        "professor_s": "Valentine Kabanets",
-        "education0_s": " ",
+        "position": "Associate Professor",
+        "professor": "Valentine Kabanets",
+        "schools": [
+            
+        ],
+        "degrees": [
+            
+        ],
+        "country": [
+            
+        ],
+        "courses": [
+            
+        ],
+        "faculty": [
+            
+        ],
+        "yearCompleted": [
+            
+        ],
+        "education": [
+            " "
+        ],
         "course0_s": " CMPT 307 Data structures and algorithms",
         "course1_s": " CMPT 881 Average-case complexity",
         "course2_s": " CMPT 308 Computability and Complexity"
     },
     {
         "id": 28,
-        "position_s": "Senior Lecturer",
-        "professor_s": "Harinder Khangura",
-        "education0_s": "M.Sc., University of British Columbia, Canada, 2001",
-        "education1_s": "B.Sc. Physics/Computing Science, University of Toronto, Canada, 1997",
-        "education2_s": " ",
+        "position": "Senior Lecturer",
+        "professor": "Harinder Khangura",
+        "schools": [
+            " University of British Columbia",
+            " University of Toronto"
+        ],
+        "degrees": [
+            "M.Sc.",
+            "B.Sc. Physics/Computing Science"
+        ],
+        "country": [
+            " Canada"
+        ],
+        "courses": [
+            
+        ],
+        "faculty": [
+            
+        ],
+        "yearCompleted": [
+            " 2001",
+            " 1997"
+        ],
+        "education": [
+            "M.Sc., University of British Columbia, Canada, 2001",
+            "B.Sc. Physics/Computing Science, University of Toronto, Canada, 1997",
+            " "
+        ],
         "course0_s": "CMPT 105W Process, Form, & Convention in Professional Genres",
         "course1_s": "CMPT 106 Applied Science, Technology, & Society",
         "course2_s": "CMPT 150 Introduction to Computer Design",
@@ -334,12 +1043,38 @@
     },
     {
         "id": 29,
-        "position_s": "Associate Professor",
-        "professor_s": "Arthur Kirkpatrick",
-        "education0_s": "Ph.D., University of Oregon, United States, 2000",
-        "education1_s": "M.Sc., Maharishi International University, United States, 1985",
-        "education2_s": "B.Sc., Pennsylvania State University, State College, United States, 1977",
-        "education3_s": " ",
+        "position": "Associate Professor",
+        "professor": "Arthur Kirkpatrick",
+        "schools": [
+            " University of Oregon",
+            " Maharishi International University",
+            " State College"
+        ],
+        "degrees": [
+            "Ph.D.",
+            "M.Sc.",
+            "B.Sc."
+        ],
+        "country": [
+            " United States"
+        ],
+        "courses": [
+            
+        ],
+        "faculty": [
+            " Pennsylvania State University"
+        ],
+        "yearCompleted": [
+            " 2000",
+            " 1985",
+            " 1977"
+        ],
+        "education": [
+            "Ph.D., University of Oregon, United States, 2000",
+            "M.Sc., Maharishi International University, United States, 1985",
+            "B.Sc., Pennsylvania State University, State College, United States, 1977",
+            " "
+        ],
         "course0_s": "CMPT 120 Introduction to Computing Science and Programming 1",
         "course1_s": "CMPT 363 User Interface Design",
         "course2_s": "CMPT 376 Technical Writing and Group Dynamics",
@@ -347,19 +1082,69 @@
     },
     {
         "id": 30,
-        "position_s": "Professor",
-        "professor_s": "Ramesh Krishnamurti",
-        "education0_s": "Ph.D., Computer and Information Science, University of Pennsylvania, 1987",
-        "education1_s": "M.Tech., Electrical Engineering, Indian Institute of Technology, India, 1977",
-        "education2_s": "B.Tech., Electrical Engineering, Indian Institute of Technology, India, 1974"
+        "position": "Professor",
+        "professor": "Ramesh Krishnamurti",
+        "schools": [
+            " Computer and Information Science",
+            " Indian Institute of Technology"
+        ],
+        "degrees": [
+            "Ph.D.",
+            "M.Tech.",
+            "B.Tech."
+        ],
+        "country": [
+            " University of Pennsylvania",
+            " India"
+        ],
+        "courses": [
+            
+        ],
+        "faculty": [
+            " Electrical Engineering"
+        ],
+        "yearCompleted": [
+            " 1987",
+            " 1977",
+            " 1974"
+        ],
+        "education": [
+            "Ph.D., Computer and Information Science, University of Pennsylvania, 1987",
+            "M.Tech., Electrical Engineering, Indian Institute of Technology, India, 1977",
+            "B.Tech., Electrical Engineering, Indian Institute of Technology, India, 1974"
+        ]
     },
     {
         "id": 31,
-        "position_s": "Senior Lecturer",
-        "professor_s": "Anne Lavergne",
-        "education0_s": "M.Sc., Computer Science, University of British Columbia, Canada, 1999",
-        "education1_s": "B.Sc., Computing Science, Simon Fraser University, Canada, 1991",
-        "education2_s": " ",
+        "position": "Senior Lecturer",
+        "professor": "Anne Lavergne",
+        "schools": [
+            " University of British Columbia",
+            " Simon Fraser University"
+        ],
+        "degrees": [
+            "M.Sc.",
+            "B.Sc."
+        ],
+        "country": [
+            " Canada"
+        ],
+        "courses": [
+            
+        ],
+        "faculty": [
+            " Computer Science",
+            " Computing Science"
+        ],
+        "yearCompleted": [
+            " 1999",
+            " 1991"
+        ],
+        "education": [
+            "M.Sc., Computer Science, University of British Columbia, Canada, 1999",
+            "B.Sc., Computing Science, Simon Fraser University, Canada, 1991",
+            " "
+        ],
         "course0_s": "CMPT 125 Introduction to Computing Science and Programming II",
         "course1_s": "CMPT 165 Introduction to the Internet and the World Wide Web",
         "course2_s": "CMPT 225 Data Structures and Programming",
@@ -368,12 +1153,38 @@
     },
     {
         "id": 32,
-        "position_s": "Professor",
-        "professor_s": "Ze-Nian Li",
-        "education0_s": "Ph.D. Computer Sciences, University of Wisconsin-Madison, United States, 1986",
-        "education1_s": "M.Sc. Computer Sciences, University of Wisconsin-Madison, United States, 1981",
-        "education2_s": "B.Sc. Electrical Engineering, University of Science and Technology of China, China, 1970",
-        "education3_s": " ",
+        "position": "Professor",
+        "professor": "Ze-Nian Li",
+        "schools": [
+            " University of Wisconsin-Madison",
+            " University of Science and Technology of China"
+        ],
+        "degrees": [
+            "Ph.D. Computer Sciences",
+            "M.Sc. Computer Sciences",
+            "B.Sc. Electrical Engineering"
+        ],
+        "country": [
+            " United States",
+            " China"
+        ],
+        "courses": [
+            
+        ],
+        "faculty": [
+            
+        ],
+        "yearCompleted": [
+            " 1986",
+            " 1981",
+            " 1970"
+        ],
+        "education": [
+            "Ph.D. Computer Sciences, University of Wisconsin-Madison, United States, 1986",
+            "M.Sc. Computer Sciences, University of Wisconsin-Madison, United States, 1981",
+            "B.Sc. Electrical Engineering, University of Science and Technology of China, China, 1970",
+            " "
+        ],
         "course0_s": "CMPT 365 Multimedia Systems",
         "course1_s": "CMPT 414 Model-based Computer Vision",
         "course2_s": "CMPT 820 Multimedia Systems",
@@ -381,121 +1192,409 @@
     },
     {
         "id": 33,
-        "position_s": "Professor",
-        "professor_s": "Arthur Liestman",
-        "education0_s": "Ph.D., Computer Science, University of Illinois at Urbana-Champaign, United States, 1981",
-        "education1_s": "M.Sc., Computer Science, University of Illinois at Urbana-Chanpaign, United States, 1978",
-        "education2_s": "B.G.S., Computer Science and Mathematics, University of Kansas, United States, 1975",
-        "education3_s": " ",
+        "position": "Professor",
+        "professor": "Arthur Liestman",
+        "schools": [
+            " University of Illinois at Urbana-Champaign",
+            " University of Illinois at Urbana-Chanpaign",
+            " University of Kansas"
+        ],
+        "degrees": [
+            "Ph.D.",
+            "M.Sc.",
+            "B.G.S."
+        ],
+        "country": [
+            " United States"
+        ],
+        "courses": [
+            
+        ],
+        "faculty": [
+            " Computer Science",
+            " Computer Science and Mathematics"
+        ],
+        "yearCompleted": [
+            " 1981",
+            " 1978",
+            " 1975"
+        ],
+        "education": [
+            "Ph.D., Computer Science, University of Illinois at Urbana-Champaign, United States, 1981",
+            "M.Sc., Computer Science, University of Illinois at Urbana-Chanpaign, United States, 1978",
+            "B.G.S., Computer Science and Mathematics, University of Kansas, United States, 1975",
+            " "
+        ],
         "course0_s": "CMPT 307 Data Structures and Algorithms",
         "course1_s": "CMPT 376W Technical Writing and Group Dynamics",
         "course2_s": "CMPT 705 Design and Analysis of Algorithms"
     },
     {
         "id": 34,
-        "position_s": "Associate Professor",
-        "professor_s": "Jiangchuan Liu",
-        "education0_s": "Ph.D. Computer Science, The Hong Kong University of Science & Technology (HKUST), 2003",
-        "education1_s": "B.Eng (Cum Laude), Computer Science and Technology, Tsinghua University, Beijing, China, 1999",
-        "education2_s": " ",
+        "position": "Associate Professor",
+        "professor": "Jiangchuan Liu",
+        "schools": [
+            " The Hong Kong University of Science & Technology (HKUST)",
+            " Tsinghua University"
+        ],
+        "degrees": [
+            "Ph.D. Computer Science",
+            "B.Eng (Cum Laude)"
+        ],
+        "country": [
+            " 2003",
+            " Beijing"
+        ],
+        "courses": [
+            
+        ],
+        "faculty": [
+            " Computer Science and Technology"
+        ],
+        "yearCompleted": [
+            " China"
+        ],
+        "education": [
+            "Ph.D. Computer Science, The Hong Kong University of Science & Technology (HKUST), 2003",
+            "B.Eng (Cum Laude), Computer Science and Technology, Tsinghua University, Beijing, China, 1999",
+            " "
+        ],
         "course0_s": "CMPT 371 Data communications and networking",
         "course1_s": "CMPT 771 Advanced network architecture and protocols"
     },
     {
         "id": 35,
-        "position_s": "Professor",
-        "professor_s": "Wo-Shun Luk",
-        "education0_s": "Ph.D., Computing Science, University of Alberta, Canada, 1976",
-        "education1_s": "M.Math., University of Waterloo, Canada, 1972",
-        "education2_s": "B.A. (Honors), Math., University of London, England, 1970",
-        "education3_s": " ",
+        "position": "Professor",
+        "professor": "Wo-Shun Luk",
+        "schools": [
+            " University of Alberta",
+            " University of Waterloo",
+            " University of London"
+        ],
+        "degrees": [
+            "Ph.D.",
+            "M.Math.",
+            "B.A. (Honors)"
+        ],
+        "country": [
+            " Canada",
+            " England"
+        ],
+        "courses": [
+            
+        ],
+        "faculty": [
+            " Computing Science",
+            " Math."
+        ],
+        "yearCompleted": [
+            " 1976",
+            " 1972",
+            " 1970"
+        ],
+        "education": [
+            "Ph.D., Computing Science, University of Alberta, Canada, 1976",
+            "M.Math., University of Waterloo, Canada, 1972",
+            "B.A. (Honors), Math., University of London, England, 1970",
+            " "
+        ],
         "course0_s": "CMPT 354 Database Systems 1",
         "course1_s": "CMPT 454 Database Systems 11",
         "course2_s": "CMPT 740 Database Systems"
     },
     {
         "id": 36,
-        "position_s": "Associate Professor",
-        "professor_s": "David Mitchell",
-        "education0_s": "Ph.D., Computer Science, University of Toronto, Canada, 2002",
-        "education1_s": "M.Sc., Computing Science, Simon Fraser University, Canada, 1993",
-        "education2_s": "B.Sc., Cognitive Science and Artificial Intelligence, University of Toronto, Canada, 1989",
-        "education3_s": " ",
+        "position": "Associate Professor",
+        "professor": "David Mitchell",
+        "schools": [
+            " University of Toronto",
+            " Simon Fraser University"
+        ],
+        "degrees": [
+            "Ph.D.",
+            "M.Sc.",
+            "B.Sc."
+        ],
+        "country": [
+            " Canada"
+        ],
+        "courses": [
+            
+        ],
+        "faculty": [
+            " Computer Science",
+            " Computing Science",
+            " Cognitive Science and Artificial Intelligence"
+        ],
+        "yearCompleted": [
+            " 2002",
+            " 1993",
+            " 1989"
+        ],
+        "education": [
+            "Ph.D., Computer Science, University of Toronto, Canada, 2002",
+            "M.Sc., Computing Science, Simon Fraser University, Canada, 1993",
+            "B.Sc., Cognitive Science and Artificial Intelligence, University of Toronto, Canada, 1989",
+            " "
+        ],
         "course0_s": "CMPT 225 Data Structures and Programming",
         "course1_s": "CMPT 417 Intelligent Systems",
         "course2_s": "CMPT 701 Computability and Logic"
     },
     {
         "id": 37,
-        "position_s": "Associate Professor",
-        "professor_s": "Greg Mori",
-        "education0_s": "Ph.D. Computer Science, University of California at Berkeley, United States, 2004",
-        "education1_s": "Hon. B.Sc. (High Distinction) in Computer Science and Mathematics, University of Toronto, Canada, 1999",
-        "education2_s": " ",
+        "position": "Associate Professor",
+        "professor": "Greg Mori",
+        "schools": [
+            " University of California at Berkeley",
+            " University of Toronto"
+        ],
+        "degrees": [
+            "Ph.D. Computer Science",
+            "Hon. B.Sc. (High Distinction) in Computer Science and Mathematics"
+        ],
+        "country": [
+            " United States",
+            " Canada"
+        ],
+        "courses": [
+            
+        ],
+        "faculty": [
+            
+        ],
+        "yearCompleted": [
+            " 2004",
+            " 1999"
+        ],
+        "education": [
+            "Ph.D. Computer Science, University of California at Berkeley, United States, 2004",
+            "Hon. B.Sc. (High Distinction) in Computer Science and Mathematics, University of Toronto, Canada, 1999",
+            " "
+        ],
         "course0_s": "CMPT 310: Artificial Intelligence Survey",
         "course1_s": "CMPT 726: Machine Learning",
         "course2_s": "CMPT 888: Human Activity Recognition"
     },
     {
         "id": 38,
-        "position_s": "Professor",
-        "professor_s": "Torsten Möller",
-        "education0_s": "Ph.D., Computer and Information Science, Ohio State University, United States, 1999",
-        "education1_s": "M.Sc. Computer and Information Science, Ohio State University, United States, 1993",
-        "education2_s": "Vordiplom, Mathematical Computer Science, Humboldt-Universität zu Berlin, Germany, 1992",
-        "education3_s": " ",
+        "position": "Professor",
+        "professor": "Torsten Möller",
+        "schools": [
+            " Ohio State University",
+            " Humboldt-Universität zu Berlin"
+        ],
+        "degrees": [
+            "Ph.D.",
+            "M.Sc. Computer and Information Science",
+            "Vordiplom"
+        ],
+        "country": [
+            " United States",
+            " Germany"
+        ],
+        "courses": [
+            
+        ],
+        "faculty": [
+            " Computer and Information Science",
+            " Mathematical Computer Science"
+        ],
+        "yearCompleted": [
+            " 1999",
+            " 1993",
+            " 1992"
+        ],
+        "education": [
+            "Ph.D., Computer and Information Science, Ohio State University, United States, 1999",
+            "M.Sc. Computer and Information Science, Ohio State University, United States, 1993",
+            "Vordiplom, Mathematical Computer Science, Humboldt-Universität zu Berlin, Germany, 1992",
+            " "
+        ],
         "course0_s": "See"
     },
     {
         "id": 39,
-        "position_s": "Lecturer",
-        "professor_s": "Steven Pearce",
-        "education0_s": "Ph.D., University of Arizona, United States, 1995",
-        "education1_s": "M.Sc. University of British Columbia, Canada, 1984",
-        "education2_s": "B.Sc. (Honors), University of British Columbia, Canada, 1981"
+        "position": "Lecturer",
+        "professor": "Steven Pearce",
+        "schools": [
+            " University of Arizona",
+            " Canada",
+            " University of British Columbia"
+        ],
+        "degrees": [
+            "Ph.D.",
+            "M.Sc. University of British Columbia",
+            "B.Sc. (Honors)"
+        ],
+        "country": [
+            " United States",
+            " 1984",
+            " Canada"
+        ],
+        "courses": [
+            
+        ],
+        "faculty": [
+            
+        ],
+        "yearCompleted": [
+            " 1995",
+            " 1981"
+        ],
+        "education": [
+            "Ph.D., University of Arizona, United States, 1995",
+            "M.Sc. University of British Columbia, Canada, 1984",
+            "B.Sc. (Honors), University of British Columbia, Canada, 1981"
+        ]
     },
     {
         "id": 40,
-        "position_s": "Professor",
-        "professor_s": "Jian Pei",
-        "education0_s": "Ph.D., Computing Science, Simon Fraser University, Canada, 2002",
-        "education1_s": "M. Eng., Computer Science Jiao Tong University, China, 1993",
-        "education2_s": "B.Eng., Computer Science Shanghai Jiao Tong University, China, 1991",
+        "position": "Professor",
+        "professor": "Jian Pei",
+        "schools": [
+            " Simon Fraser University",
+            " Computer Science Jiao Tong University",
+            " Computer Science Shanghai Jiao Tong University"
+        ],
+        "degrees": [
+            "Ph.D.",
+            "M. Eng.",
+            "B.Eng."
+        ],
+        "country": [
+            " Canada",
+            " China"
+        ],
+        "courses": [
+            
+        ],
+        "faculty": [
+            " Computing Science"
+        ],
+        "yearCompleted": [
+            " 2002",
+            " 1993",
+            " 1991"
+        ],
+        "education": [
+            "Ph.D., Computing Science, Simon Fraser University, Canada, 2002",
+            "M. Eng., Computer Science Jiao Tong University, China, 1993",
+            "B.Eng., Computer Science Shanghai Jiao Tong University, China, 1991"
+        ],
         "course0_s": "CMPT 454 Database Systems 11",
         "course1_s": "CMPT 456 Information Retrieval and Web Search",
         "course2_s": "CMPT 843 Database and Knowledge-base Systems"
     },
     {
         "id": 41,
-        "position_s": "Professor",
-        "professor_s": "Joseph Peters",
-        "education0_s": "Ph.D., Computer Science, University of Toronto, Canada, 1984",
-        "education1_s": "M.Sc., Computer Science, University of Toronto, Canada, 1976",
-        "education2_s": "B. Math., Computer Science, University of Waterloo, Canada, 1974",
-        "education3_s": " ",
+        "position": "Professor",
+        "professor": "Joseph Peters",
+        "schools": [
+            " University of Toronto",
+            " University of Waterloo"
+        ],
+        "degrees": [
+            "Ph.D.",
+            "M.Sc.",
+            "B. Math."
+        ],
+        "country": [
+            " Canada"
+        ],
+        "courses": [
+            
+        ],
+        "faculty": [
+            " Computer Science"
+        ],
+        "yearCompleted": [
+            " 1984",
+            " 1976",
+            " 1974"
+        ],
+        "education": [
+            "Ph.D., Computer Science, University of Toronto, Canada, 1984",
+            "M.Sc., Computer Science, University of Toronto, Canada, 1976",
+            "B. Math., Computer Science, University of Waterloo, Canada, 1974",
+            " "
+        ],
         "course0_s": "CMPT 307 Data Structures and Algorithms",
         "course1_s": "CMPT 371 Data Communications and Networking",
         "course2_s": "CMPT 705 Design and Analysis of Algorithms"
     },
     {
         "id": 42,
-        "position_s": "Professor",
-        "professor_s": "Fred Popowich",
-        "education0_s": "Ph.D. Cognitive Science/Artificial Intelligence, University of Edinburgh, Scotland, 1989",
-        "education1_s": "M.Sc. Computing Science, Simon Fraser University, Canada, 1985",
-        "education2_s": "B.Sc. Computing Science, University of Alberta, Canada, 1982",
+        "position": "Professor",
+        "professor": "Fred Popowich",
+        "schools": [
+            " University of Edinburgh",
+            " Simon Fraser University",
+            " University of Alberta"
+        ],
+        "degrees": [
+            "Ph.D. Cognitive Science/Artificial Intelligence",
+            "M.Sc. Computing Science",
+            "B.Sc. Computing Science"
+        ],
+        "country": [
+            " Scotland",
+            " Canada"
+        ],
+        "courses": [
+            
+        ],
+        "faculty": [
+            
+        ],
+        "yearCompleted": [
+            " 1989",
+            " 1985",
+            " 1982"
+        ],
+        "education": [
+            "Ph.D. Cognitive Science/Artificial Intelligence, University of Edinburgh, Scotland, 1989",
+            "M.Sc. Computing Science, Simon Fraser University, Canada, 1985",
+            "B.Sc. Computing Science, University of Alberta, Canada, 1982"
+        ],
         "course0_s": "CMPT 383 Comparative Programming Languages",
         "course1_s": "CMPT 417 Intelligent Systems",
         "course2_s": "CMPT 825 Natural Language Processing"
     },
     {
         "id": 43,
-        "position_s": "Senior Lecturer",
-        "professor_s": "Janice Regan",
-        "education0_s": "Ph.D., California Institute of Technology, United States, 1987",
-        "education1_s": "M.Sc., California Institute of Technology, United States, 1982",
-        "education2_s": "B.Sc. (Honors), University of Victoria, Canada, 1979",
-        "education3_s": " ",
+        "position": "Senior Lecturer",
+        "professor": "Janice Regan",
+        "schools": [
+            " California Institute of Technology",
+            " University of Victoria"
+        ],
+        "degrees": [
+            "Ph.D.",
+            "M.Sc.",
+            "B.Sc. (Honors)"
+        ],
+        "country": [
+            " United States",
+            " Canada"
+        ],
+        "courses": [
+            
+        ],
+        "faculty": [
+            
+        ],
+        "yearCompleted": [
+            " 1987",
+            " 1982",
+            " 1979"
+        ],
+        "education": [
+            "Ph.D., California Institute of Technology, United States, 1987",
+            "M.Sc., California Institute of Technology, United States, 1982",
+            "B.Sc. (Honors), University of Victoria, Canada, 1979",
+            " "
+        ],
         "course0_s": "CMPT 128 Introduction to Computing Science and Programming for Engineers",
         "course1_s": "CMPT 275 Software Engineering I",
         "course2_s": "CMPT 300 Operating systems I",
@@ -504,95 +1603,313 @@
     },
     {
         "id": 44,
-        "position_s": "Professor",
-        "professor_s": "Cenk Sahinalp",
-        "education0_s": "Ph.D. Computer Science, University of Maryland, College Park, United States, 1997",
-        "education1_s": "B.Sc. Electrical Engineering, Bilkent University, Turkey, 1991",
-        "education2_s": " ",
+        "position": "Professor",
+        "professor": "Cenk Sahinalp",
+        "schools": [
+            " College Park",
+            " Bilkent University"
+        ],
+        "degrees": [
+            "Ph.D. Computer Science",
+            "B.Sc. Electrical Engineering"
+        ],
+        "country": [
+            " United States",
+            " Turkey"
+        ],
+        "courses": [
+            
+        ],
+        "faculty": [
+            " University of Maryland"
+        ],
+        "yearCompleted": [
+            " 1997",
+            " 1991"
+        ],
+        "education": [
+            "Ph.D. Computer Science, University of Maryland, College Park, United States, 1997",
+            "B.Sc. Electrical Engineering, Bilkent University, Turkey, 1991",
+            " "
+        ],
         "course0_s": "CMPT 441 Introduction to Computational Biology",
         "course1_s": "CMPT 711 Bioinformatics Algorithms"
     },
     {
         "id": 45,
-        "position_s": "Associate Professor",
-        "professor_s": "Anoop Sarkar",
-        "education0_s": "Ph.D. Computer Science, University of Pennsylvania, United States, 2002",
-        "education1_s": "B.Eng. Computer Science, University of Poona, India, 1991",
+        "position": "Associate Professor",
+        "professor": "Anoop Sarkar",
+        "schools": [
+            " University of Pennsylvania",
+            " University of Poona"
+        ],
+        "degrees": [
+            "Ph.D. Computer Science",
+            "B.Eng. Computer Science"
+        ],
+        "country": [
+            " United States",
+            " India"
+        ],
+        "courses": [
+            
+        ],
+        "faculty": [
+            
+        ],
+        "yearCompleted": [
+            " 2002",
+            " 1991"
+        ],
+        "education": [
+            "Ph.D. Computer Science, University of Pennsylvania, United States, 2002",
+            "B.Eng. Computer Science, University of Poona, India, 1991"
+        ],
         "course0_s": "CMPT 379: Principles of Compiler Design",
         "course1_s": "CMPT 413: Computational Linguistics ",
         "course2_s": "CMPT 825: Natural Language Processing"
     },
     {
         "id": 46,
-        "position_s": "Associate Professor",
-        "professor_s": "Oliver Schulte",
-        "education0_s": "Ph.D. Logic and Computation, Carnegie Mellon University, USA, 1997",
-        "education1_s": "M.Sc. Logic and Computation, Carnegie Mellon University, USA, 1993",
-        "education2_s": "B.Sc. Computing Science, University of Toronto, Canada, 1992",
-        "education3_s": " ",
+        "position": "Associate Professor",
+        "professor": "Oliver Schulte",
+        "schools": [
+            " Carnegie Mellon University",
+            " University of Toronto"
+        ],
+        "degrees": [
+            "Ph.D. Logic and Computation",
+            "M.Sc. Logic and Computation",
+            "B.Sc. Computing Science"
+        ],
+        "country": [
+            " USA",
+            " Canada"
+        ],
+        "courses": [
+            
+        ],
+        "faculty": [
+            
+        ],
+        "yearCompleted": [
+            " 1997",
+            " 1993",
+            " 1992"
+        ],
+        "education": [
+            "Ph.D. Logic and Computation, Carnegie Mellon University, USA, 1997",
+            "M.Sc. Logic and Computation, Carnegie Mellon University, USA, 1993",
+            "B.Sc. Computing Science, University of Toronto, Canada, 1992",
+            " "
+        ],
         "course0_s": "CMPT320 Social Implications of a Computerized Society",
         "course1_s": "CMPT 354 Introduction to Database Management",
         "course2_s": "CMPT 726 Machine Learning"
     },
     {
         "id": 47,
-        "position_s": "Professor",
-        "professor_s": "Thomas Shermer",
-        "education0_s": "B.E.S. Electrical Engineering and Computer Science, Johns Hopkins University, United States, 1984",
-        "education1_s": "Ph.D. Computer Science, McGill University, Canada, 1989",
+        "position": "Professor",
+        "professor": "Thomas Shermer",
+        "schools": [
+            " Johns Hopkins University",
+            " McGill University"
+        ],
+        "degrees": [
+            "B.E.S. Electrical Engineering and Computer Science",
+            "Ph.D. Computer Science"
+        ],
+        "country": [
+            " United States",
+            " Canada"
+        ],
+        "courses": [
+            
+        ],
+        "faculty": [
+            
+        ],
+        "yearCompleted": [
+            " 1984",
+            " 1989"
+        ],
+        "education": [
+            "B.E.S. Electrical Engineering and Computer Science, Johns Hopkins University, United States, 1984",
+            "Ph.D. Computer Science, McGill University, Canada, 1989"
+        ],
         "course0_s": "CMPT 373 Software Development Methods",
         "course1_s": "CMPT 379 Compiler Design",
         "course2_s": "MACM 101 Discrete Mathematics"
     },
     {
         "id": 48,
-        "position_s": "Assistant Professor",
-        "professor_s": "Arrvindh Shriraman",
-        "education0_s": " ",
+        "position": "Assistant Professor",
+        "professor": "Arrvindh Shriraman",
+        "schools": [
+            
+        ],
+        "degrees": [
+            
+        ],
+        "country": [
+            
+        ],
+        "courses": [
+            
+        ],
+        "faculty": [
+            
+        ],
+        "yearCompleted": [
+            
+        ],
+        "education": [
+            " "
+        ],
         "course0_s": "CMPT 479 Special Topics in Computing Systems",
         "course1_s": "CMPT 885 Future Multicore Systems and their Software (offered in summer)"
     },
     {
         "id": 49,
-        "position_s": "Assistant Professor",
-        "professor_s": "Tamara Smyth",
-        "education0_s": "Ph.D.,  Computer-Based Theory and Acoustics, Stanford University, United States, 2004",
-        "education1_s": "Ph.D. Minor, Electrical Engineering Stanford, United States, 2004",
-        "education2_s": "M.Mus., Music Technology, New York University, United States, 1998",
-        "education3_s": "B.Mus., Piano Performance and Computer Applications to Music (Joint Honors), McGill University, Canada, 1996",
-        "education4_s": " ",
+        "position": "Assistant Professor",
+        "professor": "Tamara Smyth",
+        "schools": [
+            " Stanford University",
+            " Electrical Engineering Stanford",
+            " New York University",
+            " McGill University"
+        ],
+        "degrees": [
+            "Ph.D.",
+            "Ph.D. Minor",
+            "M.Mus.",
+            "B.Mus."
+        ],
+        "country": [
+            " United States",
+            " Canada"
+        ],
+        "courses": [
+            
+        ],
+        "faculty": [
+            "  Computer-Based Theory and Acoustics",
+            " Music Technology",
+            " Piano Performance and Computer Applications to Music (Joint Honors)"
+        ],
+        "yearCompleted": [
+            " 2004",
+            " 1998",
+            " 1996"
+        ],
+        "education": [
+            "Ph.D.,  Computer-Based Theory and Acoustics, Stanford University, United States, 2004",
+            "Ph.D. Minor, Electrical Engineering Stanford, United States, 2004",
+            "M.Mus., Music Technology, New York University, United States, 1998",
+            "B.Mus., Piano Performance and Computer Applications to Music (Joint Honors), McGill University, Canada, 1996",
+            " "
+        ],
         "course0_s": "CMPT 125 Introduction to Computing Science and Programming II",
         "course1_s": "CMPT 468/768 Computer Music Theory and Sound Synthesis",
         "course2_s": "CMPT 889 Computational Acoustic Modeling"
     },
     {
         "id": 50,
-        "position_s": "Professor",
-        "professor_s": "Gabor Tardos",
-        "education0_s": "Ph.D. Mathematics, Eotvos University, Hungary, 1988",
-        "education1_s": "Diploma in Mathematics, Eotvos University, Hungary, 1987",
-        "education2_s": " ",
+        "position": "Professor",
+        "professor": "Gabor Tardos",
+        "schools": [
+            " Eotvos University"
+        ],
+        "degrees": [
+            "Ph.D. Mathematics",
+            "Diploma in Mathematics"
+        ],
+        "country": [
+            " Hungary"
+        ],
+        "courses": [
+            
+        ],
+        "faculty": [
+            
+        ],
+        "yearCompleted": [
+            " 1988",
+            " 1987"
+        ],
+        "education": [
+            "Ph.D. Mathematics, Eotvos University, Hungary, 1988",
+            "Diploma in Mathematics, Eotvos University, Hungary, 1987",
+            " "
+        ],
         "course0_s": "CMPT 307 Data Structures and Algorithms",
         "course1_s": "CMPT 407 - CMPT 710 Computational Complexity – cross-listed",
         "course2_s": "CMPT 710 Computational Complexity"
     },
     {
         "id": 51,
-        "position_s": "Associate Professor",
-        "professor_s": "Eugenia Ternovska",
-        "education0_s": "Ph.D. Computer Science, University of Toronto, Canada, 2002",
-        "education1_s": "Diploma (Hons.) Applied Mathematics, Moscow State University, 1989",
-        "education2_s": " ",
+        "position": "Associate Professor",
+        "professor": "Eugenia Ternovska",
+        "schools": [
+            " University of Toronto",
+            " Moscow State University"
+        ],
+        "degrees": [
+            "Ph.D. Computer Science",
+            "Diploma (Hons.) Applied Mathematics"
+        ],
+        "country": [
+            " Canada",
+            " 1989"
+        ],
+        "courses": [
+            
+        ],
+        "faculty": [
+            
+        ],
+        "yearCompleted": [
+            " 2002"
+        ],
+        "education": [
+            "Ph.D. Computer Science, University of Toronto, Canada, 2002",
+            "Diploma (Hons.) Applied Mathematics, Moscow State University, 1989",
+            " "
+        ],
         "course0_s": "CMPT 477/777 Formal Verification",
         "course1_s": "MACM 101 Discrete Mathematics"
     },
     {
         "id": 52,
-        "position_s": "Associate Professor",
-        "professor_s": "Richard Vaughan",
-        "education0_s": "D. Phil., Computation, University of Oxford, England, 1998",
-        "education1_s": "B.A., Computing with Artificial Intelligence, University of Sussex, England, 1993",
-        "education2_s": " ",
+        "position": "Associate Professor",
+        "professor": "Richard Vaughan",
+        "schools": [
+            " University of Oxford",
+            " University of Sussex"
+        ],
+        "degrees": [
+            "D. Phil.",
+            "B.A."
+        ],
+        "country": [
+            " England"
+        ],
+        "courses": [
+            
+        ],
+        "faculty": [
+            " Computation",
+            " Computing with Artificial Intelligence"
+        ],
+        "yearCompleted": [
+            " 1998",
+            " 1993"
+        ],
+        "education": [
+            "D. Phil., Computation, University of Oxford, England, 1998",
+            "B.A., Computing with Artificial Intelligence, University of Sussex, England, 1993",
+            " "
+        ],
         "course0_s": "CMPT 128  Introduction to Computing Science for Engineers",
         "course1_s": "CMPT 300  Operating Systems I",
         "course2_s": "CMPT 401  Operating Systems II",
@@ -602,11 +1919,33 @@
     },
     {
         "id": 53,
-        "position_s": "Professor",
-        "professor_s": "Ke Wang",
-        "education0_s": "Ph.D., Georgia Institute of Technology, United States, 1986",
-        "education1_s": "M.Sc., Georgia Institute of Technology, United States, 1984",
-        "education2_s": " ",
+        "position": "Professor",
+        "professor": "Ke Wang",
+        "schools": [
+            " Georgia Institute of Technology"
+        ],
+        "degrees": [
+            "Ph.D.",
+            "M.Sc."
+        ],
+        "country": [
+            " United States"
+        ],
+        "courses": [
+            
+        ],
+        "faculty": [
+            
+        ],
+        "yearCompleted": [
+            " 1986",
+            " 1984"
+        ],
+        "education": [
+            "Ph.D., Georgia Institute of Technology, United States, 1986",
+            "M.Sc., Georgia Institute of Technology, United States, 1984",
+            " "
+        ],
         "course0_s": "CMPT 354 Database Systems I",
         "course1_s": "CMPT 454 Database Systems II",
         "course2_s": "CMPT 741 Introduction to Data Mining",
@@ -614,36 +1953,119 @@
     },
     {
         "id": 54,
-        "position_s": "Associate Professor",
-        "professor_s": "Kay Wiese",
-        "education0_s": "Certificate in Bioinformatics, Canadian Genetic Diseases Network, Canada, 2001",
-        "education1_s": "Ph.D., Computer Science, University of Regina, Canada, 1999",
-        "education2_s": "B.Sc., Department of Computer of Science Universitat des Saarlandes, Germany, 1995",
-        "education3_s": "B.Sc., Department of Computer of Science Universitat des Saarlandes, Germany, 1991",
-        "education4_s": "B.Math, Department of Mathematics, Universitat des Saarlandes, Germany 1991",
+        "position": "Associate Professor",
+        "professor": "Kay Wiese",
+        "schools": [
+            " Canadian Genetic Diseases Network",
+            " University of Regina",
+            " Department of Computer of Science Universitat des Saarlandes",
+            " Department of Mathematics"
+        ],
+        "degrees": [
+            "Certificate in Bioinformatics",
+            "Ph.D.",
+            "B.Sc.",
+            "B.Math"
+        ],
+        "country": [
+            " Canada",
+            " Germany",
+            " Universitat des Saarlandes"
+        ],
+        "courses": [
+            
+        ],
+        "faculty": [
+            " Computer Science"
+        ],
+        "yearCompleted": [
+            " 2001",
+            " 1999",
+            " 1995",
+            " 1991",
+            " Germany 1991"
+        ],
+        "education": [
+            "Certificate in Bioinformatics, Canadian Genetic Diseases Network, Canada, 2001",
+            "Ph.D., Computer Science, University of Regina, Canada, 1999",
+            "B.Sc., Department of Computer of Science Universitat des Saarlandes, Germany, 1995",
+            "B.Sc., Department of Computer of Science Universitat des Saarlandes, Germany, 1991",
+            "B.Math, Department of Mathematics, Universitat des Saarlandes, Germany 1991"
+        ],
         "course0_s": "CMPT 441 Computational Biology",
         "course1_s": "CMPT 711 Bioinformatics Algorithms",
         "course2_s": "MACM 101 Discrete Mathematics"
     },
     {
         "id": 55,
-        "position_s": "Lecturer",
-        "professor_s": "Cynthia Xie",
-        "education0_s": "M.A., Applied Linguistics, University of Jyvaskyla, Finland, 2000",
-        "education1_s": "B.A., Teaching Chinese as a Foreign Language, East China Normal University, China, 1992",
-        "education2_s": " ",
+        "position": "Lecturer",
+        "professor": "Cynthia Xie",
+        "schools": [
+            " University of Jyvaskyla",
+            " East China Normal University"
+        ],
+        "degrees": [
+            "M.A.",
+            "B.A."
+        ],
+        "country": [
+            " Finland",
+            " China"
+        ],
+        "courses": [
+            
+        ],
+        "faculty": [
+            " Applied Linguistics",
+            " Teaching Chinese as a Foreign Language"
+        ],
+        "yearCompleted": [
+            " 2000",
+            " 1992"
+        ],
+        "education": [
+            "M.A., Applied Linguistics, University of Jyvaskyla, Finland, 2000",
+            "B.A., Teaching Chinese as a Foreign Language, East China Normal University, China, 1992",
+            " "
+        ],
         "course0_s": "CHIN 180, CHIN 181, CHIN 280 and CHIN 281: Intensive Mandarin Chinese for Beginners",
         "course1_s": "CHIN 190, CHIN 191, CHIN 290 and CHIN 291: Heritage Mandarin Chinese",
         "course2_s": "CHIN 390: Advanced Chinese Reading: Technical Chinese"
     },
     {
         "id": 56,
-        "position_s": "Associate Professor",
-        "professor_s": "Richard Zhang",
-        "education0_s": "Ph.D., Computer Science, University of Toronto, Canada, 2003",
-        "education1_s": "M.Math., Computer Science, University of Waterloo, Canada, 1997",
-        "education2_s": "B.Math., Faculty of Mathematics, University of Waterloo, Canada, 1995",
-        "education3_s": " ",
+        "position": "Associate Professor",
+        "professor": "Richard Zhang",
+        "schools": [
+            " University of Toronto",
+            " University of Waterloo"
+        ],
+        "degrees": [
+            "Ph.D.",
+            "M.Math.",
+            "B.Math."
+        ],
+        "country": [
+            " Canada"
+        ],
+        "courses": [
+            
+        ],
+        "faculty": [
+            " Computer Science",
+            " Faculty of Mathematics"
+        ],
+        "yearCompleted": [
+            " 2003",
+            " 1997",
+            " 1995"
+        ],
+        "education": [
+            "Ph.D., Computer Science, University of Toronto, Canada, 2003",
+            "M.Math., Computer Science, University of Waterloo, Canada, 1997",
+            "B.Math., Faculty of Mathematics, University of Waterloo, Canada, 1995",
+            " "
+        ],
         "course0_s": "CMPT 464/764 Geometric modeling in computer graphics",
         "course1_s": "CMPT 466 Computer animation",
         "course2_s": "CMPT 361 Introduction to computer graphics"
