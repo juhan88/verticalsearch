@@ -39,10 +39,7 @@ def outputJson(data){
 			eduList.each{
 				def eduInfo = it.split(",")		
 				println eduInfo.size()		
-				// NEED TO FIX BUG
-				// NOT ALL PROFS LIST in the following order 
-				// DEGREE, FACULTY, UNIVERSITY, COUNTRY, YEAROFCOMPLETION							
-				// SOME HAVE 3 OR 4 OR 5				
+							
 				if(eduInfo.size() == 4){					
 					degreeslst.add(eduInfo[0])
 					schoolslst.add(eduInfo[1])
@@ -74,47 +71,9 @@ def outputJson(data){
 			faculty facultylst.unique()
 			yearCompleted yearCompletelst.unique()
 			education eduList
-			
-			if(!courseList.isEmpty() && name[1] != "Pearce"){
-				num = 0			
-				courseList.each{					
-					"course${num}_s" it
-					// def course = it.split(" ")
-					// if(course.size() > 2){
-					// 	def cname = course[0] + " " + course[1]				
-					// 	def topic = joinString(course, 2, course.size()-1)
-						
-					// 	"course$num"{
-					// 		courseName cname
-					// 		courseTopic topic
-					// 	}
-					// }
-					num+=1
-				}
-			}
-			//special case for Pearce
-			else if( name[1] == "Pearce"){
-				// courseList.each{
-				// 	c ->
-				// 	num = 0
-				// 	if (c.contains("Computing Science"))
-				// 	{	
-						
-				// 		def d = c.split(",")
-				// 		d.each{
-				// 			def cname  = getStevenPearce(it)
-				// 			"course$num"{
-				// 				courseName "CMPT " + cname
-				// 			}
-				// 			num+=1
-				// 		}
-				// 	}
-				// }
-			}
-			courses courseslst.unique()
+			courses courseList.unique()
 		}
-		// println it
-		// println edu[i]
+		
 		i+= 1
 		messages.add(json)
 	}
