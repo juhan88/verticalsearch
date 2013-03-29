@@ -368,7 +368,7 @@ def filterPeopleOnly(links){
 
 
 //MAIN LOOP
-def bigTest(){
+def getProfData(){
 	
 	def facultyAddr = ["http://www.cs.sfu.ca/people/emeriti.html", "http://www.cs.sfu.ca/people/faculty.html"]
 	// def facultyAddr = ["http://www.cs.sfu.ca/people/emeriti.html"]
@@ -383,8 +383,6 @@ def bigTest(){
 	f = new File("prof.json")
 	f.delete()
 	f.append(printJson(outputJson(data)))
-	
-
 }
 
 def smallTest(){
@@ -411,4 +409,4 @@ def smallTest(){
 
 
 // smallTest()
-bigTest()
+// getProfData()

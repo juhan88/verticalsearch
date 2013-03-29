@@ -1,15 +1,36 @@
 [
     {
         "id": 0,
-        "position_s": "Senior Lecturer",
-        "professor_s": "Diana Cukierman",
-        "education0_s": "Ph.D., Computing Science, Simon Fraser University, Canada, 2003",
-        "education1_s": "M.Sc., Computing Science, Simon Fraser University, Canada, 1994",
-        "education2_s": "Engineer of Computational Systems, Universidad de la Republica, Uruguay, 1989",
-        "course0_s": "CMPT 120 Introduction to Computing Science and Programming I",
-        "course1_s": "CMPT 125 Introduction to Computing Science and Programming II",
-        "course2_s": "CMPT 126 Introduction to Computing Science and Programming",
-        "course3_s": "CMPT 150 Introduction to Computer Design",
-        "course4_s": "CMPT 891 Advanced Graduate Seminar"
+        "schools": [
+            " University of British Columbia",
+            " Warwick University",
+            " Nottingham University"
+        ],
+        "professor": "Stella Atkins",
+        "degrees": [
+            "Ph.D. Computer Science",
+            "M.Phil. Computer Science",
+            "B.Sc. Chemistry"
+        ],
+        "country": [
+            " 1985",
+            " 1976",
+            " 1966"
+        ],
+        "faculty": [
+            
+        ],
+        "yearCompleted": [
+            
+        ],
+        "education": [
+            "Ph.D. Computer Science, University of British Columbia, 1985",
+            "M.Phil. Computer Science, Warwick University, 1976",
+            "B.Sc. Chemistry, Nottingham University, 1966",
+            " "
+        ],
+        "courses": [
+            
+        ]
     }
 ]
