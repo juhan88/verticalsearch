@@ -8,27 +8,31 @@ import groovy.json.*
 // wrapper for outpputing JSON
 def outputJson(data){
 	def messages = []	
-	
 	def names = data[0]	
 	def edu = data[1]	
 	def recentlyTaughtCourses = data[2]
 	int i = 0
+
 	
 	//loop thru all the names found
 	names.each{
 		name ->
-		eduList = edu[i]
-		courseList = recentlyTaughtCourses[i]
+		if(edu != null)
+			eduList = edu[i]
+		if(recentlyTaughtCourses != null)
+			courseList = recentlyTaughtCourses[i]
 
 		def json = new JsonBuilder()
 		json{
 
 			id i
-			position name[2]
-			professor name[0] + " " + name[1]			
-			schools eduList
-			int num = 0
-			
+			professor name[0] + " " + name[1]
+			if(name[2] != null)
+				position name[2]
+			if(edu != null)
+				schools eduList
+
+			int num = 0			
 			def degreeslst = []
 			def facultylst = []
 			def courseslst =[]
@@ -36,33 +40,35 @@ def outputJson(data){
 			def countrylst = []
 			def yearCompletelst = []
 			
-			eduList.each{
-				def eduInfo = it.split(",")		
-				println eduInfo.size()		
-							
-				if(eduInfo.size() == 4){					
-					degreeslst.add(eduInfo[0])
-					schoolslst.add(eduInfo[1])
-					countrylst.add(eduInfo[2])
-					yearCompletelst.add(eduInfo[3])
-					
+			if(edu != null){
+				eduList.each{
+					def eduInfo = it.split(",")		
+					// println eduInfo.size()		
+								
+					if(eduInfo.size() == 4){					
+						degreeslst.add(eduInfo[0])
+						schoolslst.add(eduInfo[1])
+						countrylst.add(eduInfo[2])
+						yearCompletelst.add(eduInfo[3])
+						
+					}
+					else if(eduInfo.size() > 4){					
+						degreeslst.add(eduInfo[0])
+						facultylst.add(eduInfo[1])
+						schoolslst.add(eduInfo[2])
+						countrylst.add(eduInfo[3])
+						yearCompletelst.add(eduInfo[4])
+						
+					}
+					else if(eduInfo.size() == 3)
+					{					
+						degreeslst.add(eduInfo[0])
+						schoolslst.add(eduInfo[1])
+						countrylst.add(eduInfo[2])
+					}
+						
+					num+=1
 				}
-				else if(eduInfo.size() > 4){					
-					degreeslst.add(eduInfo[0])
-					facultylst.add(eduInfo[1])
-					schoolslst.add(eduInfo[2])
-					countrylst.add(eduInfo[3])
-					yearCompletelst.add(eduInfo[4])
-					
-				}
-				else if(eduInfo.size() == 3)
-				{					
-					degreeslst.add(eduInfo[0])
-					schoolslst.add(eduInfo[1])
-					countrylst.add(eduInfo[2])
-				}
-					
-				num+=1
 			}
 
 			degrees degreeslst.unique()
@@ -70,8 +76,10 @@ def outputJson(data){
 			country countrylst.unique()			
 			faculty facultylst.unique()
 			yearCompleted yearCompletelst.unique()
-			education eduList
-			courses courseList.unique()
+			if(edu != null)
+				education eduList
+			if(recentlyTaughtCourses != null)
+				courses courseList.unique()
 		}
 		
 		i+= 1
@@ -103,7 +111,7 @@ def getStevenPearce(string){
 
 def printJson(message){
 	def prettyJson = JsonOutput.prettyPrint(message.toString())
-	println prettyJson  //dumps output to screen
+	// println prettyJson  //dumps output to screen
 	return prettyJson	//dumps output for writing to file
 }
 
@@ -164,9 +172,11 @@ def getInfo(docs){
 	println("Retrieving Info...")
 	def names = []
 	def educations = []
-	def courses = []	
+	def courses = []
+	
 	docs.each{
 		page ->		
+		
 		def nameBlock = page.depthFirst().DIV.findAll { it.@class == 'title section'}	
 		def position = page.depthFirst().DIV.findAll { it.@class == 'text '}
 		def eduBlock = page.depthFirst().DIV.findAll{ it.@class == 'text parbase section' }
@@ -179,10 +189,7 @@ def getInfo(docs){
 		    educations.add(getEducInfo(eduBlock))
 		if(!courseBlock.isEmpty())
 			courses.add(getCourses(courseBlock))
-
-
 	}
-
 	
 	def data = []
 	data.add(names)
@@ -332,10 +339,9 @@ def getEducInfo(block){
 	
 		
 
-	println results
+	// println results
 	return results
 }
-
 
 def ignoreBRTags(list){
 	def filtered = []
@@ -348,31 +354,41 @@ def ignoreBRTags(list){
 
 def filterPeopleOnly(links){
 	def filtered = []
+	
 	links.collect{
 		link ->
-		if (link.contains("people/faculty"))
+		if (link.contains("people/faculty") && !link.contains("/people/faculty.html"))
+			filtered.add(link)
+		if (link.contains("people/emeriti") && !link.contains("/people/emeriti.html"))
 			filtered.add(link)
 	}
 	return filtered.unique()
 }
 
-def facultyAOddr = ["http://www.cs.sfu.ca/people/emeriti.html", "http://www.cs.sfu.ca/people/faculty.html"]
 
 
-// def webAddr = "http://www.cs.sfu.ca/people/faculty/uweglasser.html"
-
+//MAIN LOOP
 def bigTest(){
-	def webAddr = "http://www.cs.sfu.ca/people/faculty.html"
-	def data = getInfo(getDoc(webAddr))	
 	
+	def facultyAddr = ["http://www.cs.sfu.ca/people/emeriti.html", "http://www.cs.sfu.ca/people/faculty.html"]
+	// def facultyAddr = ["http://www.cs.sfu.ca/people/emeriti.html"]
+	def allDocs = []
+	facultyAddr.each{
+		webAddr ->
+		allDocs = allDocs + getDoc(webAddr)
+	}
+	
+	def data = getInfo(allDocs)
+
 	f = new File("prof.json")
 	f.delete()
 	f.append(printJson(outputJson(data)))
+	
 
 }
 
 def smallTest(){
-	def webAddr4 = "http://www.cs.sfu.ca/people/faculty/dianacukierman.html"
+	def webAddr4 = "http://www.cs.sfu.ca/people/emeriti/stellaatkins.html"
 	// def webAddr1 = "http://www.cs.sfu.ca/people/faculty/mikeevans.html"
 	// def webAddr1 = "http://www.cs.sfu.ca/people/faculty/ryandarcy.html"
 	// def webAddr2 = "http://www.cs.sfu.ca/people/faculty/RameshKrishnamurti.html"
