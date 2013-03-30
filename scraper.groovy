@@ -407,7 +407,5 @@ def smallTest(){
 	f.append(printJson(outputJson(output4)))
 }
 
-
 // smallTest()
 getProfData()
-
