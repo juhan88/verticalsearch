@@ -3,7 +3,7 @@ package searchengine
 class SearchController {
 	// logic and methods
 		
-	def index = {
+	def index() {
 		redirect (action: current)
 	}
 

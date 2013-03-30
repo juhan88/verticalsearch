@@ -143,7 +143,7 @@ class ScrapeController {
 			// def webAddr2 = "http://www.cs.sfu.ca/people/faculty/uweglasser.html"
 
 			// println getDoc(webAddr)[1]
-			def index = {
+			def index() {
 				def rdata = getInfo(getDoc(webAddr))
 				//[rdata:rdata]
 				
