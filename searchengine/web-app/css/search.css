@@ -60,6 +60,15 @@ body {
 	height: 50%;
 }
 
+.hidden-submit {
+  border: 0 none;
+  height: 0;
+  width: 0;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
 #grailsLogo {
 	background-color: #abbf78;
 }

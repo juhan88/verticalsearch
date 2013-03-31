@@ -17,8 +17,6 @@
 		<tmpl:/header />	
 	
     <g:layoutBody />
-
-		<div id="map-canvas"></div>
 									
 		<tmpl:/footer />
 
