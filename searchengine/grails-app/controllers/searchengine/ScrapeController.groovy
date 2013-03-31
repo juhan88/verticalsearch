@@ -412,7 +412,7 @@ class ScrapeController {
 	def index(){
 
 	// smallTest()
-		def jdata = getProfData()
-		[jdata:jdata]
+		//def jdata = getProfData()
+		//[jdata:jdata]
 	}
 }
