@@ -16,4 +16,5 @@
 ##########################
 searchengine/devDb.lock.db
 searchengine/devDb.trace.db
+searchengine/devDb.h2.db
 searchengine/searchengine.tmproj
