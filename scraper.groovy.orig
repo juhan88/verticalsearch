@@ -7,45 +7,112 @@ import groovy.json.*
 
 // wrapper for outpputing JSON
 def outputJson(data){
-	def messages = []
-	def names = data[0]
+	def messages = []	
+	def names = data[0]	
 	def edu = data[1]	
+	def recentlyTaughtCourses = data[2]
 	int i = 0
 
+	
+	//loop thru all the names found
 	names.each{
 		name ->
-		list = edu[i]
-		def json = new JsonBuilder()
-		json.message{
-			header{
-				firstname name[0]
-				lastname name[1]
-			}
-			int num = 0
-			println list
-			list.each{
-				eduInfo = it.split(",")
+		if(edu != null)
+			eduList = edu[i]
+		if(recentlyTaughtCourses != null)
+			courseList = recentlyTaughtCourses[i]
 
-				education{
-					"edu$num" it
+		def json = new JsonBuilder()
+		json{
+
+			id i
+			professor name[0] + " " + name[1]
+			if(name[2] != null)
+				position name[2]
+			if(edu != null)
+				schools eduList
+
+			int num = 0			
+			def degreeslst = []
+			def facultylst = []
+			def courseslst =[]
+			def schoolslst = []
+			def countrylst = []
+			def yearCompletelst = []
+			
+			if(edu != null){
+				eduList.each{
+					def eduInfo = it.split(",")		
+					// println eduInfo.size()		
+								
+					if(eduInfo.size() == 4){					
+						degreeslst.add(eduInfo[0])
+						schoolslst.add(eduInfo[1])
+						countrylst.add(eduInfo[2])
+						yearCompletelst.add(eduInfo[3])
+						
+					}
+					else if(eduInfo.size() > 4){					
+						degreeslst.add(eduInfo[0])
+						facultylst.add(eduInfo[1])
+						schoolslst.add(eduInfo[2])
+						countrylst.add(eduInfo[3])
+						yearCompletelst.add(eduInfo[4])
+						
+					}
+					else if(eduInfo.size() == 3)
+					{					
+						degreeslst.add(eduInfo[0])
+						schoolslst.add(eduInfo[1])
+						countrylst.add(eduInfo[2])
+					}
+						
+					num+=1
 				}
-				countries{
-					"country$num" eduInfo[3]
-				}
-				num+=1
 			}
+
+			degrees degreeslst.unique()
+			schools schoolslst.unique()
+			country countrylst.unique()			
+			faculty facultylst.unique()
+			yearCompleted yearCompletelst.unique()
+			if(edu != null)
+				education eduList
+			if(recentlyTaughtCourses != null)
+				courses courseList.unique()
 		}
-		// println it
-		// println edu[i]
+		
 		i+= 1
 		messages.add(json)
 	}
 	return messages
 }
 
+def getStevenPearce(string){
+	def newString = []
+	def add = false
+	if(string.contains("(")){
+		string.each{
+			if(add)
+				newString.add(it)
+			if(it == '(')
+			{
+				add = true
+			}
+		}
+		return newString.join()
+	}
+	if(string.contains(")"))
+	{
+		return string[0..-2]
+	}
+	return string
+}
+
 def printJson(message){
 	def prettyJson = JsonOutput.prettyPrint(message.toString())
-	println prettyJson
+	// println prettyJson  //dumps output to screen
+	return prettyJson	//dumps output for writing to file
 }
 
 // wrapper function for scraping data
@@ -53,7 +120,6 @@ def getData(webAddr){
 	def raw_html = getRawDoc(webAddr)
 	return getLinks(raw_html)    	
 }
-
 
 // gets html page of webaddress provided
 def getRawDoc(webAddr){
@@ -86,6 +152,7 @@ def getLinks(doc){
 	}
 	return htmllinks
 }
+<<<<<<< HEAD
 
 // gets html body of each link
 def getDoc(webAddr){
@@ -101,25 +168,84 @@ def getDoc(webAddr){
 	return docs
 }
 
+//wrapper for all logic
 def getInfo(docs){
-	println("Getting Education Info...")
+	println("Retrieving Info...")
 	def names = []
 	def educations = []
+	def courses = []
+	
 	docs.each{
 		page ->		
-		def nameBlock = page.depthFirst().DIV.findAll { it.@class == 'title section'}	
-		def eduBlock = page.depthFirst().DIV.findAll{ it.@class == 'text parbase section' }
 		
-		if(!nameBlock.isEmpty()) 
-			names.add(getName(nameBlock))
+		def nameBlock = page.depthFirst().DIV.findAll { it.@class == 'title section'}	
+		def position = page.depthFirst().DIV.findAll { it.@class == 'text '}
+		def eduBlock = page.depthFirst().DIV.findAll{ it.@class == 'text parbase section' }
+		def courseBlock = page.depthFirst().DIV.findAll{ it.@class == 'text parbase section'}
+
+=======
+
+// gets html body of each link
+def getDoc(webAddr){
+	def links = filterPeopleOnly(getData(webAddr))
+	def docs = []
+
+	links.each{
+		link ->
+		println "Getting this doc ${link}"
+		def d = getRawDoc(link)
+		docs.add(d)
+	} 
+	return docs
+}
+
+//wrapper for all logic
+def getInfo(docs){
+	println("Retrieving Info...")
+	def names = []
+	def educations = []
+	def courses = []
+	
+	docs.each{
+		page ->		
+		
+		def nameBlock = page.depthFirst().DIV.findAll { it.@class == 'title section'}	
+		def position = page.depthFirst().DIV.findAll { it.@class == 'text '}
+		def eduBlock = page.depthFirst().DIV.findAll{ it.@class == 'text parbase section' }
+		def courseBlock = page.depthFirst().DIV.findAll{ it.@class == 'text parbase section'}
+
+>>>>>>> upstream/master
+		
+		if(!nameBlock.isEmpty() && !position.isEmpty())
+			names.add(getName(nameBlock) + getTitle(position))		
 		if(!eduBlock.isEmpty())
 		    educations.add(getEducInfo(eduBlock))
+		if(!courseBlock.isEmpty())
+			courses.add(getCourses(courseBlock))
 	}
-
+	
 	def data = []
 	data.add(names)
 	data.add(educations)
+	data.add(courses)	
 	return data
+}
+
+def getTitle(block){
+	def position
+	block.each{
+		def content = it.value()
+		content.each{			
+			if(it.name() == 'P'){
+				def header = it.value().text()	
+				if(header.contains("School of Computing Science") && !header.contains("DIV")){
+					def p = header.split(",")
+					position = p[0]
+				}
+			}
+		}
+	}
+	return position
 }
 
 def getName(block){	
@@ -143,30 +269,30 @@ def getName(block){
 	return name
 }
 
-def getEducInfo(block){
-	def education = []			
+def getCourses(block){
+	def courses = []			
 	block.each{
 		def content = it.value()
 		content.each{
 			def header = it.value()
 			int i = 0
 			header.each{
-				if(it.name() == "H2" && it.value().contains("Education"))
+				if(it.name() == "H2" && it.value().contains("Recently taught courses"))
 				{
 					def schools = header[i+1].value()
-					// println schools
+					
 					schools.each{
 						tag ->
 						// println tag
 						if(tag.getClass() != groovy.util.Node)
 						{
-							education.add(tag)
+							courses.add(tag)
 						}
 						else if(tag.getClass() == groovy.util.Node && tag.name() == "LI")
 						{
 							tag.each{					
 								li ->									
-								education.add(li)
+								courses.add(li)
 							}
 						}
 					}
@@ -175,51 +301,189 @@ def getEducInfo(block){
 			}
 		}
 	}
+	
+	return ignoreBRTags(courses)
+}
+
+def joinString(name, start, end){
+	def joined = []
+	(start..end).each{ joined.add(name[it]) }
+	return joined.join(" ")
+}
+<<<<<<< HEAD
+
+def getEducInfo(block){
+	def education = []			
+	block.each{
+		def content = it.value()
+		content.each{
+			def header = it.value()
+			int i = 0
+			def found = false
+
+			header.each{				
+				if(it.name() == "H2" && it.value().contains("Education"))
+				{
+					found = true
+					// println header[i+1]
+				}
+				if(it.name() == "P" && found){
+					school = it.value()	
+					// println "+++++++++"			
+					// println school.text()
+					// println "+++++++++"
+					if(school.getClass() != groovy.util.Node)
+					{
+						education.add(school)
+					}
+
+=======
+
+def getEducInfo(block){
+	def education = []			
+	block.each{
+		def content = it.value()
+		content.each{
+			def header = it.value()
+			int i = 0
+			def found = false
+
+			header.each{				
+				if(it.name() == "H2" && it.value().contains("Education"))
+				{
+					found = true
+					// println header[i+1]
+				}
+				if(it.name() == "P" && found){
+					school = it.value()	
+					// println "+++++++++"			
+					// println school.text()
+					// println "+++++++++"
+					if(school.getClass() != groovy.util.Node)
+					{
+						education.add(school)
+					}
+
+>>>>>>> upstream/master
+				}
+				else if (it.name() == "UL" && found){
+					school = it.value()					
+					school.each{
+						li -> 									
+						education.add(li.text())
+					}
+				}
+				i+=1
+			}
+		}
+	}
 
 	//refilter only want school names not BR[tags
-	def edu = []
-	education.collect{ 
-		if(it.getClass() != groovy.util.Node)
-			edu.add(it)
+
+	def edu = education
+	def results = []
+	edu.each{
+		degree ->
+		
+		if(degree.getClass() == groovy.util.NodeList){
+			degree.each{
+				if(it.getClass() != groovy.util.Node){	
+					results.add(it)
+				}
+			}
+		}		
 	}
-	return edu
+
+
+	// println results.size()
+	if(results.isEmpty() && !education.isEmpty())
+		results = education		
+	
+		
+
+	// println results
+	return results
+}
+
+def ignoreBRTags(list){
+	def filtered = []
+	list.collect{ 
+		if(it.getClass() != groovy.util.Node)
+			filtered.add(it)
+	}
+	return filtered
 }
 
 def filterPeopleOnly(links){
 	def filtered = []
+	
 	links.collect{
 		link ->
-		if (link.contains("people/faculty"))
+		if (link.contains("people/faculty") && !link.contains("/people/faculty.html"))
+			filtered.add(link)
+		if (link.contains("people/emeriti") && !link.contains("/people/emeriti.html"))
 			filtered.add(link)
 	}
 	return filtered.unique()
 }
 
-def facultyAddr = ["http://www.cs.sfu.ca/people/emeriti.html", "http://www.cs.sfu.ca/people/faculty.html"]
 
 
-// def webAddr = "http://www.cs.sfu.ca/people/faculty/uweglasser.html"
+//MAIN LOOP
+def getProfData(){
+	
+	def facultyAddr = ["http://www.cs.sfu.ca/people/emeriti.html", "http://www.cs.sfu.ca/people/faculty.html"]
+	// def facultyAddr = ["http://www.cs.sfu.ca/people/emeriti.html"]
+	def allDocs = []
+	facultyAddr.each{
+		webAddr ->
+		allDocs = allDocs + getDoc(webAddr)
+	}
+	
+	def data = getInfo(allDocs)
 
-def bigTest(){
-	def webAddr = "http://www.cs.sfu.ca/people/faculty.html"
-	printJson(outputJson(getInfo(getDoc(webAddr))))	
+	f = new File("prof.json")
+	f.delete()
+	f.append(printJson(outputJson(data)))
 }
 
 def smallTest(){
-	def webAddr1 = "http://www.cs.sfu.ca/people/faculty/dianacukierman.html"
-	def webAddr2 = "http://www.cs.sfu.ca/people/faculty/uweglasser.html"	
-	def output1 = getInfo(getRawDoc(webAddr1))
-	def output2 = getInfo(getRawDoc(webAddr2))
-	printJson(outputJson(output1))
-	printJson(outputJson(output2))
+	def webAddr4 = "http://www.cs.sfu.ca/people/emeriti/stellaatkins.html"
+	// def webAddr1 = "http://www.cs.sfu.ca/people/faculty/mikeevans.html"
+	// def webAddr1 = "http://www.cs.sfu.ca/people/faculty/ryandarcy.html"
+	// def webAddr2 = "http://www.cs.sfu.ca/people/faculty/RameshKrishnamurti.html"
+	// def webAddr3 = "http://www.cs.sfu.ca/people/faculty/uweglasser.html"	
+	// def webAddr2 = "http://www.cs.sfu.ca/people/faculty/stevenpearce.html"
+	// def webAddr1 = "http://www.cs.sfu.ca/people/faculty/valentinekabanets.html"
+	// def output1 = getInfo(getRawDoc(webAddr1))
+	// def output2 = getInfo(getRawDoc(webAddr2))	
+	// def output3 = getInfo(getRawDoc(webAddr3))
+	def output4 = getInfo(getRawDoc(webAddr4))
+	
+<<<<<<< HEAD
+
+	f = new File("output.json")
+	f.delete()
+	// f.append(printJson(outputJson(output1)))
+	// f.append(printJson(outputJson(output2)))
+	// f.append(printJson(outputJson(output3)))
+	f.append(printJson(outputJson(output4)))
+}
+
+// smallTest()
+getProfData()
+=======
+
+	f = new File("output.json")
+	f.delete()
+	// f.append(printJson(outputJson(output1)))
+	// f.append(printJson(outputJson(output2)))
+	// f.append(printJson(outputJson(output3)))
+	f.append(printJson(outputJson(output4)))
 }
 
 
-<<<<<<< HEAD
-	getInfo(getDoc(webAddr))
-	// getInfo(getRawDoc(webAddr1))
-	// getInfo(getRawDoc(webAddr2))
-=======
-smallTest()
-// bigTest()
->>>>>>> added Jsonoutput printout for scraped data
+// smallTest()
+getProfData()
+
+>>>>>>> upstream/master
