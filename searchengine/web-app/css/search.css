@@ -10,13 +10,26 @@ h1, h2, h3, h4, h5, h6 {
 
 /* BASE LAYOUT */
 
-html {
+html body {
+	margin: 0;
+	padding: 0;
+  height: 100%;
+}
+
+html.no-cssgradients {
+	background-color: #aaa;
+}
+
+.ie6 html {
 	height: 100%;
-	background-color: #fff;
-	background-image: -moz-linear-gradient(center top, #fff, #ddd);
-	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), color-stop(1, #ddd));
-	background-image: linear-gradient(top, #fff, #ddd);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr = '#ffffff', EndColorStr = '#dddddd');
+}
+
+/* site wrapper for gradient effect */
+.wrapper {
+	background-image: -moz-linear-gradient(center top, #aaa, #ddd);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #aaa), color-stop(1, #ddd));
+	background-image: linear-gradient(top, #aaa, #ddd);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr = '#aaaaaa', EndColorStr = '#dddddd');
 	background-repeat: no-repeat;
 	/* change the box model to exclude the padding from the calculation of 100% height (IE8+) */
 	-webkit-box-sizing: border-box;
@@ -24,22 +37,10 @@ html {
 	        box-sizing: border-box;
 }
 
-html.no-cssgradients {
-	background-color: #fff;
-}
-
-.ie6 html {
-	height: 100%;
-}
-
-html * {
-	margin: 0;
-}
-
-body {
+/* main content area */
+.content {
 	background: #ffffff;
 	color: #333333;
-	height: 100%;
 	margin: 0 auto;
 	min-width: 960px;
 	max-width: 960px;
@@ -57,16 +58,8 @@ body {
 }
 
 #map-canvas {
-	height: 50%;
-}
-
-.hidden-submit {
-  border: 0 none;
-  height: 0;
-  width: 0;
-  padding: 0;
-  margin: 0;
-  overflow: hidden;
+	height: 20em;
+	width: 100%;
 }
 
 #grailsLogo {
@@ -123,22 +116,12 @@ img {
 	margin: 1em;
 }
 
-.content {
-	padding: 2em;
-}
-
-.content h1 {
-	border-bottom: 1px solid #CCCCCC;
-	margin: 0.8em 1em 0.3em;
-	padding: 0 0.25em;
-}
-
 .scaffold-list h1 {
 	border: none;
 }
 
 .footer {
-	background: #abbf78;
+	background-color: #efefef;
 	color: #000;
 	clear: both;
 	font-size: 0.8em;

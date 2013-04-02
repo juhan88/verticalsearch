@@ -8,17 +8,31 @@
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASI7VvnfYj_axUxRX8YHrxqLYORnuwMqo&sensor=false">
     </script>
 		<g:javascript src="map.js" />
+		<g:javascript library="jquery" />
+		<r:layoutResources />
   </head>
 
+	<%-- call to initialize map  --%>
 	<body onload="initialize()">
 
-    <tmpl:/nav />
+		<%-- wrapper div for gradient effect --%>
+		<div class="wrapper">
+			
+			<%-- main div for page content --%>
+			<div class="content">
 
-		<tmpl:/header />	
-	
-    <g:layoutBody />
+    		<tmpl:/nav />
+
+				<tmpl:/header />
+				
+				<%-- dynamic page content --%>				
+    		<g:layoutBody />
 									
-		<tmpl:/footer />
+				<tmpl:/footer />				
+				
+			</div>
+				
+		</div>
 
   </body>
 

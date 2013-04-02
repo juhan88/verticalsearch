@@ -1,15 +1,30 @@
+<!DOCTYPE html>
 <html>
 
 <head>
-	<meta name="layout" content="search"></meta>
+	<meta name="layout" content="search"/>
 </head>
 
 <body>
+	
+	<%-- use jQuery to detect 'enter' key to execute map marker --%>
+	<script type='text/javascript'>
+		$(document).ready(function(){
+			$("#address").keypress(function(e){
+				if(e.which == 13){
+					codeAddress()
+				}
+			})
+		})
+	</script>
+		
+	<%-- search field --%>
 	<div id="querybox">
 		<g:textField name="address" value="" />
 		<g:actionSubmit value="OK" onclick="codeAddress()" />
 	</div>
 	
+	<%-- interactive map --%>	
 	<div id="map-canvas"></div>
 			
 	<table border="1">
@@ -27,8 +42,7 @@
 		</g:each>
 	</table>
 	
-	<div class="content">
-	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in arcu felis, quis iaculis turpis. Proin eget leo eget purus tempus hendrerit eu et velit. Nullam sed mi mauris, nec commodo mauris. Proin lobortis massa a ante molestie et auctor magna sagittis. In eu erat eu lorem scelerisque vulputate. Donec eget turpis metus. In at tortor dolor.
+	<div><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in arcu felis, quis iaculis turpis. Proin eget leo eget purus tempus hendrerit eu et velit. Nullam sed mi mauris, nec commodo mauris. Proin lobortis massa a ante molestie et auctor magna sagittis. In eu erat eu lorem scelerisque vulputate. Donec eget turpis metus. In at tortor dolor.
 
 	Cras eget odio enim, sollicitudin tincidunt turpis. Sed interdum viverra est vitae pretium. Cras ullamcorper pellentesque leo quis hendrerit. Fusce in viverra tellus. Ut luctus justo at neque volutpat molestie id quis urna. Maecenas risus quam, pretium nec condimentum sed, feugiat ac turpis. Quisque aliquet congue commodo.
 
@@ -66,8 +80,8 @@
 
 	Sed imperdiet sem ac libero vulputate vel condimentum odio ultrices. Curabitur rhoncus mauris at mi posuere eu facilisis enim convallis. Fusce sodales leo quis ipsum aliquet elementum. Aenean vel mauris purus. Duis bibendum convallis enim, eget blandit nunc tristique vitae. Quisque ut elit nec felis dapibus luctus. Ut metus ante, interdum vitae sollicitudin sit amet, rhoncus at mauris. Vivamus eu dignissim orci. Vestibulum et nibh mauris. Aenean tristique pellentesque dictum. Suspendisse varius diam quis lorem rutrum sollicitudin. Proin risus diam, interdum non fringilla id, elementum sed leo. Donec tincidunt placerat quam, in ullamcorper erat semper id. Ut vulputate eros vel massa porttitor gravida. Etiam in enim ut massa aliquam commodo at vel erat. Mauris tristique, lacus eu accumsan accumsan, lacus libero auctor est, sed pellentesque purus dolor feugiat odio.
 
-	Cras facilisis tempor vestibulum. In ultricies pellentesque nunc, non hendrerit arcu fringilla pharetra. In aliquet molestie posuere. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent at urna in lectus venenatis dapibus ultrices non elit. Praesent vitae nunc commodo lectus ultrices tempus non sit amet metus. Nunc at pharetra arcu.	
-	</div>
+	Cras facilisis tempor vestibulum. In ultricies pellentesque nunc, non hendrerit arcu fringilla pharetra. In aliquet molestie posuere. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent at urna in lectus venenatis dapibus ultrices non elit. Praesent vitae nunc commodo lectus ultrices tempus non sit amet metus. Nunc at pharetra arcu.</p></div>
+
 </body>
 
 </html>
