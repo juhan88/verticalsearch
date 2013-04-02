@@ -1,5 +1,6 @@
 var geocoder;
 var map;
+var markersArray = [];
 
 function initialize() {
   geocoder = new google.maps.Geocoder();
@@ -17,12 +18,22 @@ function codeAddress() {
   geocoder.geocode( { 'address': address}, function(results, status) {
     if (status == google.maps.GeocoderStatus.OK) {
       map.setCenter(results[0].geometry.location);
-      var marker = new google.maps.Marker({
+          var marker = new google.maps.Marker({
           map: map,
           position: results[0].geometry.location
       });
+			markersArray.push(marker);
     } else {
       alert("Geocode was not successful for the following reason: " + status);
     }
   });
+}
+
+function deleteMarkers() {
+	if (markersArray) {
+		for (i in markersArray) {
+			markersArray[i].setMap(null);
+		}
+		markersArray.length = 0;
+	}
 }

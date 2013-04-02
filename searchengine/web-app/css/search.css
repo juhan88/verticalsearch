@@ -5,7 +5,7 @@ input, select, textarea {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	line-height: 1.1;
+	line-height: 0.5;
 }
 
 /* BASE LAYOUT */
@@ -54,7 +54,7 @@ html.no-cssgradients {
 	background: #fff;
 	color: #000;
 	font-size: xx-large;
-	padding: 3em 2em 2em 2em;
+	padding: 2em 2em 1em 2em;
 }
 
 #map-canvas {
@@ -296,7 +296,7 @@ input[type=checkbox], input[type=radio] {
 
 input:focus, select:focus, textarea:focus {
 	background-color: #ffffff;
-	border: 1px solid #eeeeee;
+	border: 1px solid #000;
 	outline: 0;
 	   -moz-box-shadow: 0 0 0.5em #ffffff;
 	-webkit-box-shadow: 0 0 0.5em #ffffff;

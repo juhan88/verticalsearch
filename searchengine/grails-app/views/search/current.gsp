@@ -7,21 +7,43 @@
 
 <body>
 	
-	<%-- use jQuery to detect 'enter' key to execute map marker --%>
+	<%-- jQuery --%>
 	<script type='text/javascript'>
+	  
+		// ready the DOM
 		$(document).ready(function(){
+			
+			// remove placeholder text from text field
+			$("#address").click(function(){
+				if ($(this).val("start here")){
+					$(this).val("")
+				}
+			})
+			
+			// enable 'enter' key to invoke search
 			$("#address").keypress(function(e){
-				if(e.which == 13){
+				if (e.which == 13){
 					codeAddress()
 				}
 			})
+			
+			// clear the search field when Clear All is invoked
+			$('input[value="Clear All"]').click(function(){
+				$("#address").val("")
+			})
+			
 		})
 	</script>
 		
 	<%-- search field --%>
 	<div id="querybox">
-		<g:textField name="address" value="" />
+		<g:textField name="address" value="start here" />
+		
+		<%-- submit query to map --%>
 		<g:actionSubmit value="OK" onclick="codeAddress()" />
+		
+		<%-- clear map markers --%>
+		<g:actionSubmit value="Clear All" onclick="deleteMarkers()" />
 	</div>
 	
 	<%-- interactive map --%>	
