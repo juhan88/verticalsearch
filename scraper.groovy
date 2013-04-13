@@ -6,7 +6,7 @@ import groovy.json.*
 
 
 // wrapper for outpputing JSON
-def outputJson(data){
+def outputJson(data,links){
 	def messages = []	
 	def names = data[0]	
 	def edu = data[1]	
@@ -70,7 +70,7 @@ def outputJson(data){
 					num+=1
 				}
 			}
-
+			website links[i]
 			degrees degreeslst.unique()
 			schools schoolslst.unique()
 			country countrylst.unique()			
@@ -157,6 +157,7 @@ def getLinks(doc){
 def getDoc(webAddr){
 	def links = filterPeopleOnly(getData(webAddr))
 	def docs = []
+	def results = []
 
 	links.each{
 		link ->
@@ -164,7 +165,10 @@ def getDoc(webAddr){
 		def d = getRawDoc(link)
 		docs.add(d)
 	} 
-	return docs
+
+	results.add(links)
+	results.add(docs)
+	return results
 }
 
 //wrapper for all logic
@@ -372,17 +376,21 @@ def getProfData(){
 	
 	def facultyAddr = ["http://www.cs.sfu.ca/people/emeriti.html", "http://www.cs.sfu.ca/people/faculty.html"]
 	// def facultyAddr = ["http://www.cs.sfu.ca/people/emeriti.html"]
+	def allLinks = []
 	def allDocs = []
 	facultyAddr.each{
-		webAddr ->
-		allDocs = allDocs + getDoc(webAddr)
+		webAddr ->		
+		def tmp = getDoc(webAddr)
+		allLinks = allLinks + tmp[0]
+		allDocs = allDocs + tmp[1]
+
 	}
 	
 	def data = getInfo(allDocs)
 
 	f = new File("prof.json")
 	f.delete()
-	f.append(printJson(outputJson(data)))
+	f.append(printJson(outputJson(data,allLinks)))
 }
 
 def smallTest(){
