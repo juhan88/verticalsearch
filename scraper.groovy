@@ -255,15 +255,15 @@ def getPublication(block){
 				if(it.toString().contains("recent publications")){					
 					def li = content[i+1]		 
 					li.each{
-						p = it.value()[0] 
+						p = it.value()[0]
 						if(p.getClass() == groovy.util.Node)
 						{
-							p.each{
-								papers.add(it)
+							p.each{								
+								papers.add(it.trim())
 							}
 						}
-						else{
-							papers.add(p)
+						else{							
+							papers.add(p.replaceAll('"', '').trim())
 						}
 					}
 				}
@@ -274,7 +274,6 @@ def getPublication(block){
 		}
 	}
 
-	
 	return papers
 }
 
@@ -480,7 +479,9 @@ def getProfData(){
 }
 
 def smallTest(){
-	def webAddr5 = "http://www.cs.sfu.ca/people/faculty/markdrew.html"
+	
+	def webAddr5 = "http://www.cs.sfu.ca/people/faculty/anoopsarkar.html"
+	// def webAddr5 = "http://www.cs.sfu.ca/people/faculty/markdrew.html"
 	def webAddr4 = "http://www.cs.sfu.ca/people/faculty/cenkssahinalp.html"
 	// def webAddr1 = "http://www.cs.sfu.ca/people/faculty/mikeevans.html"
 	// def webAddr1 = "http://www.cs.sfu.ca/people/faculty/ryandarcy.html"
@@ -512,5 +513,23 @@ getProfData()
 
 
 
+// def map = [name:"Mori", likes:"CMPT470", id:0]
+// def map2 = [name:"Baker", likes:"CMPT470", id:1]
+// def map3 = [name:"Bart", likes:"CMPT300", id:1]
 
+// // println map.get('likes')
+// // println map2.get('likes')
 
+// def bmap = []
+// bmap.add(map)
+// bmap.add(map2)
+// bmap.add(map3)
+
+// def b = bmap.findAll{
+// 	it.get('likes')
+// }
+
+// println b
+
+// def c = bmap.findAll{ it.get('id') }
+// println c
