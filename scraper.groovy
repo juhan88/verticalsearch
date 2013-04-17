@@ -6,21 +6,26 @@ import groovy.json.*
 
 
 // wrapper for outpputing JSON
-def outputJson(data){
+def outputJson(data,links){
 	def messages = []	
 	def names = data[0]	
 	def edu = data[1]	
-	def recentlyTaughtCourses = data[2]
+	def recentlyTaughtCourses = data[2]	
+	def masterSchoolList = []
+	def papers = data[3]
 	int i = 0
-
+	
 	
 	//loop thru all the names found
 	names.each{
 		name ->
+		
 		if(edu != null)
 			eduList = edu[i]
 		if(recentlyTaughtCourses != null)
 			courseList = recentlyTaughtCourses[i]
+		if(papers != null)
+			paperList = papers[i]
 
 		def json = new JsonBuilder()
 		json{
@@ -39,6 +44,7 @@ def outputJson(data){
 			def schoolslst = []
 			def countrylst = []
 			def yearCompletelst = []
+			def paperlst = []
 			
 			if(edu != null){
 				eduList.each{
@@ -46,46 +52,63 @@ def outputJson(data){
 					// println eduInfo.size()		
 								
 					if(eduInfo.size() == 4){					
-						degreeslst.add(eduInfo[0])
-						schoolslst.add(eduInfo[1])
-						countrylst.add(eduInfo[2])
-						yearCompletelst.add(eduInfo[3])
+						degreeslst.add(eduInfo[0].trim())
+						schoolslst.add(eduInfo[1].trim())
+						countrylst.add(eduInfo[2].trim())
+						yearCompletelst.add(eduInfo[3].trim())
 						
 					}
 					else if(eduInfo.size() > 4){					
-						degreeslst.add(eduInfo[0])
-						facultylst.add(eduInfo[1])
-						schoolslst.add(eduInfo[2])
-						countrylst.add(eduInfo[3])
-						yearCompletelst.add(eduInfo[4])
+						degreeslst.add(eduInfo[0].trim())
+						facultylst.add(eduInfo[1].trim())
+						schoolslst.add(eduInfo[2].trim())
+						countrylst.add(eduInfo[3].trim())
+						yearCompletelst.add(eduInfo[4].trim())
 						
 					}
 					else if(eduInfo.size() == 3)
 					{					
-						degreeslst.add(eduInfo[0])
-						schoolslst.add(eduInfo[1])
-						countrylst.add(eduInfo[2])
+						degreeslst.add(eduInfo[0].trim())
+						schoolslst.add(eduInfo[1].trim())
+						countrylst.add(eduInfo[2].trim())
 					}
 						
 					num+=1
 				}
 			}
 
+			
+
+			website links[i]
 			degrees degreeslst.unique()
 			schools schoolslst.unique()
 			country countrylst.unique()			
-			faculty facultylst.unique()
-			yearCompleted yearCompletelst.unique()
+			if(!facultylst.isEmpty())
+				faculty facultylst.unique()
+			yearCompleted yearCompletelst.unique()			
+
 			if(edu != null)
-				education eduList
+				education eduList.findAll{ it.size() > 5 }
 			if(recentlyTaughtCourses != null)
 				courses courseList.unique()
+			if(paperList != null){
+				publications paperList
+			}
+
+			masterSchoolList.add(schoolslst)
 		}
 		
 		i+= 1
+
 		messages.add(json)
+
 	}
-	return messages
+	
+	// def results = []
+	// results.add(messages)
+	// results.add(masterSchoolList.flatten().unique())	
+	// println messages.getClass()
+	return messages	
 }
 
 def getStevenPearce(string){
@@ -110,7 +133,9 @@ def getStevenPearce(string){
 }
 
 def printJson(message){
+	
 	def prettyJson = JsonOutput.prettyPrint(message.toString())
+	
 	// println prettyJson  //dumps output to screen
 	return prettyJson	//dumps output for writing to file
 }
@@ -157,6 +182,7 @@ def getLinks(doc){
 def getDoc(webAddr){
 	def links = filterPeopleOnly(getData(webAddr))
 	def docs = []
+	def results = []
 
 	links.each{
 		link ->
@@ -164,7 +190,10 @@ def getDoc(webAddr){
 		def d = getRawDoc(link)
 		docs.add(d)
 	} 
-	return docs
+
+	results.add(links)
+	results.add(docs)
+	return results
 }
 
 //wrapper for all logic
@@ -173,6 +202,7 @@ def getInfo(docs){
 	def names = []
 	def educations = []
 	def courses = []
+	def publications = []
 	
 	docs.each{
 		page ->		
@@ -181,21 +211,70 @@ def getInfo(docs){
 		def position = page.depthFirst().DIV.findAll { it.@class == 'text '}
 		def eduBlock = page.depthFirst().DIV.findAll{ it.@class == 'text parbase section' }
 		def courseBlock = page.depthFirst().DIV.findAll{ it.@class == 'text parbase section'}
+		def publicationBlock = page.depthFirst().DIV.findAll{ it.@class == 'text listed' }
+		def publicationBlock1 = page.depthFirst().DIV.findAll{ it.@class == 'text parbase section' }
 
-		
 		if(!nameBlock.isEmpty() && !position.isEmpty())
 			names.add(getName(nameBlock) + getTitle(position))		
 		if(!eduBlock.isEmpty())
 		    educations.add(getEducInfo(eduBlock))
 		if(!courseBlock.isEmpty())
 			courses.add(getCourses(courseBlock))
+		if(!publicationBlock.isEmpty())
+			publications.add(getPublication(publicationBlock))
+		else if(!publicationBlock1.isEmpty())
+			publications.add(getPublication(publicationBlock1))
+		
 	}
 	
 	def data = []
 	data.add(names)
+	println names.size()
 	data.add(educations)
+	println educations.size()
 	data.add(courses)	
+	println courses.size()
+	data.add(publications)
+	println publications.size()
 	return data
+}
+
+
+//HELPER FUNCTIONS
+def getPublication(block){
+	def papers = []
+	block.each{
+
+		def content = it.value()
+		int i = 0
+		content.each{
+			def header = it.value()
+			
+			header.each{
+				// println it
+				if(it.toString().contains("recent publications")){					
+					def li = content[i+1]		 
+					li.each{
+						p = it.value()[0]
+						if(p.getClass() == groovy.util.Node)
+						{
+							p.each{								
+								papers.add(it.trim())
+							}
+						}
+						else{							
+							papers.add(p.replaceAll('"', '').trim())
+						}
+					}
+				}
+				
+			}
+			i += 1
+
+		}
+	}
+
+	return papers
 }
 
 def getTitle(block){
@@ -370,23 +449,40 @@ def filterPeopleOnly(links){
 //MAIN LOOP
 def getProfData(){
 	
-	def facultyAddr = ["http://www.cs.sfu.ca/people/emeriti.html", "http://www.cs.sfu.ca/people/faculty.html"]
+	// def facultyAddr = ["http://www.cs.sfu.ca/people/emeriti.html", "http://www.cs.sfu.ca/people/faculty.html"]
 	// def facultyAddr = ["http://www.cs.sfu.ca/people/emeriti.html"]
+	def facultyAddr = ["http://www.cs.sfu.ca/people/faculty.html"]
+	def allLinks = []
 	def allDocs = []
 	facultyAddr.each{
-		webAddr ->
-		allDocs = allDocs + getDoc(webAddr)
+		webAddr ->		
+		def tmp = getDoc(webAddr)
+		allLinks = allLinks + tmp[0]
+		allDocs = allDocs + tmp[1]
 	}
 	
 	def data = getInfo(allDocs)
 
 	f = new File("prof.json")
 	f.delete()
-	f.append(printJson(outputJson(data)))
+	def messages = outputJson(data,allLinks)
+	// println messages
+	
+ 	f.append(printJson(messages))
+
+	//get all links of all schools
+	// f1 = new File("schools.txt")
+	// f1.delete()
+	// messages[1].each{
+	// 	f1.append(it.trim()+"\n")
+	// }
 }
 
 def smallTest(){
-	def webAddr4 = "http://www.cs.sfu.ca/people/emeriti/stellaatkins.html"
+	
+	def webAddr5 = "http://www.cs.sfu.ca/people/faculty/anoopsarkar.html"
+	// def webAddr5 = "http://www.cs.sfu.ca/people/faculty/markdrew.html"
+	def webAddr4 = "http://www.cs.sfu.ca/people/faculty/cenkssahinalp.html"
 	// def webAddr1 = "http://www.cs.sfu.ca/people/faculty/mikeevans.html"
 	// def webAddr1 = "http://www.cs.sfu.ca/people/faculty/ryandarcy.html"
 	// def webAddr2 = "http://www.cs.sfu.ca/people/faculty/RameshKrishnamurti.html"
@@ -397,17 +493,43 @@ def smallTest(){
 	// def output2 = getInfo(getRawDoc(webAddr2))	
 	// def output3 = getInfo(getRawDoc(webAddr3))
 	def output4 = getInfo(getRawDoc(webAddr4))
-	
-
-	f = new File("output.json")
-	f.delete()
-	// f.append(printJson(outputJson(output1)))
-	// f.append(printJson(outputJson(output2)))
-	// f.append(printJson(outputJson(output3)))
-	f.append(printJson(outputJson(output4)))
+    def messages = outputJson(output4, webAddr4)
+    println printJson(messages)
+    def output5 = getInfo(getRawDoc(webAddr5))
+    def messages1 = outputJson(output5, webAddr5)
+    println printJson(messages1)
+    
+	// f = new File("output.json")
+	// f.delete()
+	// // f.append(printJson(outputJson(output1)))
+	// // f.append(printJson(outputJson(output2)))
+	// // f.append(printJson(outputJson(output3)))
+	// f.append(printJson(outputJson(output4)))
 }
 
 
-// smallTest()
+ // smallTest()
 getProfData()
 
+
+
+// def map = [name:"Mori", likes:"CMPT470", id:0]
+// def map2 = [name:"Baker", likes:"CMPT470", id:1]
+// def map3 = [name:"Bart", likes:"CMPT300", id:1]
+
+// // println map.get('likes')
+// // println map2.get('likes')
+
+// def bmap = []
+// bmap.add(map)
+// bmap.add(map2)
+// bmap.add(map3)
+
+// def b = bmap.findAll{
+// 	it.get('likes')
+// }
+
+// println b
+
+// def c = bmap.findAll{ it.get('id') }
+// println c

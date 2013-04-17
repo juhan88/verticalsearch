@@ -1,0 +1,87 @@
+University of British Columbia, http://www.ubc.ca/
+Warwick University, http://www2.warwick.ac.uk/
+Nottingham University, http://www.nottingham.ac.uk/
+University of East Anglia, http://www.uea.ac.uk/
+University of Colorado, http://www.colorado.edu/
+Carnegie-Mellon University, http://www.cmu.edu/index.shtml
+Wayne State Univ., http://wayne.edu/
+University College, http://www.uc.utoronto.ca/
+Simon Fraser University, http://www.sfu.ca/
+University of Virginia, http://www.virginia.edu/
+University of Cambridge, http://www.cam.ac.uk/
+Va. Polytechnic Inst., http://www.vt.edu/
+Univ. of British Columbia, http://www.ubc.ca/
+Xavier Univ., http://www.xavier.edu/
+Univ. of Chicago, http://www.uchicago.edu/
+Washington Univ., http://wustl.edu/
+Queen’s University, http://www.queensu.ca/
+University of Waterloo, https://uwaterloo.ca/
+University of Western Ontario, http://www.uwo.ca/english/
+University of Paderborn, http://www.uni-paderborn.de/en/
+McGill University, http://www.mcgill.edu/
+University of Calcutta, http://www.caluniv.ac.in/
+Ural State University, http://www.usue.ru/
+Universidad de la Republica, http://www.universidad.edu.uy/
+Dalhousie University, http://www.dal.ca/
+University of Victoria, http://www.uvic.ca/
+Univ. Aix-Marseille II, http://www.univ-amu.fr/
+Buenos Aires University, http://www.uba.ar/ingles/index01.php
+University of Toronto, http://www.utoronto.ca/
+University College London, http://www.ucl.ac.uk/
+Cornell University, http://www.cornell.edu/
+Bilkent University, http://www.bilkent.edu.tr/index.html
+Swiss Federal Institute of Technology, http://www.ethz.ch/index_EN
+University of Dortmund, http://www.tu-dortmund.de/uni/International/University/
+Birmingham University, http://www.birmingham.ac.uk/index.aspx
+University of Dundee, http://www.dundee.ac.uk/
+Cambridge, http://www.cam.ac.uk/
+Northampton, http://www.northampton.ac.uk/
+Tohoku University, http://www.tohoku.ac.jp/english/
+Ibaraki University, www.ibaraki.ac.jp/en
+Shandong University, www.sdu.edu.cn/english
+Chalmers University of Technology, http://www.chalmers.se/en/Pages/default.aspx
+Jordan University, http://www.ju.edu.jo/home.aspx
+Purdue University, http://www.purdue.edu/
+University of Connecticut, http://www.uconn.edu/
+Mansoura University, http://www.mans.edu.eg/en
+University of Montreal, http://www.umontreal.ca/english/
+McMaster University, http://www.mcmaster.ca/
+Praguem, http://www.cuni.cz/UKENG-1.html
+University of Oregon, University of Oregon
+Maharishi International University, http://www.mum.edu/
+State College, http://www.statecollege.com/
+Indian Institute of Technology, http://www.iitd.ac.in/
+University of Wisconsin-Madison, http://www.wisc.edu/
+University of Science and Technology of China, http://en.ustc.edu.cn/
+University of Illinois at Urbana-Champaign, http://illinois.edu/
+University of Kansas, http://www.ku.edu/
+The Hong Kong University of Science & Technology (HKUST), http://www.ust.hk/eng/index.htm
+Tsinghua University, http://www.tsinghua.edu.cn/publish/then/
+University of Alberta, http://www.ualberta.ca/
+University of London, http://www.lon.ac.uk/
+University of California at Berkeley, http://www.berkeley.edu/index.html
+Ohio State University, http://www.osu.edu/
+Humboldt-Universität zu Berlin, http://www.hu-berlin.de/?set_language=en
+University of Arizona, http://www.arizona.edu/
+Computer Science Jiao Tong University, http://www.cs.sjtu.edu.cn/
+Computer Science Shanghai Jiao Tong University, http://www.cs.sjtu.edu.cn/
+University of Edinburgh, http://www.ed.ac.uk/home
+California Institute of Technology, http://www.caltech.edu/
+College Park, http://www.umd.edu/
+University of Pennsylvania, http://www.upenn.edu/
+University of Poona, http://www.unipune.ac.in/
+Carnegie Mellon University, http://www.cmu.edu/index.shtml
+Johns Hopkins University, http://www.jhu.edu/
+Stanford University, http://www.stanford.edu/
+Electrical Engineering Stanford, http://ee.stanford.edu/
+New York University, http://www.nyu.edu/
+Eotvos University, http://www.elte.hu/en
+Moscow State University, http://www.msu.ru/en/
+University of Oxford, http://www.ox.ac.uk/
+University of Sussex, http://www.sussex.ac.uk/
+Georgia Institute of Technology, http://www.gatech.edu/
+Canadian Genetic Diseases Network, http://oicr.on.ca/institution/canadian-genetic-diseases-network
+University of Regina, http://www.uregina.ca/
+Department of Computer of Science Universitat des Saarlandes, http://www.cs.uni-saarland.de/
+University of Jyvaskyla, https://www.jyu.fi/en
+East China Normal University, http://english.ecnu.edu.cn/
