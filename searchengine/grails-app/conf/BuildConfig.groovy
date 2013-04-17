@@ -42,8 +42,12 @@ grails.project.dependency.resolution = {
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes e.g.
 
 		runtime 'org.apache.solr:solr-solrj:4.2.0'
+<<<<<<< Updated upstream
 
 
+=======
+        runtime 'org.apache.httpcomponents:httpclient:4.2.3'
+>>>>>>> Stashed changes
         // runtime 'mysql:mysql-connector-java:5.1.22'
     }
 
