@@ -1,0 +1,3 @@
+03-30 10:14:13 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SEARCH[*] SELECT * FROM SCRAPE"; expected "SELECT, SET, SAVEPOINT, SCRIPT, SHUTDOWN, SHOW, {"; SQL statement:
+SEARCH SELECT * FROM SCRAPE [42001-164]
