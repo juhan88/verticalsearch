@@ -265,7 +265,69 @@ input, select, textarea {
 
 #querybox {
 	width: 80%;
+<<<<<<< Updated upstream
 	margin: 2em 10% 3em 10%;
+=======
+	height: 400px;
+	margin: -2em 10% 3em 10%;
+}
+
+#querybox h1 {
+	color: #ffc400;
+}
+
+.additionalpages{
+  margin: -2em 10% 3em 10%;
+}
+
+#address {
+	font-size: x-large;
+	margin-top: 177px;
+}
+
+#results {
+	font-size: large;
+	padding: 0em 4em;
+}
+
+.name a {
+	font-size: x-large;
+}
+
+.indent {
+	display: block;
+	padding-left: 1em;
+}
+
+.course {
+	color: #009900;
+	display: block;
+	padding-left: 1em;
+}
+
+.smindent {
+	display: block;
+	padding-left: 0.7em;
+}
+
+.prestige {
+	color: #009900;
+	display: block;
+	padding-left: 0.7em;
+}
+
+.cell {
+	background-color: #ffffff;
+	border: 1px solid black;
+	padding: 0.5em;
+	text-decoration: none;
+	   -moz-border-radius: 1.3em;
+	-webkit-border-radius: 1.3em;
+	        border-radius: 1.3em;
+		    -moz-box-shadow: 5px 5px 6px 0px #888;
+		 -webkit-box-shadow: 5px 5px 6px 0px #888;
+		         box-shadow: 5px 5px 6px 0px #888;
+>>>>>>> Stashed changes
 }
 
 select {
@@ -595,7 +657,7 @@ th:hover, tr:hover {
 
 .ie6 .buttons input.delete, .ie6 .buttons input.edit, .ie6 .buttons input.save,
 .ie7 .buttons input.delete, .ie7 .buttons input.edit, .ie7 .buttons input.save {
-	padding-left: 36px;
+	padding-left: 36px;                              2
 }
 
 .buttons .delete {
@@ -614,3 +676,17 @@ a.skip {
 	position: absolute;
 	left: -9999px;
 }
+
+.ex{
+   margin: 2em;
+}
+
+.list{
+   padding-left:2em
+}
+
+.about{
+   margin: 6em;
+}
+
+

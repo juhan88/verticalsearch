@@ -17,21 +17,26 @@
 
 		<%-- wrapper div for gradient effect --%>
 		<div class="wrapper">
-			
+
 			<%-- main div for page content --%>
 			<div class="content">
 
     		<tmpl:/nav />
 
+<<<<<<< Updated upstream
 				<tmpl:/header />
 				
+=======
+				<%--<tmpl:/header />--%>
+
+>>>>>>> Stashed changes
 				<%-- dynamic page content --%>				
     		<g:layoutBody />
-									
+
 				<tmpl:/footer />				
-				
+
 			</div>
-				
+
 		</div>
 
   </body>
