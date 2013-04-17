@@ -23,13 +23,11 @@
 
     		<tmpl:/nav />
 
-<<<<<<< Updated upstream
 				<tmpl:/header />
-				
-=======
+
 				<%--<tmpl:/header />--%>
 
->>>>>>> Stashed changes
+
 				<%-- dynamic page content --%>				
     		<g:layoutBody />
 

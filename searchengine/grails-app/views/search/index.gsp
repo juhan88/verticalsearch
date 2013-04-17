@@ -50,11 +50,6 @@
 		</g:formRemote>
 
 	</div>
-    address
-	<div class="additionalpages">
-
-	    <a href="./nextpage">1</a>
-    </div>
 
 	<%-- populate div with query results --%>
 	<div id="results"></div>

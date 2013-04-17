@@ -13,6 +13,7 @@ class SearchController {
 	def uQ
 	def response
 	def TOTAL_UNIVERSITIES = 852	// const for scrape total, used for rank calculation
+    def startPageNum = 0
 
 
 	/* Initial Query */
@@ -31,6 +32,7 @@ class SearchController {
 										""")										 // searchable fields
 		solrparams.set("q.op", "OR")						 // allow in-exact matches
 		solrparams.set("defType", "edismax")		 // set solr to run as edismax
+        solrparams.set("start",startPageNum)
 		
 		response = solr.query(solrparams)				 // main query raw header and results
 						 
@@ -108,7 +110,7 @@ class SearchController {
 				schoolparams.set("q.op", "AND")					// exact match
 				schoolparams.set("rows",1)							// return first match only
 				schoolparams.set("defType", "edismax")
-				schoolparams.set("qf", "uniName")				// query school name->rank keys only				
+				schoolparams.set("qf", "uniName")				// query school name->rank keys only
 				schoollist = solr.query(schoolparams).getResults()	// subquery results			
 				
 				/* Loop each school in results */				
@@ -165,9 +167,22 @@ class SearchController {
 		/* for Relationships */
 		findSimilarities(allResults)
 
+        multiPage(doclist.getNumFound())
 
 	} // end mainQuery
-	
+
+
+
+    /* multi pages */
+    def multiPage(numPages){
+        int pages = getPages(numPages)
+        if(numPages > 1){
+            (1..numPages).each{
+                render "<a href=./pages>  $it  <a/>"
+
+            }
+        }
+    }
 	/* Setter for simple string values */
 	def setData(a) {
 		def b
@@ -246,11 +261,9 @@ class SearchController {
 	}
 
 
-    def nextpage() {
+    def page(){
 
     }
-
-
 
     //HELPER FUNCTION TO DETERMINE HOW RESULT PAGES
     private getPages(pages){
