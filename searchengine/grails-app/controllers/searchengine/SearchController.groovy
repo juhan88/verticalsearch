@@ -23,8 +23,14 @@ class SearchController {
 		/* Local Variables */
 		def solrparams = new org.apache.solr.client.solrj.SolrQuery()
 
-        if (!uQ)
+        if(!uQ)
+        {
+           if (!params.address)
             uQ = params.address				// user query input value from gsp
+           else if (request.getQueryString())
+               uQ = request.getQueryString()
+        }
+
 
 		solrparams.setQuery(uQ)
 		solrparams.set("qf","""
@@ -173,8 +179,10 @@ class SearchController {
 		findSimilarities(allResults)
 
 
+
         def currentPage = request.getForwardURI()
         multiPage(doclist.getNumFound(), currentPage)
+
 
 	} // end mainQuery
 
@@ -182,6 +190,7 @@ class SearchController {
 
     /* multi pages */
     def multiPage(numPages, currentURI){
+
         def filteredURI = []
         def l = currentURI.split("/")
 
@@ -197,6 +206,7 @@ class SearchController {
 
         int pages = getPages(numPages)
         def queryString = uQ.replaceAll(" ","%20")
+
 
         render "<br/>"
         render "<br/>"
@@ -295,15 +305,20 @@ class SearchController {
 
 
     def page(){
-        def request = request.getQueryString().split(";")
-        def query = request[0].split('=')
-        def page = request[1].split('=')
-        def incomingPage = request[2].split('=')
-        int num = page[1] as int
+        def r = request.getQueryString().split(";")
+        int num = -1
+        def query = r[0].split('=')
+        if (r.size() > 1)
+        {
+            def page = r[1].split('=')
+            num = page[1] as int
+            currentPageNum = num
+        }
 
-
-        currentPageNum = num
-        startPageNum = ((num-1)*10)
+        if(num != -1)
+            startPageNum = ((num-1)*10)
+        else
+            startPageNum = 0
         uQ = query[1].replaceAll("%20"," ")
 
         render "<title>Prestige query :: $uQ</title> "
@@ -322,17 +337,22 @@ class SearchController {
         /*  query box */
         render "<br/>"
         render "<br/>"
-        render "<form name='input' action='' method='get'>"
-        render "<input type='text' value=$uQ size ='100' >"
+        render "<form name='input' action='subquery' method='post'>"
+        render "<input type='text' name='newQuery' value='$uQ' >"
         render "<input type='submit' value='Tarot'>"
         render "</form>"
-
 
         render "<div id='results'>"
             mainQuery()
         render "</div>"
         render "</div>"
 
+    }
+
+
+    def subquery(){
+        def r = request.getParameter('newQuery')
+        redirect(uri:"/search/page?q=$r")
     }
 
     //HELPER FUNCTION TO DETERMINE HOW RESULT PAGES
