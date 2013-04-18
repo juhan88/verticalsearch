@@ -51,15 +51,16 @@ html.no-cssgradients {
 }
 
 .header {
-	background: #fff;
-	color: #000;
+	color: #fff;
 	font-size: xx-large;
-	padding: 2em 2em 1em 2em;
+	padding: 0em 2em 0.5em 2em;
 }
 
 #map-canvas {
 	height: 20em;
 	width: 100%;
+	border-top: solid 1px black;
+	border-bottom: solid 1px black;
 }
 
 #grailsLogo {
@@ -80,7 +81,7 @@ html.no-cssgradients {
 }
 
 a:link, a:visited, a:hover {
-	color: #48802c;
+	color: #0000cc;
 }
 
 a:hover, a:active {
@@ -88,7 +89,6 @@ a:hover, a:active {
 }
 
 h1 {
-	color: #000;
 	font-weight: bold;
 	font-size: 2.5em;
 }
@@ -125,8 +125,12 @@ img {
 	color: #000;
 	clear: both;
 	font-size: 0.8em;
-	padding: 1em;
-	min-height: 1em;
+	min-height: 1em;	
+	padding: 0.5em 0.75em;
+	   -moz-box-shadow: 0 0 3px 1px #aaaaaa;
+	-webkit-box-shadow: 0 0 3px 1px #aaaaaa;
+	        box-shadow: 0 0 3px 1px #aaaaaa;
+	zoom: 1;
 }
 
 .footer a {
@@ -264,20 +268,17 @@ input, select, textarea {
 }
 
 #querybox {
+	background-image: url(../images/fortuneTeller.jpg);
+	background-repeat: no-repeat;
+	background-position: 0% 88%;
+  background-size: cover;
 	width: 80%;
-<<<<<<< Updated upstream
-	margin: 2em 10% 3em 10%;
-=======
 	height: 400px;
 	margin: -2em 10% 3em 10%;
 }
 
 #querybox h1 {
 	color: #ffc400;
-}
-
-.additionalpages{
-  margin: -2em 10% 3em 10%;
 }
 
 #address {
@@ -327,7 +328,6 @@ input, select, textarea {
 		    -moz-box-shadow: 5px 5px 6px 0px #888;
 		 -webkit-box-shadow: 5px 5px 6px 0px #888;
 		         box-shadow: 5px 5px 6px 0px #888;
->>>>>>> Stashed changes
 }
 
 select {
@@ -657,7 +657,7 @@ th:hover, tr:hover {
 
 .ie6 .buttons input.delete, .ie6 .buttons input.edit, .ie6 .buttons input.save,
 .ie7 .buttons input.delete, .ie7 .buttons input.edit, .ie7 .buttons input.save {
-	padding-left: 36px;                              2
+	padding-left: 36px;
 }
 
 .buttons .delete {
@@ -677,16 +677,6 @@ a.skip {
 	left: -9999px;
 }
 
-.ex{
-   margin: 2em;
+.rpage{
+
 }
-
-.list{
-   padding-left:2em
-}
-
-.about{
-   margin: 6em;
-}
-
-

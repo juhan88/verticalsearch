@@ -21,7 +21,9 @@ class SearchController {
 		
 		/* Local Variables */
 		def solrparams = new org.apache.solr.client.solrj.SolrQuery()
-		uQ = params.address				// user query input value from gsp
+
+        if (!uQ)
+            uQ = params.address				// user query input value from gsp
 		solrparams.setQuery(uQ)
 		solrparams.set("qf","""
 										professor
@@ -176,12 +178,19 @@ class SearchController {
     /* multi pages */
     def multiPage(numPages){
         int pages = getPages(numPages)
-        if(numPages > 1){
-            (1..numPages).each{
-                render "<a href=./pages>  $it  <a/>"
 
+
+        def queryString = uQ.replaceAll(" ","%20")
+        render "<div class=rpage>"
+        def prevlink = "./search/page?q=${queryString};p=-1"
+        if(pages > 1){
+            (1..pages).each{
+                def link = "./page?q=${queryString};p=$it"
+                render "<a href=$link>  $it  <a/>"
             }
         }
+        def nextlink = "./search/page?q=${queryString};p=+1"
+        render "</div>"
     }
 	/* Setter for simple string values */
 	def setData(a) {
@@ -262,8 +271,20 @@ class SearchController {
 
 
     def page(){
+        def request = request.getQueryString().split(";")
+        def query = request[0].split('=')
+        def page = request[1].split('=')
+
+        int num = page[1] as int
+        startPageNum = ((num-1)*10)
+
+        uQ = query[1].replaceAll("%20"," ")
+
+        mainQuery()
 
     }
+
+
 
     //HELPER FUNCTION TO DETERMINE HOW RESULT PAGES
     private getPages(pages){
