@@ -2,10 +2,10 @@
 <html>
 
   <head>
+    <link rel="shortcut icon" href="images/favicon.ico" >
     <title><g:layoutTitle default="University Rankings"/></title>
-		<link rel="stylesheet" href="${resource(dir: 'css', file: 'search.css')}" type="text/css">
-
-		<r:layoutResources />
+    <link rel="stylesheet" href="${resource(dir: 'css', file: 'search.css')}" type="text/css">
+    <r:layoutResources />
   </head>
 
 	<%-- call to initialize map  --%>

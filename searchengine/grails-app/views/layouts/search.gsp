@@ -2,6 +2,7 @@
 <html>
 
   <head>
+    <link rel="shortcut icon" href="images/favicon.ico" >
     <title><g:layoutTitle default="Prestige : Engine" /></title>
 		<link rel="stylesheet" href="${resource(dir: 'css', file: 'search.css')}" type="text/css">
 		<script type="text/javascript"

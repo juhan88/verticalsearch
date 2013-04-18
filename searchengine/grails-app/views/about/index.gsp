@@ -2,7 +2,8 @@
 <html>
 
 <head>
-	<meta name="layout" content="ranking"/>
+    <link rel="shortcut icon" href="images/favicon.ico" >
+	<meta name="layout" content="about"/>
 </head>
 
 <body>

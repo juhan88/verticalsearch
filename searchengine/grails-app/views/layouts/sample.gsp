@@ -3,7 +3,7 @@
 
   <head>
      <link rel="shortcut icon" href="images/favicon.ico" >
-     <title><g:layoutTitle default="About The Team"/></title>
+     <title><g:layoutTitle default="Sample Queries"/></title>
 	 <link rel="stylesheet" href="${resource(dir: 'css', file: 'search.css')}" type="text/css">
      <r:layoutResources />
   </head>
