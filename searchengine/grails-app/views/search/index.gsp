@@ -42,7 +42,7 @@
 			<g:textField name="address" placeholder="start here" />
 
 			<%-- submit query to map --%>
-			<g:actionSubmit value="BAM!" />
+			<g:actionSubmit value="Tarot" />
 				
 			<%-- clear map markers --%>
 			<%--<g:actionSubmit value="Clear All" onclick="deleteMarkers()" />--%>

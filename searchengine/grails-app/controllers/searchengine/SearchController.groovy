@@ -46,6 +46,7 @@ class SearchController {
 		if (doclist.getNumFound() == 0)
 			render "Sorry, I could not find any matches for <b>" + uQ + "</b><br /><br />"
         else{
+            render "<br />"
             render "Results found ${doclist.getNumFound()} ---- Page # $currentPageNum"
             render "<br />"
             render "<br />"
@@ -181,7 +182,6 @@ class SearchController {
 
     /* multi pages */
     def multiPage(numPages, currentURI){
-
         def filteredURI = []
         def l = currentURI.split("/")
 
@@ -200,7 +200,6 @@ class SearchController {
 
         render "<br/>"
         render "<br/>"
-        render "<br/>"
         render "<link rel='stylesheet' href='/searchengine/static/css/search.css' type='text/css'>"
 
         render "<center>"
@@ -215,7 +214,6 @@ class SearchController {
 
         render "</div>"
         render "</center>"
-        render "<br/>"
         render "<br/>"
         render "<br/>"
     }
@@ -293,7 +291,6 @@ class SearchController {
 			render "<br />"
 		}
 		render "<br />"
-
 	}
 
 
@@ -309,6 +306,8 @@ class SearchController {
         startPageNum = ((num-1)*10)
         uQ = query[1].replaceAll("%20"," ")
 
+        render "<title>Prestige query :: $uQ</title> "
+        render "<link rel=\"shortcut icon\" href=\"images/favicon.ico\" >"
         /* ghetto rendering of the next few pages */
         render "<div class='wrapper'>"
         render "<div class='content'>"
@@ -320,12 +319,16 @@ class SearchController {
           render "<a href='/searchengine/sample/index'>Query Examples</a>"
         render "</div>"
 
+        /*  query box */
         render "<br/>"
         render "<br/>"
+        render "<form name='input' action='' method='get'>"
+        render "<input type='text' value=$uQ size ='100' >"
+        render "<input type='submit' value='Tarot'>"
+        render "</form>"
+
+
         render "<div id='results'>"
-            render "Prestige: $uQ"
-            render "<br/>"
-            render "<br/>"
             mainQuery()
         render "</div>"
         render "</div>"
