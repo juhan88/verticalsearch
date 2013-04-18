@@ -14,7 +14,7 @@ class SearchController {
 	def response
 	def TOTAL_UNIVERSITIES = 852	// const for scrape total, used for rank calculation
     def startPageNum = 0
-    def currentPageNum = 0          // not used for anything yet
+    def currentPageNum = 1          // not used for anything yet
 
 
 	/* Initial Query */
