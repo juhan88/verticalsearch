@@ -14,6 +14,7 @@ class SearchController {
 	def response
 	def TOTAL_UNIVERSITIES = 852	// const for scrape total, used for rank calculation
     def startPageNum = 0
+    def currentPageNum = 0
 
 
 	/* Initial Query */
@@ -24,6 +25,7 @@ class SearchController {
 
         if (!uQ)
             uQ = params.address				// user query input value from gsp
+
 		solrparams.setQuery(uQ)
 		solrparams.set("qf","""
 										professor
@@ -44,7 +46,7 @@ class SearchController {
 		if (doclist.getNumFound() == 0)
 			render "Sorry, I could not find any matches for <b>" + uQ + "</b><br /><br />"
         else{
-            render "Results found ${doclist.getNumFound()}"
+            render "Results found ${doclist.getNumFound()} ---- Page # $currentPageNum"
             render "<br />"
             render "<br />"
         }
@@ -171,7 +173,6 @@ class SearchController {
 
 
         def currentPage = request.getForwardURI()
-        render request.requestURI
         multiPage(doclist.getNumFound(), currentPage)
 
 	} // end mainQuery
@@ -181,32 +182,34 @@ class SearchController {
     /* multi pages */
     def multiPage(numPages, currentURI){
 
-
+        def filteredURI = []
         def l = currentURI.split("/")
 
-        render "<br/>"
-        render l
-        render "<br/>"
+        //remove the last element
+        int i = 0
+        l.each{
+           if(i != l.size()-1)
+               filteredURI.add(it)
+            i+= 1
+        }
+
+        currentURI = filteredURI.join('/')
 
         int pages = getPages(numPages)
         def queryString = uQ.replaceAll(" ","%20")
-        render currentURI
+
         render "<link rel='stylesheet' href='/searchengine/static/css/search.css' type='text/css'>"
-
-
 
         render "<center>"
         render "<div class=rpage>"
-        def prevlink = "${currentURI}page?q=${queryString};p=-1"
-        render "<a href=$prevlink style='text-decoration:none'>  prev  <a/>"
+
         if(pages > 1){
             (1..pages).each{
-                def link = "${currentURI}page?q=${queryString};p=$it"
+                def link = "${currentURI}/page?q=${queryString};p=$it;c=$startPageNum"
                 render "<a href=$link style='text-decoration:none'>  $it  <a/>"
             }
         }
-        def nextlink = "${currentURI}page?q=${queryString};p=+1"
-        render "<a href=$nextlink style='text-decoration:none'>  next  <a/>"
+
         render "</div>"
         render "</center>"
     }
@@ -292,7 +295,11 @@ class SearchController {
         def request = request.getQueryString().split(";")
         def query = request[0].split('=')
         def page = request[1].split('=')
+        def incomingPage = request[2].split('=')
         int num = page[1] as int
+
+
+        currentPageNum = num
         startPageNum = ((num-1)*10)
         uQ = query[1].replaceAll("%20"," ")
         mainQuery()
