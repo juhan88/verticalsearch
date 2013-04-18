@@ -281,8 +281,6 @@ class SearchController {
 
     }
 
-
-
     //HELPER FUNCTION TO DETERMINE HOW RESULT PAGES
     private getPages(pages){
         int numPages = pages/10

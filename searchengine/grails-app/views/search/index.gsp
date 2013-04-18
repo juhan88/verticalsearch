@@ -31,8 +31,8 @@
 	<div id="querybox">
 		
 		<div class="header">
-			<h1 id="bigTitle">Prestigious</h1>
-			<h3 id="subTitle">sfu professor ranklist.</h3>
+			<h1 id="bigTitle">Prestige</h1>
+			<h3 id="subTitle">sfu professor rank list.</h3>
 		</div>
 		
 		<%-- ajax form to send query to searchcontroller.myquery --%>
