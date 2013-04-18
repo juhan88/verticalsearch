@@ -14,7 +14,7 @@ class SearchController {
 	def response
 	def TOTAL_UNIVERSITIES = 852	// const for scrape total, used for rank calculation
     def startPageNum = 0
-    def currentPageNum = 0
+    def currentPageNum = 0          // not used for anything yet
 
 
 	/* Initial Query */
@@ -23,13 +23,11 @@ class SearchController {
 		/* Local Variables */
 		def solrparams = new org.apache.solr.client.solrj.SolrQuery()
 
+
+        //if uQ is specified means its a subquery
         if(!uQ)
-        {
-           if (!params.address)
             uQ = params.address				// user query input value from gsp
-           else if (request.getQueryString())
-               uQ = request.getQueryString()
-        }
+
 
 
 		solrparams.setQuery(uQ)
@@ -308,7 +306,7 @@ class SearchController {
         def r = request.getQueryString().split(";")
         int num = -1
         def query = r[0].split('=')
-        if (r.size() > 1)
+        if (r.size() > 1)               //check if 2nd argument is specified
         {
             def page = r[1].split('=')
             num = page[1] as int
@@ -321,9 +319,12 @@ class SearchController {
             startPageNum = 0
         uQ = query[1].replaceAll("%20"," ")
 
+
+        /* ghetto rendering of the next few pages */
+
         render "<title>Prestige query :: $uQ</title> "
         render "<link rel=\"shortcut icon\" href=\"images/favicon.ico\" >"
-        /* ghetto rendering of the next few pages */
+
         render "<div class='wrapper'>"
         render "<div class='content'>"
         render "<div class='nav'>"
@@ -349,7 +350,7 @@ class SearchController {
 
     }
 
-
+    /* action for the querybox in 'page' results */
     def subquery(){
         def r = request.getParameter('newQuery')
         redirect(uri:"/search/page?q=$r")
