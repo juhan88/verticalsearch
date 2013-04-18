@@ -198,6 +198,9 @@ class SearchController {
         int pages = getPages(numPages)
         def queryString = uQ.replaceAll(" ","%20")
 
+        render "<br/>"
+        render "<br/>"
+        render "<br/>"
         render "<link rel='stylesheet' href='/searchengine/static/css/search.css' type='text/css'>"
 
         render "<center>"
@@ -212,6 +215,9 @@ class SearchController {
 
         render "</div>"
         render "</center>"
+        render "<br/>"
+        render "<br/>"
+        render "<br/>"
     }
 	/* Setter for simple string values */
 	def setData(a) {
@@ -302,7 +308,28 @@ class SearchController {
         currentPageNum = num
         startPageNum = ((num-1)*10)
         uQ = query[1].replaceAll("%20"," ")
-        mainQuery()
+
+        /* ghetto rendering of the next few pages */
+        render "<div class='wrapper'>"
+        render "<div class='content'>"
+        render "<div class='nav'>"
+          render "<a href='/searchengine/search/index'>Prestige :: Engine</a> |"
+	      render "<a href='https://docs.google.com/document/d/1bfjZXHmQLMC_q7rIz6f-X6kbokwQAy1HjQPIxf53K8g/edit?usp=sharing'>Documentation</a> |"
+          render "<a href='/searchengine/about/index'>About the Team</a> |"
+	      render "<a href='/searchengine/ranking/index'>University Ranking</a> |"
+          render "<a href='/searchengine/sample/index'>Query Examples</a>"
+        render "</div>"
+
+        render "<br/>"
+        render "<br/>"
+        render "<div id='results'>"
+            render "Prestige: $uQ"
+            render "<br/>"
+            render "<br/>"
+            mainQuery()
+        render "</div>"
+        render "</div>"
+
     }
 
     //HELPER FUNCTION TO DETERMINE HOW RESULT PAGES
