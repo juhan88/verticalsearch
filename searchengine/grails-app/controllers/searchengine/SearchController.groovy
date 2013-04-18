@@ -178,11 +178,10 @@ class SearchController {
     /* multi pages */
     def multiPage(numPages){
         int pages = getPages(numPages)
-
-
         def queryString = uQ.replaceAll(" ","%20")
         render "<div class=rpage>"
         def prevlink = "./search/page?q=${queryString};p=-1"
+//        render "<a href=$prevlink>  prev  <a/>"
         if(pages > 1){
             (1..pages).each{
                 def link = "./page?q=${queryString};p=$it"
@@ -190,6 +189,7 @@ class SearchController {
             }
         }
         def nextlink = "./search/page?q=${queryString};p=+1"
+//        render "<a href=$nextlink>  next  <a/>"
         render "</div>"
     }
 	/* Setter for simple string values */
@@ -274,12 +274,9 @@ class SearchController {
         def request = request.getQueryString().split(";")
         def query = request[0].split('=')
         def page = request[1].split('=')
-
         int num = page[1] as int
         startPageNum = ((num-1)*10)
-
         uQ = query[1].replaceAll("%20"," ")
-
         mainQuery()
 
     }
