@@ -169,28 +169,44 @@ class SearchController {
 		/* for Relationships */
 		findSimilarities(allResults)
 
-        multiPage(doclist.getNumFound())
+
+        def currentPage = request.getForwardURI()
+        render request.requestURI
+        multiPage(doclist.getNumFound(), currentPage)
 
 	} // end mainQuery
 
 
 
     /* multi pages */
-    def multiPage(numPages){
+    def multiPage(numPages, currentURI){
+
+
+        def l = currentURI.split("/")
+
+        render "<br/>"
+        render l
+        render "<br/>"
+
         int pages = getPages(numPages)
         def queryString = uQ.replaceAll(" ","%20")
+        render currentURI
+        render "<link rel='stylesheet' href='/searchengine/static/css/search.css' type='text/css'>"
+
+
+
         render "<center>"
         render "<div class=rpage>"
-        def prevlink = "./search/page?q=${queryString};p=-1"
-//        render "<a href=$prevlink>  prev  <a/>"
+        def prevlink = "${currentURI}page?q=${queryString};p=-1"
+        render "<a href=$prevlink style='text-decoration:none'>  prev  <a/>"
         if(pages > 1){
             (1..pages).each{
-                def link = "./page?q=${queryString};p=$it"
+                def link = "${currentURI}page?q=${queryString};p=$it"
                 render "<a href=$link style='text-decoration:none'>  $it  <a/>"
             }
         }
-        def nextlink = "./search/page?q=${queryString};p=+1"
-//        render "<a href=$nextlink>  next  <a/>"
+        def nextlink = "${currentURI}page?q=${queryString};p=+1"
+        render "<a href=$nextlink style='text-decoration:none'>  next  <a/>"
         render "</div>"
         render "</center>"
     }
