@@ -14,6 +14,11 @@
     score. We imagined this vertical search engine to be a predictor or fortune teller that magically determines
     the scores of any SFU professor, hence the picture below.
     </p>
+        <a href="http://dictionary.reference.com/browse/tarot">Tarot</a>: a set of 22 playing cards bearing allegorical representations, used for fortunetelling in the
+        late 18th century. We utilize the word <i>Tarot</i> as a way to "fortunetell" the education score
+        for each prof.
+    <p>
+    </p>
      <div class="list" style="margin-left: 2em;">
         <li> Derek Sheh (dds1)</li>
         <li> Juhan Houang (jha32)</li>

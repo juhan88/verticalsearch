@@ -55,6 +55,7 @@ html.no-cssgradients {
 	font-size: xx-large;
 	margin-left: -1em;
     padding-top: 0.3em;
+    height: 39%;
 }
 
 #map-canvas {
@@ -96,10 +97,12 @@ h1 {
 
 #bigTitle {
 	text-indent: 7%;
+	margin-top: 0.4em;
 }
 
 #subTitle {
-	text-indent: 14%;
+    margin-top: -0.5em;
+	text-indent: 15%;
 }
 
 ul {
@@ -271,7 +274,7 @@ input, select, textarea {
 #querybox {
 	background-image: url(../images/fortuneTeller.jpg);
 	background-repeat: no-repeat;
-	background-position: 0% 100%;
+	background-position: 0% 98%;
     background-size: cover;
 	width: 100%;
 	height: 450px;
